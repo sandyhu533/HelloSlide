@@ -3,25 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2D853F2D2338B9730008F84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F2C2338B9730008F84A /* AppDelegate.swift */; };
-		2D853F2F2338B9730008F84A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F2E2338B9730008F84A /* ViewController.swift */; };
-		2D853F322338B9730008F84A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F302338B9730008F84A /* Main.storyboard */; };
-		2D853F342338B97A0008F84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F332338B97A0008F84A /* Assets.xcassets */; };
-		2D853F372338B97A0008F84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F352338B97A0008F84A /* LaunchScreen.storyboard */; };
+		2D853F512338B98E0008F84A /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F3F2338B98E0008F84A /* CenterView.swift */; };
+		2D853F532338B98E0008F84A /* CGDrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F412338B98E0008F84A /* CGDrawingEngine.swift */; };
+		2D853F542338B98E0008F84A /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F422338B98E0008F84A /* CellView.swift */; };
+		2D853F552338B98E0008F84A /* CanvasMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F432338B98E0008F84A /* CanvasMainViewController.swift */; };
+		2D853F562338B98E0008F84A /* RouletteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F442338B98E0008F84A /* RouletteCell.swift */; };
+		2D853F572338B98E0008F84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F452338B98E0008F84A /* Assets.xcassets */; };
+		2D853F582338B98E0008F84A /* RouletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F462338B98E0008F84A /* RouletteView.swift */; };
+		2D853F5A2338B98E0008F84A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F492338B98E0008F84A /* Main.storyboard */; };
+		2D853F5B2338B98E0008F84A /* StrokeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F4A2338B98E0008F84A /* StrokeGestureRecognizer.swift */; };
+		2D853F5C2338B98E0008F84A /* CanvasContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F4B2338B98E0008F84A /* CanvasContainerView.swift */; };
+		2D853F5E2338B98E0008F84A /* CGMathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F4D2338B98E0008F84A /* CGMathExtensions.swift */; };
+		2D853F602338B98E0008F84A /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F4F2338B98E0008F84A /* UIColorExtensions.swift */; };
+		2D853F612338B98E0008F84A /* StrokeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F502338B98E0008F84A /* StrokeCollection.swift */; };
+		2D853F662338BA410008F84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F652338BA410008F84A /* LaunchScreen.storyboard */; };
+		62416022213608E6996AF4CD /* Pods_HelloWord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A403EED29F809BF8D2AA9841 /* Pods_HelloWord.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D853F292338B9730008F84A /* HelloWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D853F2C2338B9730008F84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D853F2E2338B9730008F84A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2D853F312338B9730008F84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2D853F332338B97A0008F84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2D853F362338B97A0008F84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D853F382338B97A0008F84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D853F3F2338B98E0008F84A /* CenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
+		2D853F412338B98E0008F84A /* CGDrawingEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGDrawingEngine.swift; sourceTree = "<group>"; };
+		2D853F422338B98E0008F84A /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		2D853F432338B98E0008F84A /* CanvasMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasMainViewController.swift; sourceTree = "<group>"; };
+		2D853F442338B98E0008F84A /* RouletteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouletteCell.swift; path = ../Views/RouletteCell.swift; sourceTree = "<group>"; };
+		2D853F452338B98E0008F84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D853F462338B98E0008F84A /* RouletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteView.swift; sourceTree = "<group>"; };
+		2D853F492338B98E0008F84A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2D853F4A2338B98E0008F84A /* StrokeGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeGestureRecognizer.swift; sourceTree = "<group>"; };
+		2D853F4B2338B98E0008F84A /* CanvasContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasContainerView.swift; sourceTree = "<group>"; };
+		2D853F4D2338B98E0008F84A /* CGMathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGMathExtensions.swift; sourceTree = "<group>"; };
+		2D853F4F2338B98E0008F84A /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		2D853F502338B98E0008F84A /* StrokeCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeCollection.swift; sourceTree = "<group>"; };
+		2D853F652338BA410008F84A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D1B248A21DF5553F7280C61 /* Pods-HelloWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWord.release.xcconfig"; path = "Target Support Files/Pods-HelloWord/Pods-HelloWord.release.xcconfig"; sourceTree = "<group>"; };
+		A403EED29F809BF8D2AA9841 /* Pods_HelloWord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C240AC1F2929D8E0A239FBF7 /* Pods-HelloWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWord.debug.xcconfig"; path = "Target Support Files/Pods-HelloWord/Pods-HelloWord.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62416022213608E6996AF4CD /* Pods_HelloWord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +65,8 @@
 			children = (
 				2D853F2B2338B9730008F84A /* HelloWord */,
 				2D853F2A2338B9730008F84A /* Products */,
+				2E099054540240FB2EA732AF /* Pods */,
+				3717D2F5664A51AADDAABC95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +81,81 @@
 		2D853F2B2338B9730008F84A /* HelloWord */ = {
 			isa = PBXGroup;
 			children = (
-				2D853F2C2338B9730008F84A /* AppDelegate.swift */,
-				2D853F2E2338B9730008F84A /* ViewController.swift */,
-				2D853F302338B9730008F84A /* Main.storyboard */,
-				2D853F332338B97A0008F84A /* Assets.xcassets */,
-				2D853F352338B97A0008F84A /* LaunchScreen.storyboard */,
+				2D853F492338B98E0008F84A /* Main.storyboard */,
+				2D853F622338B9A90008F84A /* Controls */,
+				2D853F632338B9AF0008F84A /* Models */,
+				2D853F3E2338B98E0008F84A /* Views */,
+				2D853F642338B9FD0008F84A /* Extensions */,
+				2D853F672338BA490008F84A /* Supporting Files */,
 				2D853F382338B97A0008F84A /* Info.plist */,
 			);
 			path = HelloWord;
+			sourceTree = "<group>";
+		};
+		2D853F3E2338B98E0008F84A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D853F3F2338B98E0008F84A /* CenterView.swift */,
+				2D853F462338B98E0008F84A /* RouletteView.swift */,
+				2D853F422338B98E0008F84A /* CellView.swift */,
+				2D853F4B2338B98E0008F84A /* CanvasContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2D853F622338B9A90008F84A /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				2D853F412338B98E0008F84A /* CGDrawingEngine.swift */,
+				2D853F432338B98E0008F84A /* CanvasMainViewController.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		2D853F632338B9AF0008F84A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D853F502338B98E0008F84A /* StrokeCollection.swift */,
+				2D853F442338B98E0008F84A /* RouletteCell.swift */,
+				2D853F4A2338B98E0008F84A /* StrokeGestureRecognizer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2D853F642338B9FD0008F84A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D853F4F2338B98E0008F84A /* UIColorExtensions.swift */,
+				2D853F4D2338B98E0008F84A /* CGMathExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2D853F672338BA490008F84A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D853F452338B98E0008F84A /* Assets.xcassets */,
+				2D853F2C2338B9730008F84A /* AppDelegate.swift */,
+				2D853F652338BA410008F84A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E099054540240FB2EA732AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C240AC1F2929D8E0A239FBF7 /* Pods-HelloWord.debug.xcconfig */,
+				8D1B248A21DF5553F7280C61 /* Pods-HelloWord.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3717D2F5664A51AADDAABC95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A403EED29F809BF8D2AA9841 /* Pods_HelloWord.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D853F3B2338B97A0008F84A /* Build configuration list for PBXNativeTarget "HelloWord" */;
 			buildPhases = (
+				31D735FDCBA169DA265005A6 /* [CP] Check Pods Manifest.lock */,
 				2D853F252338B9730008F84A /* Sources */,
 				2D853F262338B9730008F84A /* Frameworks */,
 				2D853F272338B9730008F84A /* Resources */,
+				FB826E0259B2485A00B6246D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,44 +218,77 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D853F372338B97A0008F84A /* LaunchScreen.storyboard in Resources */,
-				2D853F342338B97A0008F84A /* Assets.xcassets in Resources */,
-				2D853F322338B9730008F84A /* Main.storyboard in Resources */,
+				2D853F662338BA410008F84A /* LaunchScreen.storyboard in Resources */,
+				2D853F572338B98E0008F84A /* Assets.xcassets in Resources */,
+				2D853F5A2338B98E0008F84A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31D735FDCBA169DA265005A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelloWord-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB826E0259B2485A00B6246D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelloWord/Pods-HelloWord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelloWord/Pods-HelloWord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelloWord/Pods-HelloWord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D853F252338B9730008F84A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D853F2F2338B9730008F84A /* ViewController.swift in Sources */,
+				2D853F612338B98E0008F84A /* StrokeCollection.swift in Sources */,
+				2D853F602338B98E0008F84A /* UIColorExtensions.swift in Sources */,
+				2D853F562338B98E0008F84A /* RouletteCell.swift in Sources */,
+				2D853F512338B98E0008F84A /* CenterView.swift in Sources */,
+				2D853F542338B98E0008F84A /* CellView.swift in Sources */,
+				2D853F5B2338B98E0008F84A /* StrokeGestureRecognizer.swift in Sources */,
+				2D853F532338B98E0008F84A /* CGDrawingEngine.swift in Sources */,
+				2D853F5C2338B98E0008F84A /* CanvasContainerView.swift in Sources */,
+				2D853F552338B98E0008F84A /* CanvasMainViewController.swift in Sources */,
+				2D853F582338B98E0008F84A /* RouletteView.swift in Sources */,
 				2D853F2D2338B9730008F84A /* AppDelegate.swift in Sources */,
+				2D853F5E2338B98E0008F84A /* CGMathExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2D853F302338B9730008F84A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D853F312338B9730008F84A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2D853F352338B97A0008F84A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D853F362338B97A0008F84A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2D853F392338B97A0008F84A /* Debug */ = {
@@ -280,6 +409,7 @@
 		};
 		2D853F3C2338B97A0008F84A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C240AC1F2929D8E0A239FBF7 /* Pods-HelloWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +428,7 @@
 		};
 		2D853F3D2338B97A0008F84A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D1B248A21DF5553F7280C61 /* Pods-HelloWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "filename" : "qianbi-5.png"
+    },
+    {
+      "idiom" : "ipad",
+      "filename" : "qianbi-6.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
