@@ -147,8 +147,9 @@ class StrokeCGView: UIView {
         layer.drawsAsynchronously = true
         
         let dirtyRectView = { () -> UIView in
-            let view = UIView(frame: CGRect(x: -10, y: -10, width: 0, height: 0))
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             view.layer.borderColor = UIColor.red.cgColor
+            //view.backgroundColor = .black
             view.layer.borderWidth = 0.5
             view.isUserInteractionEnabled = false
             view.isHidden = true

@@ -10,18 +10,10 @@ import Foundation
 
 struct RouletteCell: Codable {
     
-    let id : Int
     let title : String
     let image : String
     
-    init(){
-        id = Int()
-        title = String()
-        image = String()
-    }
-    
-    init(id: Int, title: String, image: String) {
-        self.id = id
+    init(title: String, image: String) {
         self.title = title
         self.image = image
     }

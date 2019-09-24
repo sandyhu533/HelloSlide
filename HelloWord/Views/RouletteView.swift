@@ -60,7 +60,7 @@ class RouletteView: UIView {
         }
         
         centerView.snp.makeConstraints { (make) in
-            make.width.height.equalTo(75)
+            make.width.height.equalTo(83)
             make.center.equalTo(dialView.snp.center)
         }
         
@@ -96,9 +96,9 @@ class RouletteView: UIView {
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
         
         if upOrDown {
-            animation.byValue = CGFloat.pi / 3
+            animation.byValue = CGFloat.pi / CGFloat(cells.count) * 2.0
         }else{
-            animation.byValue = -CGFloat.pi / 3
+            animation.byValue = -CGFloat.pi / CGFloat(cells.count) * 2.0
         }
         
         animation.duration = 0
@@ -121,7 +121,7 @@ class RouletteView: UIView {
             cells.insert(cells.last!, at: 0)
             cells.remove(at: cells.count - 1)
         }
-        self.centerView.set(image: cells[1].title)
+        self.centerView.set(image: cells[(cells.count / 2 + 1) / 2 - 1].title)
     }
 }
 
@@ -130,7 +130,7 @@ extension RouletteView {
     func set(cells: [RouletteCell]) {
         self.cells = cells
         reloadData()
-        self.centerView.set(image: cells[1].title)
+        self.centerView.set(image: cells[(cells.count / 2 + 1) / 2 - 1].title)
     }
     
     private func reloadData() {
@@ -155,7 +155,7 @@ extension RouletteView {
                                       y: dialView.bounds.width / 2)
             cellView.set(title: lottery.title, image: lottery.image)
             
-            let rotationAngle = CGFloat(CGFloat(2 * index + 1) / 6 * .pi )
+            let rotationAngle = CGFloat(CGFloat(2 * index + 1) / CGFloat(cells.count) * .pi )
             cellView.transform = CGAffineTransform(rotationAngle: rotationAngle)
             cellsView.addSubview(cellView)
         }

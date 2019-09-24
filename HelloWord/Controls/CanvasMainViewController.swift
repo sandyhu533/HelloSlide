@@ -10,16 +10,13 @@ import UIKit
 class CanvasMainViewController: UIViewController, RouletteViewDelegate {
     
     var cgView: StrokeCGView!
+    var textView: UITextView!
     
     //    var fingerStrokeRecognizer: StrokeGestureRecognizer!
     var pencilStrokeRecognizer: StrokeGestureRecognizer!
-    
-    @IBOutlet weak var editButton: UIBarButtonItem!
+
     @IBOutlet weak var containerStackView: UIStackView!
-    //    @IBOutlet weak var pencilButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var separatorView: UIView!
-    //var rouletteVieController: RouletteViewController
     
     var strokeCollection = StrokeCollection()
     var canvasContainerView: CanvasContainerView!
@@ -28,25 +25,41 @@ class CanvasMainViewController: UIViewController, RouletteViewDelegate {
     /// - Tag: CanvasMainViewController-viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        let screenBounds = UIScreen.main.bounds
-        let maxScreenDimension = max(screenBounds.width, screenBounds.height)
         
-        let cgView = StrokeCGView(frame: CGRect(origin: .zero, size: CGSize(width: maxScreenDimension, height: maxScreenDimension)))
-        cgView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.cgView = cgView
+//        let screenBounds = UIScreen.main.bounds
+//        let maxScreenDimension = max(screenBounds.width, screenBounds.height)
         
-        //canvasContainerView指白纸
-        let canvasContainerView = CanvasContainerView(canvasSize: cgView.frame.size)
-        canvasContainerView.documentView = cgView
+        //cgView是手写的图层，大小与scrollView一致
+        self.cgView = StrokeCGView(frame: CGRect(origin: .zero, size: CGSize(width: min(self.scrollView.frame.width,self.scrollView.frame.height), height: max(self.scrollView.frame.width,self.scrollView.frame.height) )))
+        self.cgView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        print("cgView",cgView.frame.size)
+        print("scrollView",scrollView.frame.size)
+        
+        //cgView是手写的图层，大小与scrollView一致
+        self.textView = UITextView(frame: CGRect(x: 0.05 * cgView.frame.width, y: 0.05 * cgView.frame.height, width: 0.9 * cgView.frame.width, height: 0.9 * cgView.frame.height))
+        self.textView.text = "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+        self.textView.backgroundColor = .blue
+        
+        //默认手写模式，隐藏编辑模式文字层
+        //textView.isHidden = true
+        
+        //canvasContainerView是scrollView的content，是cgView的containner
+        let canvasContainerView = CanvasContainerView(canvasSize: cgView.frame.size, scrollSize:
+            scrollView.frame.size)
+        canvasContainerView.cgView = cgView
+        canvasContainerView.textView = textView
+        canvasContainerView.backgroundColor = .lightGray
         self.canvasContainerView = canvasContainerView
-        //scrollView为屏幕下方的可缩放的view
+        
+        print("canvasContainerView",canvasContainerView.frame.size)
+        
+        //scrollView最大的ViewContainer，位于底层，它有一个subView：canvasContainerView
         scrollView.contentSize = canvasContainerView.frame.size
-        scrollView.contentOffset = CGPoint(x: (canvasContainerView.frame.width - scrollView.bounds.width) / 2.0,
-                                           y: (canvasContainerView.frame.height - scrollView.bounds.height) / 2.0)
         scrollView.addSubview(canvasContainerView)
         scrollView.backgroundColor = canvasContainerView.backgroundColor
-        scrollView.maximumZoomScale = 1.0
-        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 1
+        scrollView.minimumZoomScale = 1
         scrollView.panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
         scrollView.pinchGestureRecognizer?.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
         // We put our UI elements on top of the scroll view, so we don't want any of the
@@ -63,22 +76,34 @@ class CanvasMainViewController: UIViewController, RouletteViewDelegate {
             view.addInteraction(pencilInteraction)
         }
         
-        
         setupDrawingToolBar()
         setupPencilUI()
         setupRouletteBar()
     }
     
+    //编辑模式
+    @IBAction func editMode(_ sender: Any) {
+        //隐藏手写层，打开编辑层
+        self.canvasContainerView.cgView?.isHidden = true
+        //self.textView.isHidden = false
+    }
+    
+    
     func setupRouletteBar(){
-        let rouletteCells = [RouletteCell(id: 1, title: "FirstClass", image: "FirstClass"),
-                             RouletteCell(id: 2, title: "SecondClass", image: "SecondClass"),
-                             RouletteCell(id: 3, title: "Passage", image: "Passage"),
-                             RouletteCell(id: 4, title: "FirstClass", image: "FirstClass"),
-                             RouletteCell(id: 5, title: "SecondClass", image: "SecondClass"),
-                             RouletteCell(id: 6, title: "Passage", image: "Passage"),]
+        let rouletteCells = [RouletteCell(title: "NextPage", image: "NextPage"),
+                             RouletteCell(title: "Camera", image: "Camera"),
+                             RouletteCell(title: "FirstClass", image: "FirstClass"),
+                             RouletteCell(title: "SecondClass", image: "SecondClass"),
+                             RouletteCell(title: "Passage", image: "Passage"),
+                             RouletteCell(title: "NextPage", image: "NextPage"),
+                             RouletteCell(title: "Camera", image: "Camera"),
+                             RouletteCell(title: "FirstClass", image: "FirstClass"),
+                             RouletteCell(title: "SecondClass", image: "SecondClass"),
+                             RouletteCell(title: "Passage", image: "Passage"),]
         
         let rouletteView = RouletteView()
         view.addSubview(rouletteView)
+        //rouletteView.frame = CGRect(x: 0.0, y: self.view.center.y, width: 300, height: 350)
         rouletteView.snp.makeConstraints { (make) in
             make.width.equalTo(300)
             make.height.equalTo(350)
@@ -147,8 +172,11 @@ class CanvasMainViewController: UIViewController, RouletteViewDelegate {
         writeButton.isSelected = true
     }
     
+    //手写模式
     @objc func buttonSelected(sender: UIButton!) {
+        //切换按钮形态
         sender.isSelected = true
+        //切换手写工具
         for (index,button) in self.containerStackView .arrangedSubviews.enumerated(){
             if let aButton = button as? UIButton {
                 if aButton != sender {
@@ -158,6 +186,9 @@ class CanvasMainViewController: UIViewController, RouletteViewDelegate {
                 }
             }
         }
+        //打开手写层，隐藏编辑层
+        self.canvasContainerView.cgView?.isHidden = false
+        //self.textView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

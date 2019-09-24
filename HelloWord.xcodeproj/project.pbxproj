@@ -96,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				2D853F3F2338B98E0008F84A /* CenterView.swift */,
-				2D853F462338B98E0008F84A /* RouletteView.swift */,
 				2D853F422338B98E0008F84A /* CellView.swift */,
+				2D853F462338B98E0008F84A /* RouletteView.swift */,
 				2D853F4B2338B98E0008F84A /* CanvasContainerView.swift */,
 			);
 			path = Views;
@@ -106,8 +106,8 @@
 		2D853F622338B9A90008F84A /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				2D853F412338B98E0008F84A /* CGDrawingEngine.swift */,
 				2D853F432338B98E0008F84A /* CanvasMainViewController.swift */,
+				2D853F412338B98E0008F84A /* CGDrawingEngine.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.WHU.SandyHu.HelloWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -441,7 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.WHU.SandyHu.HelloWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

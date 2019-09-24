@@ -36,7 +36,7 @@ class CellView: UIView {
             make.height.equalTo(25)
             make.width.equalTo(25)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(82)
+            make.top.equalToSuperview().offset(75)
         }
     }
     

@@ -33,8 +33,8 @@ class CenterView: UIView {
     
     private func setupLayout() {
         imageView.snp.makeConstraints { (make) in
-            make.height.equalTo(75)
-            make.width.equalTo(75)
+            make.height.equalTo(83)
+            make.width.equalTo(83)
             make.center.equalToSuperview()
         }
     }
