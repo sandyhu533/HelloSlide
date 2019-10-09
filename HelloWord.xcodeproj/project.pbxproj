@@ -11,7 +11,7 @@
 		2D853F512338B98E0008F84A /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F3F2338B98E0008F84A /* CenterView.swift */; };
 		2D853F532338B98E0008F84A /* CGDrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F412338B98E0008F84A /* CGDrawingEngine.swift */; };
 		2D853F542338B98E0008F84A /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F422338B98E0008F84A /* CellView.swift */; };
-		2D853F552338B98E0008F84A /* CanvasMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F432338B98E0008F84A /* CanvasMainViewController.swift */; };
+		2D853F552338B98E0008F84A /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F432338B98E0008F84A /* OutlineViewController.swift */; };
 		2D853F562338B98E0008F84A /* RouletteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F442338B98E0008F84A /* RouletteCell.swift */; };
 		2D853F572338B98E0008F84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F452338B98E0008F84A /* Assets.xcassets */; };
 		2D853F582338B98E0008F84A /* RouletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F462338B98E0008F84A /* RouletteView.swift */; };
@@ -23,6 +23,27 @@
 		2D853F612338B98E0008F84A /* StrokeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F502338B98E0008F84A /* StrokeCollection.swift */; };
 		2D853F662338BA410008F84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F652338BA410008F84A /* LaunchScreen.storyboard */; };
 		62416022213608E6996AF4CD /* Pods_HelloWord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A403EED29F809BF8D2AA9841 /* Pods_HelloWord.framework */; };
+		C546C2A2234CC16D00E73B67 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C29E234CC16D00E73B67 /* Parser.swift */; };
+		C546C2A3234CC16D00E73B67 /* Helloword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C29F234CC16D00E73B67 /* Helloword.swift */; };
+		C546C2A4234CC16D00E73B67 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2A0234CC16D00E73B67 /* Template.swift */; };
+		C546C2A5234CC16D00E73B67 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2A1234CC16D00E73B67 /* Word.swift */; };
+		C546C2A7234CC19200E73B67 /* TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2A6234CC19200E73B67 /* TableDelegate.swift */; };
+		C546C2EE234CC3D400E73B67 /* UIImageTintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2D6234CC3D400E73B67 /* UIImageTintExtension.swift */; };
+		C546C2EF234CC3D400E73B67 /* MLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2D7234CC3D400E73B67 /* MLog.swift */; };
+		C546C2F0234CC3D400E73B67 /* UIColorRainbowCrayonsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2D8234CC3D400E73B67 /* UIColorRainbowCrayonsExtension.swift */; };
+		C546C2F3234CC3D400E73B67 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2DC234CC3D400E73B67 /* Page.swift */; };
+		C546C2F4234CC3D400E73B67 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2DE234CC3D400E73B67 /* PresentationModel.swift */; };
+		C546C2F5234CC3D400E73B67 /* ColorModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2DF234CC3D400E73B67 /* ColorModeModel.swift */; };
+		C546C2F6234CC3D400E73B67 /* DesignerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2E0234CC3D400E73B67 /* DesignerModel.swift */; };
+		C546C2F8234CC3D400E73B67 /* DesignerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2E3234CC3D400E73B67 /* DesignerStub.swift */; };
+		C546C2F9234CC3D400E73B67 /* SingleSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2E5234CC3D400E73B67 /* SingleSlideView.swift */; };
+		C546C2FA234CC3D400E73B67 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2E6234CC3D400E73B67 /* PageCollectionViewCell.swift */; };
+		C546C2FB234CC3D400E73B67 /* DesignerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2E7234CC3D400E73B67 /* DesignerCollectionViewCell.swift */; };
+		C546C2FC234CC3D400E73B67 /* DesignerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2E9234CC3D400E73B67 /* DesignerTemplate.swift */; };
+		C546C2FD234CC3D400E73B67 /* Designer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2EA234CC3D400E73B67 /* Designer.swift */; };
+		C546C2FE234CC3D400E73B67 /* PageCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2EC234CC3D400E73B67 /* PageCollectionViewDelegate.swift */; };
+		C546C2FF234CC3D400E73B67 /* DesignerCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C2ED234CC3D400E73B67 /* DesignerCollectionViewDelegate.swift */; };
+		C546C301234CC3FA00E73B67 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C546C300234CC3FA00E73B67 /* SlideViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +53,7 @@
 		2D853F3F2338B98E0008F84A /* CenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
 		2D853F412338B98E0008F84A /* CGDrawingEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGDrawingEngine.swift; sourceTree = "<group>"; };
 		2D853F422338B98E0008F84A /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
-		2D853F432338B98E0008F84A /* CanvasMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasMainViewController.swift; sourceTree = "<group>"; };
+		2D853F432338B98E0008F84A /* OutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewController.swift; sourceTree = "<group>"; };
 		2D853F442338B98E0008F84A /* RouletteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouletteCell.swift; path = ../Views/RouletteCell.swift; sourceTree = "<group>"; };
 		2D853F452338B98E0008F84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D853F462338B98E0008F84A /* RouletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteView.swift; sourceTree = "<group>"; };
@@ -46,6 +67,27 @@
 		8D1B248A21DF5553F7280C61 /* Pods-HelloWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWord.release.xcconfig"; path = "Target Support Files/Pods-HelloWord/Pods-HelloWord.release.xcconfig"; sourceTree = "<group>"; };
 		A403EED29F809BF8D2AA9841 /* Pods_HelloWord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C240AC1F2929D8E0A239FBF7 /* Pods-HelloWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWord.debug.xcconfig"; path = "Target Support Files/Pods-HelloWord/Pods-HelloWord.debug.xcconfig"; sourceTree = "<group>"; };
+		C546C29E234CC16D00E73B67 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		C546C29F234CC16D00E73B67 /* Helloword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helloword.swift; sourceTree = "<group>"; };
+		C546C2A0234CC16D00E73B67 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		C546C2A1234CC16D00E73B67 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		C546C2A6234CC19200E73B67 /* TableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDelegate.swift; sourceTree = "<group>"; };
+		C546C2D6234CC3D400E73B67 /* UIImageTintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTintExtension.swift; sourceTree = "<group>"; };
+		C546C2D7234CC3D400E73B67 /* MLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLog.swift; sourceTree = "<group>"; };
+		C546C2D8234CC3D400E73B67 /* UIColorRainbowCrayonsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorRainbowCrayonsExtension.swift; sourceTree = "<group>"; };
+		C546C2DC234CC3D400E73B67 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		C546C2DE234CC3D400E73B67 /* PresentationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
+		C546C2DF234CC3D400E73B67 /* ColorModeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModeModel.swift; sourceTree = "<group>"; };
+		C546C2E0234CC3D400E73B67 /* DesignerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerModel.swift; sourceTree = "<group>"; };
+		C546C2E3234CC3D400E73B67 /* DesignerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerStub.swift; sourceTree = "<group>"; };
+		C546C2E5234CC3D400E73B67 /* SingleSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleSlideView.swift; sourceTree = "<group>"; };
+		C546C2E6234CC3D400E73B67 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C546C2E7234CC3D400E73B67 /* DesignerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C546C2E9234CC3D400E73B67 /* DesignerTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerTemplate.swift; sourceTree = "<group>"; };
+		C546C2EA234CC3D400E73B67 /* Designer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Designer.swift; sourceTree = "<group>"; };
+		C546C2EC234CC3D400E73B67 /* PageCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		C546C2ED234CC3D400E73B67 /* DesignerCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		C546C300234CC3FA00E73B67 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				2D853F492338B98E0008F84A /* Main.storyboard */,
-				2D853F622338B9A90008F84A /* Controls */,
-				2D853F632338B9AF0008F84A /* Models */,
-				2D853F3E2338B98E0008F84A /* Views */,
-				2D853F642338B9FD0008F84A /* Extensions */,
+				C546C29A234CC09A00E73B67 /* Outline */,
+				C546C29D234CC16D00E73B67 /* Parser */,
+				C546C2D4234CC3D400E73B67 /* Slide */,
 				2D853F672338BA490008F84A /* Supporting Files */,
 				2D853F382338B97A0008F84A /* Info.plist */,
 			);
@@ -106,8 +147,8 @@
 		2D853F622338B9A90008F84A /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				2D853F432338B98E0008F84A /* CanvasMainViewController.swift */,
 				2D853F412338B98E0008F84A /* CGDrawingEngine.swift */,
+				C546C2A6234CC19200E73B67 /* TableDelegate.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -156,6 +197,108 @@
 				A403EED29F809BF8D2AA9841 /* Pods_HelloWord.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C546C29A234CC09A00E73B67 /* Outline */ = {
+			isa = PBXGroup;
+			children = (
+				2D853F432338B98E0008F84A /* OutlineViewController.swift */,
+				2D853F622338B9A90008F84A /* Controls */,
+				2D853F632338B9AF0008F84A /* Models */,
+				2D853F3E2338B98E0008F84A /* Views */,
+				2D853F642338B9FD0008F84A /* Extensions */,
+			);
+			path = Outline;
+			sourceTree = "<group>";
+		};
+		C546C29D234CC16D00E73B67 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C546C29E234CC16D00E73B67 /* Parser.swift */,
+				C546C29F234CC16D00E73B67 /* Helloword.swift */,
+				C546C2A0234CC16D00E73B67 /* Template.swift */,
+				C546C2A1234CC16D00E73B67 /* Word.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		C546C2D4234CC3D400E73B67 /* Slide */ = {
+			isa = PBXGroup;
+			children = (
+				C546C300234CC3FA00E73B67 /* SlideViewController.swift */,
+				C546C2D9234CC3D400E73B67 /* element */,
+				C546C2DD234CC3D400E73B67 /* model */,
+				C546C2E1234CC3D400E73B67 /* stub */,
+				C546C2E4234CC3D400E73B67 /* view */,
+				C546C2D5234CC3D400E73B67 /* util */,
+				C546C2E8234CC3D400E73B67 /* designer */,
+				C546C2EB234CC3D400E73B67 /* control */,
+			);
+			path = Slide;
+			sourceTree = "<group>";
+		};
+		C546C2D5234CC3D400E73B67 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				C546C2D6234CC3D400E73B67 /* UIImageTintExtension.swift */,
+				C546C2D7234CC3D400E73B67 /* MLog.swift */,
+				C546C2D8234CC3D400E73B67 /* UIColorRainbowCrayonsExtension.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		C546C2D9234CC3D400E73B67 /* element */ = {
+			isa = PBXGroup;
+			children = (
+				C546C2DC234CC3D400E73B67 /* Page.swift */,
+			);
+			path = element;
+			sourceTree = "<group>";
+		};
+		C546C2DD234CC3D400E73B67 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C546C2DE234CC3D400E73B67 /* PresentationModel.swift */,
+				C546C2DF234CC3D400E73B67 /* ColorModeModel.swift */,
+				C546C2E0234CC3D400E73B67 /* DesignerModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C546C2E1234CC3D400E73B67 /* stub */ = {
+			isa = PBXGroup;
+			children = (
+				C546C2E3234CC3D400E73B67 /* DesignerStub.swift */,
+			);
+			path = stub;
+			sourceTree = "<group>";
+		};
+		C546C2E4234CC3D400E73B67 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C546C2E5234CC3D400E73B67 /* SingleSlideView.swift */,
+				C546C2E6234CC3D400E73B67 /* PageCollectionViewCell.swift */,
+				C546C2E7234CC3D400E73B67 /* DesignerCollectionViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C546C2E8234CC3D400E73B67 /* designer */ = {
+			isa = PBXGroup;
+			children = (
+				C546C2E9234CC3D400E73B67 /* DesignerTemplate.swift */,
+				C546C2EA234CC3D400E73B67 /* Designer.swift */,
+			);
+			path = designer;
+			sourceTree = "<group>";
+		};
+		C546C2EB234CC3D400E73B67 /* control */ = {
+			isa = PBXGroup;
+			children = (
+				C546C2EC234CC3D400E73B67 /* PageCollectionViewDelegate.swift */,
+				C546C2ED234CC3D400E73B67 /* DesignerCollectionViewDelegate.swift */,
+			);
+			path = control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,17 +416,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C546C2A2234CC16D00E73B67 /* Parser.swift in Sources */,
+				C546C2A4234CC16D00E73B67 /* Template.swift in Sources */,
 				2D853F612338B98E0008F84A /* StrokeCollection.swift in Sources */,
 				2D853F602338B98E0008F84A /* UIColorExtensions.swift in Sources */,
+				C546C2EE234CC3D400E73B67 /* UIImageTintExtension.swift in Sources */,
 				2D853F562338B98E0008F84A /* RouletteCell.swift in Sources */,
+				C546C2F4234CC3D400E73B67 /* PresentationModel.swift in Sources */,
 				2D853F512338B98E0008F84A /* CenterView.swift in Sources */,
 				2D853F542338B98E0008F84A /* CellView.swift in Sources */,
+				C546C2F5234CC3D400E73B67 /* ColorModeModel.swift in Sources */,
+				C546C2A7234CC19200E73B67 /* TableDelegate.swift in Sources */,
 				2D853F5B2338B98E0008F84A /* StrokeGestureRecognizer.swift in Sources */,
+				C546C2F0234CC3D400E73B67 /* UIColorRainbowCrayonsExtension.swift in Sources */,
+				C546C2FD234CC3D400E73B67 /* Designer.swift in Sources */,
+				C546C2EF234CC3D400E73B67 /* MLog.swift in Sources */,
 				2D853F532338B98E0008F84A /* CGDrawingEngine.swift in Sources */,
+				C546C2F6234CC3D400E73B67 /* DesignerModel.swift in Sources */,
+				C546C2FA234CC3D400E73B67 /* PageCollectionViewCell.swift in Sources */,
+				C546C2A5234CC16D00E73B67 /* Word.swift in Sources */,
+				C546C2A3234CC16D00E73B67 /* Helloword.swift in Sources */,
+				C546C2FF234CC3D400E73B67 /* DesignerCollectionViewDelegate.swift in Sources */,
 				2D853F5C2338B98E0008F84A /* CanvasContainerView.swift in Sources */,
-				2D853F552338B98E0008F84A /* CanvasMainViewController.swift in Sources */,
+				C546C2FE234CC3D400E73B67 /* PageCollectionViewDelegate.swift in Sources */,
+				C546C2F8234CC3D400E73B67 /* DesignerStub.swift in Sources */,
+				2D853F552338B98E0008F84A /* OutlineViewController.swift in Sources */,
 				2D853F582338B98E0008F84A /* RouletteView.swift in Sources */,
+				C546C2F3234CC3D400E73B67 /* Page.swift in Sources */,
+				C546C2F9234CC3D400E73B67 /* SingleSlideView.swift in Sources */,
+				C546C301234CC3FA00E73B67 /* SlideViewController.swift in Sources */,
 				2D853F2D2338B9730008F84A /* AppDelegate.swift in Sources */,
+				C546C2FB234CC3D400E73B67 /* DesignerCollectionViewCell.swift in Sources */,
+				C546C2FC234CC3D400E73B67 /* DesignerTemplate.swift in Sources */,
 				2D853F5E2338B98E0008F84A /* CGMathExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
