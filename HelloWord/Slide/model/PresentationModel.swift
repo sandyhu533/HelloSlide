@@ -10,21 +10,22 @@ import Foundation
 
 class PresentationModel {
     
-    // TODO: 测试时用
-    var designerModel : DesignerModel?
-    
     // 存放每一面幻灯片数据
     var pages = [Page]()
     
     // 当前选中设计师的序号，默认为0
     var selectedDesignerIndex = 0
     
-//    // 根据设计师及模板序号获取幻灯片
-//    func getPages(designerIndex : Int, templateIndex : Int) {
-//        
-//        // 模拟从文件获取数据
-//        pages = PresentationStub().getPagesFromFile(designerIndex : designerIndex, templateIndex : templateIndex, designerModel : designerModel!)
-//        
-//    }
+    // 放入数据
+    func fillData(pageViews : [PageView]) {
+        
+        for pageView in pageViews{
+            let page = Page()
+            page.addSlide(pageView)
+            self.pages.append(page)
+        }
+        
+    }
+    
     
 }

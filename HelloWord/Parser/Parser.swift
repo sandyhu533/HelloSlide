@@ -27,8 +27,9 @@ class Parser{
     func modifiedFromWord(id pageid:Int,information:[wordFromOutline]){
         //如果pageid超过访问下界，则增加相应数量的newPage
         if pageid>=myWord.WordData.count {
-            for _ in 0...pageid-myWord.WordData.count+1{
+            for index in 0...pageid-myWord.WordData.count{
                 addnewpage()
+                print("addView\(index)")
             }
         }
         //更新myWord中当页的信息
@@ -37,6 +38,10 @@ class Parser{
         print(information)
         //更新myHelloWord中当页的信息
         self.myHelloword.reNewHelloWord(id: pageid, datasource: myWord.getThisPage(id:pageid),templateid:0)
+        
+        print("TEST1")
+        print("myHelloword.HellowordData.count  \(myHelloword.HellowordData.count)")
+        print("\(myHelloword.HellowordData)")
     }
     
     

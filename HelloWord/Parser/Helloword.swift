@@ -83,6 +83,19 @@ class Helloword{
         self.HellowordData[pageid] = thispage
     }
     
+    func renewAlltheFrame(newframe frame:CGRect){
+        for x in self.HellowordData{
+            x.initframe=frame
+        }
+    }
+    
+    func renewAll(myword words:Word,templatecolorid colorid:Int){
+        let num = self.HellowordData.count
+        for i in 0..<num{
+            self.reNewHelloWord(id: i, datasource: words.getThisPage(id: i), templateid: colorid)
+        }
+    }
+    
     func deleteoldhelloword(id pageid:Int){
         
             self.HellowordData[pageid].PageCellElments.removeAll()
@@ -101,9 +114,9 @@ class Helloword{
 class PageView:UIView {
     
     var PageCellElments:[UIView]
-    var initframe:CGRect
     var initview:UIView
-    
+    var initframe:CGRect
+
     init(initframe:CGRect){
         self.PageCellElments=[UIView]()
         self.initframe=initframe
@@ -140,8 +153,9 @@ func createzerofirstkuang(rect myrect:CGRect,type contenttype:kind,tpl:template)
         thisframe=StringtoFrame(string: tpl.zerosecondkuang, thisview: myrect)
     case .thirdtitle:
         thisframe=StringtoFrame(string: tpl.zerothirdkuang, thisview: myrect)
-
-        }
+    case .image:
+        thisframe=StringtoFrame(string: tpl.zerosecondkuang, thisview: myrect)
+    }
     
     return thisframe
 }
@@ -155,8 +169,9 @@ func createkuang(rect myrect:CGRect,type contenttype:kind,tpl:template)->CGRect{
         thisframe=StringtoFrame(string: tpl.secondkuang, thisview: myrect)
     case .thirdtitle:
         thisframe=StringtoFrame(string: tpl.thirdkuang, thisview: myrect)
-
-        }
+    case .image:
+        thisframe=StringtoFrame(string: tpl.zerosecondkuang, thisview: myrect)
+    }
     
     return thisframe
 }
@@ -182,7 +197,7 @@ func addnewcontentandview(inthisframe myframe:CGRect,templatenow:template,data s
         maxfont=CGFloat(Double(templatenow.thirdadmirefontmax)!)
         
     }
-    tempview.attributedText=createAttributedString(text: source.content, type: source.type, font: templatenow.font, width:mywidth , height:myheight, color:color, fontmin:minfont, fontmax:maxfont)
+    tempview.attributedText=createAttributedString(text: source.content as! String, type: source.type, font: templatenow.font, width:mywidth , height:myheight, color:color, fontmin:minfont, fontmax:maxfont)
         //参照helloword-version1修改
     tempview.backgroundColor=UIColor.clear
     return tempview

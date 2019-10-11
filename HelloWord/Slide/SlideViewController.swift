@@ -72,14 +72,8 @@ class SlideViewController: UIViewController{
 
     // MARK: - Methods
     
-    override func viewWillAppear(_ animated: Bool) {
-//
-//    }
-//
-//    override func viewDidLoad() {
-        super.viewWillAppear(animated)
-        
-        mlog(message: "here", infoType: .DEBUG)
+    override func viewDidLoad() {
+        mlog(message: "SlideView viewDidLoad", infoType: .DEBUG)
         
         // 创建设计师模型
         designerModel = DesignerModel()
@@ -88,26 +82,13 @@ class SlideViewController: UIViewController{
         // 创建幻灯片模型
         presentationModel = PresentationModel()
         
-        // TODO: 测试时用
-        presentationModel!.designerModel = designerModel
-        
-        // 默认使用0号设计师0号模板
-//        presentationModel!.getPages(designerIndex: 0, templateIndex: 0)
-        
-        //使用从parser传过来的pageView创建page
-        for pageView in pageViews!{
-            let page = Page()
-            page.addSlide(pageView)
-            presentationModel!.pages.append(page)
-        }
-        
         // 创建pageColletionView的代理
         pageCollectionViewDelegate = PageCollectionViewDelegate(presentationModel: presentationModel!, pageCollectionView: pageCollectionView)
         
         // 设置pageColletionView的代理
         pageCollectionView.delegate = pageCollectionViewDelegate
         pageCollectionView.dataSource = pageCollectionViewDelegate
-
+        
         // 初始化设计师数组
         designerModel!.getDesigners()
         
@@ -120,12 +101,24 @@ class SlideViewController: UIViewController{
         
         // 默认选中0号设计师0号模板
         designerModel!.designerArray[0].isSelected = true
+        
+        // 刷新
+        changeDesigner()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+        super.viewWillAppear(animated)
+        
+        mlog(message: "view Will Appear", infoType: .DEBUG)
+        
+        presentationModel?.fillData(pageViews: pageViews!)
 
         // 刷新
         changeDesigner()
-        
-        // debug：设置为第一页幻灯片
-        self.view = self.presentationModel!.pages[0].singleSlideViews[0]    }
+
+    }
     
     // 处理view大小改变，重新计算cell大小
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -141,29 +134,13 @@ class SlideViewController: UIViewController{
     // 刷新pageCollectionView
     func refreshPageCollectionView () {
         
-        mlog(message: "refresh", infoType: .DESIGNER_INFO)
-        
-//        pageCollectionView.layoutMarginsDidChange()
-//        pageCollectionView.safeAreaInsetsDidChange()
-//
+        mlog(message: "refresh!!!!!!", infoType: .DEBUG)
+
         pageCollectionView.collectionViewLayout.invalidateLayout()
         pageCollectionView.reloadData()
-//        pageCollectionView.reloadItems(at: pageCollectionView.indexPathsForVisibleItems)
-//
-//        pageCollectionView.contentMode = .redraw
+
         pageCollectionView.setNeedsDisplay()
-//
-//
-//        for cell in pageCollectionView.visibleCells {
-//
-//
-//            let pageCell = cell as! PageCollectionViewCell
-//            pageCell.slideView.contentMode = .redraw
-//            pageCell.slideView.setNeedsDisplay()
-//
-//        }
-//
-//        changeTemplate(dir: 0, indexPath: pageCollectionView.indexPathsForVisibleItems[0])
+
     }
     
     // 更换当页模版
@@ -247,6 +224,8 @@ class SlideViewController: UIViewController{
 
         // 刷新pageCollectionView
         refreshPageCollectionView()
+        
+//        self.view = self.presentationModel?.pages[0].singleSlideViews[0]
     }
     
     // 点击选择设计师

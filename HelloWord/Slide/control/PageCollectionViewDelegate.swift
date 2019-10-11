@@ -42,6 +42,7 @@ class PageCollectionViewDelegate : NSObject, UICollectionViewDelegate, UICollect
         
         // 提示信息
         mlog(message: "begin drawing page \(indexPath.row)", infoType: .CREATE_SLIDE)
+        mlog(message: "画出当前页 page \(page.singleSlideViews[0].subviews)", infoType: .DEBUG)
         
         return cell
     }

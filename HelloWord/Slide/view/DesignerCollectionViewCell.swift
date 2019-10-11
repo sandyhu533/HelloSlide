@@ -19,11 +19,14 @@ class DesignerCollectionViewCell: UICollectionViewCell {
         self.designer = designer
         
         // 设置大小
-        designerView.bounds = CGRect(x: 80, y: 80, width: 80, height: 80)
+        designerView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        designerView.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
         
         // 背景透明
         designerView.backgroundColor = UIColor.clear
         designerView.alpha = 1
+        
+        self.backgroundView?.alpha = 0
         
         // 加载图片，如果不存在，显示空白
         if ColorModeModel.colorMode == .light {
@@ -46,15 +49,21 @@ class DesignerCollectionViewCell: UICollectionViewCell {
             
             // 设置背景颜色
             if ColorModeModel.colorMode == .light {
-                // 白色背景
-                designerView.backgroundColor = UIColor.white
-                designerView.alpha = 0.6
+                // 白色背景图片
+                self.backgroundView = UIImageView(image: UIImage(named: "avatarbackground")?.tint(color: UIColor.white, blendMode: .destinationIn))
+                self.backgroundView?.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+                self.backgroundView?.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
+                self.backgroundView?.alpha = 0.6
+                
             } else {
-                // 黑色背景
-                designerView.backgroundColor = UIColor.black
-                designerView.alpha = 0.6
+                // 黑色背景图片
+                self.backgroundView = UIImageView(image: UIImage(named: "avatarbackground")?.tint(color: UIColor.black, blendMode: .destinationIn))
+                self.backgroundView?.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+                self.backgroundView?.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
+                self.backgroundView?.alpha = 0.6
+                
             }
-        
+            
         }
 
     }

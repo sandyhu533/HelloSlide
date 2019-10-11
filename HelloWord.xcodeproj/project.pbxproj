@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D60EA87234F7072002B4887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D60EA86234F7072002B4887 /* Assets.xcassets */; };
+		2D60EA89234F7096002B4887 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D60EA88234F7096002B4887 /* Document.swift */; };
+		2D60EA8B234F70A4002B4887 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D60EA8A234F70A4002B4887 /* DocumentBrowserViewController.swift */; };
+		2D60EA8D234F8C9E002B4887 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D60EA8C234F8C9E002B4887 /* UIViewControllerExtension.swift */; };
 		2D853F2D2338B9730008F84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F2C2338B9730008F84A /* AppDelegate.swift */; };
 		2D853F512338B98E0008F84A /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F3F2338B98E0008F84A /* CenterView.swift */; };
 		2D853F532338B98E0008F84A /* CGDrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F412338B98E0008F84A /* CGDrawingEngine.swift */; };
 		2D853F542338B98E0008F84A /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F422338B98E0008F84A /* CellView.swift */; };
 		2D853F552338B98E0008F84A /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F432338B98E0008F84A /* OutlineViewController.swift */; };
 		2D853F562338B98E0008F84A /* RouletteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F442338B98E0008F84A /* RouletteCell.swift */; };
-		2D853F572338B98E0008F84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F452338B98E0008F84A /* Assets.xcassets */; };
 		2D853F582338B98E0008F84A /* RouletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F462338B98E0008F84A /* RouletteView.swift */; };
 		2D853F5A2338B98E0008F84A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F492338B98E0008F84A /* Main.storyboard */; };
 		2D853F5B2338B98E0008F84A /* StrokeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F4A2338B98E0008F84A /* StrokeGestureRecognizer.swift */; };
@@ -47,6 +50,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D60EA86234F7072002B4887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D60EA88234F7096002B4887 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		2D60EA8A234F70A4002B4887 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
+		2D60EA8C234F8C9E002B4887 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		2D853F292338B9730008F84A /* HelloWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D853F2C2338B9730008F84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D853F382338B97A0008F84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +62,6 @@
 		2D853F422338B98E0008F84A /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		2D853F432338B98E0008F84A /* OutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewController.swift; sourceTree = "<group>"; };
 		2D853F442338B98E0008F84A /* RouletteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouletteCell.swift; path = ../Views/RouletteCell.swift; sourceTree = "<group>"; };
-		2D853F452338B98E0008F84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D853F462338B98E0008F84A /* RouletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteView.swift; sourceTree = "<group>"; };
 		2D853F492338B98E0008F84A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2D853F4A2338B98E0008F84A /* StrokeGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				2D853F492338B98E0008F84A /* Main.storyboard */,
+				2D60EA8A234F70A4002B4887 /* DocumentBrowserViewController.swift */,
+				2D60EA88234F7096002B4887 /* Document.swift */,
 				C546C29A234CC09A00E73B67 /* Outline */,
 				C546C29D234CC16D00E73B67 /* Parser */,
 				C546C2D4234CC3D400E73B67 /* Slide */,
@@ -168,6 +176,7 @@
 			children = (
 				2D853F4F2338B98E0008F84A /* UIColorExtensions.swift */,
 				2D853F4D2338B98E0008F84A /* CGMathExtensions.swift */,
+				2D60EA8C234F8C9E002B4887 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,7 +184,7 @@
 		2D853F672338BA490008F84A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2D853F452338B98E0008F84A /* Assets.xcassets */,
+				2D60EA86234F7072002B4887 /* Assets.xcassets */,
 				2D853F2C2338B9730008F84A /* AppDelegate.swift */,
 				2D853F652338BA410008F84A /* LaunchScreen.storyboard */,
 			);
@@ -362,7 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D853F662338BA410008F84A /* LaunchScreen.storyboard in Resources */,
-				2D853F572338B98E0008F84A /* Assets.xcassets in Resources */,
+				2D60EA87234F7072002B4887 /* Assets.xcassets in Resources */,
 				2D853F5A2338B98E0008F84A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +445,7 @@
 				C546C2FA234CC3D400E73B67 /* PageCollectionViewCell.swift in Sources */,
 				C546C2A5234CC16D00E73B67 /* Word.swift in Sources */,
 				C546C2A3234CC16D00E73B67 /* Helloword.swift in Sources */,
+				2D60EA8D234F8C9E002B4887 /* UIViewControllerExtension.swift in Sources */,
 				C546C2FF234CC3D400E73B67 /* DesignerCollectionViewDelegate.swift in Sources */,
 				2D853F5C2338B98E0008F84A /* CanvasContainerView.swift in Sources */,
 				C546C2FE234CC3D400E73B67 /* PageCollectionViewDelegate.swift in Sources */,
@@ -443,9 +453,11 @@
 				2D853F552338B98E0008F84A /* OutlineViewController.swift in Sources */,
 				2D853F582338B98E0008F84A /* RouletteView.swift in Sources */,
 				C546C2F3234CC3D400E73B67 /* Page.swift in Sources */,
+				2D60EA8B234F70A4002B4887 /* DocumentBrowserViewController.swift in Sources */,
 				C546C2F9234CC3D400E73B67 /* SingleSlideView.swift in Sources */,
 				C546C301234CC3FA00E73B67 /* SlideViewController.swift in Sources */,
 				2D853F2D2338B9730008F84A /* AppDelegate.swift in Sources */,
+				2D60EA89234F7096002B4887 /* Document.swift in Sources */,
 				C546C2FB234CC3D400E73B67 /* DesignerCollectionViewCell.swift in Sources */,
 				C546C2FC234CC3D400E73B67 /* DesignerTemplate.swift in Sources */,
 				2D853F5E2338B98E0008F84A /* CGMathExtensions.swift in Sources */,

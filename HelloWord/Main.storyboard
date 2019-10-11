@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uUA-I3-xZq">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fTI-tV-p6Y">
+    <device id="ipad12_9rounded" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,28 +13,28 @@
         <!--Outline View Controller-->
         <scene sceneID="GgB-hg-Iam">
             <objects>
-                <viewController storyboardIdentifier="outlineViewController" id="7ZY-Js-B9v" customClass="OutlineViewController" customModule="HelloWord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="outlineViewController" id="7ZY-Js-B9v" customClass="OutlineViewController" customModule="HelloWord" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ax4-Vq-O7V">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-bC-pdc">
-                                <rect key="frame" x="0.0" y="50" width="1024" height="1246"/>
+                                <rect key="frame" x="0.0" y="74" width="1024" height="1222"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jup-nV-QwJ">
-                                <rect key="frame" x="0.0" y="50" width="1024" height="1246"/>
+                                <rect key="frame" x="0.0" y="74" width="1024" height="1222"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextViewCell" rowHeight="230" id="jiE-Ya-iNe">
                                         <rect key="frame" x="0.0" y="28" width="1024" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jiE-Ya-iNe" id="rp7-Rk-94i">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="230"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="229.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1001" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qEJ-zG-OHP">
-                                                    <rect key="frame" x="75" y="10" width="874" height="210"/>
+                                                    <rect key="frame" x="75" y="10" width="874" height="209.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="hyS-Cb-xFJ"/>
@@ -68,9 +70,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Hip-Xf-zms">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="qGf-a1-z7F">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="E9u-DJ-Oo0">
                             <connections>
-                                <action selector="editMode:" destination="7ZY-Js-B9v" id="R40-OE-eLT"/>
+                                <action selector="dismissDocumentViewController:" destination="7ZY-Js-B9v" id="3LA-vk-yEe"/>
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="zeP-uF-9cn">
@@ -116,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-ZZ-OVi" userLabel="PageCollectionView">
-                                <rect key="frame" x="0.0" y="50" width="1024" height="1246"/>
+                                <rect key="frame" x="0.0" y="74" width="1024" height="1222"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qni-Tr-AOd">
                                     <size key="itemSize" width="400" height="300"/>
@@ -202,10 +204,10 @@
         <!--Navigation Controller-->
         <scene sceneID="XMh-mk-PHw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uUA-I3-xZq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" id="uUA-I3-xZq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8EB-ky-5IH">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -216,7 +218,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TOk-ST-RC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="55.322338830584712"/>
+            <point key="canvasLocation" x="200" y="55"/>
+        </scene>
+        <!--Document Browser View Controller-->
+        <scene sceneID="4Ud-2O-T5h">
+            <objects>
+                <viewController id="fTI-tV-p6Y" customClass="DocumentBrowserViewController" customModule="HelloWord" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wix-Mv-Eaf">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="dNo-05-9mh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4I-pb-3V8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-641" y="49"/>
         </scene>
     </scenes>
 </document>

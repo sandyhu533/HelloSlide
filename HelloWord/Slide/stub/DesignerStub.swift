@@ -16,24 +16,25 @@ class DesignerStub {
     // 模拟从文件中获取设计师
     func getDesignersFromFile() -> [Designer] {
         
-        mlog(message: "here", infoType: .DEBUG)
+        mlog(message: "getDesignersFromFile Stub", infoType: .DEBUG)
         
         var designersArray = [Designer]()
         
         // 从Assets中获取当前的12个设计师头像
-        for i in 0...11 {
+        for i in 1...11 {
             // 创建设计师对象
             let designer = Designer()
             
             // 设置图像名
             designer.imageName = "avatar\(i)"
             
-            // 随机两套模板（头像颜色和背景颜色）
+            // 两套模板（头像颜色和背景颜色）
             for j in 0...1 {
                 let designerTemplate = DesignerTemplate()
                 
-                // 随机选色
-                let randomIndex = Int(arc4random_uniform(UInt32(colors.count)))
+                // 选色
+                // 去除随机，以删除不必要的引用
+                let randomIndex = i*2+1
                 let color = colors[randomIndex]
                 
                 designerTemplate.templateID = "\(i).\(j)"

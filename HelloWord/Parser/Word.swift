@@ -10,9 +10,13 @@ import Foundation
 
 class Word{
     
-    //大纲文件有多页
-    var WordData=[PageData]()
-
+    //多页的大纲文件
+    var WordData: [PageData]
+    
+    init(){
+        self.WordData = [PageData]()
+    }
+    
     func addNewPage(){
         self.WordData.append(PageData())
     }
@@ -32,10 +36,16 @@ class Word{
     
     //清除所有元素
     func removeAllElements(id pageid:Int){
-        for i in 0..<WordData[pageid].PageData.count{
-            self.WordData[pageid].PageData.remove(at: i)
+        if self.WordData[pageid].PageData.count != 0{
+            self.WordData[pageid].PageData.removeAll()
         }
     }
+    
+    init(WordData:[PageData]) {
+        self.WordData=WordData
+        
+    }
+    
 }
 
 class PageData{
@@ -48,7 +58,7 @@ class PageData{
     }
     
     //把每一级标题元素添加进页面中
-    func createNewNode(id:Int,type:kind,content:String,parentid:Int?){
+    func createNewNode(id:Int,type:kind,content:Any,parentid:Int?){
         self.PageData.append(PageNode(id: id, type: type, content: content, parentid: parentid))
         if let parent=parentid{
             self.PageData[parent].createNewChild(childid: id)
@@ -70,13 +80,13 @@ class PageNode{
     
     var id:Int
     var type:kind
-    var content:String
+    var content:Any
     var stackid:Int?
     private var parentid:Int?
     var childid:[Int]
     var childnum:Int
     
-    init(id:Int,type:kind,content:String,parentid:Int?){
+    init(id:Int,type:kind,content:Any,parentid:Int?){
         self.id=id
         self.type=type
         self.content=content
@@ -92,18 +102,19 @@ class PageNode{
     }
 }
 
-enum kind{
+enum kind: Int, Codable{
     case firsttitle
     case secondtitle
     case thirdtitle
+    case image
 }
 
 class wordFromOutline{
     var id:Int
     var type:kind
-    var content:String
+    var content:Any
     var parentid:Int?
-    init(id:Int,type:kind,content:String,parentid:Int?){
+    init(id:Int,type:kind,content:Any,parentid:Int?){
         self.id=id
         self.content=content
         self.type=type

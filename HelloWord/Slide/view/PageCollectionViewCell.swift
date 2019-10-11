@@ -14,6 +14,7 @@ class PageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var slideView: UIView!
     
     var page : Page?
+    var background : UIView?
     
     // 设置页
     func setPage(_ page : Page){
@@ -23,9 +24,14 @@ class PageCollectionViewCell: UICollectionViewCell {
         // 加入subview
         for subView in page.singleSlideViews {
             slideView.addSubview(subView)
-            print("addleview")
         }
         
+        // 设置背景
+        background = page.singleSlideViews[(page.currentSlideIndex)].initview
+        background?.frame = self.bounds
+        background?.bounds = self.bounds
+        slideView.addSubview(background!)
+
         // 设置0页大小
         page.singleSlideViews[0].frame = self.bounds
         page.singleSlideViews[0].bounds = self.bounds
@@ -47,6 +53,10 @@ class PageCollectionViewCell: UICollectionViewCell {
         // 初始化时，有时frame左上角不为0
         slideView.frame = self.bounds
         slideView.bounds = self.bounds
+        
+        // 调整背景大小
+        background?.frame = self.bounds
+        background?.bounds = self.bounds
         
         // 判断是否换页
         if page?.lastSlideIndex != page?.currentSlideIndex {
@@ -73,6 +83,7 @@ class PageCollectionViewCell: UICollectionViewCell {
                 completion: nil)
             
         }
+        
     }
 
 }
