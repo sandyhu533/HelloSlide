@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol SlideViewDelegate {
+    func getNewPages(templateID: Int)->[Page]?
+}
+
+
 //class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
 class SlideViewController: UIViewController{
     
@@ -16,9 +21,9 @@ class SlideViewController: UIViewController{
         didSet {
             // 根据明暗模式设置背景色
             if ColorModeModel.colorMode == .dark {
-                pageCollectionView.backgroundColor = UIColor.white
+                pageCollectionView.backgroundColor = UIColor.GUNMETAL()
             } else {
-                pageCollectionView.backgroundColor = UIColor.black
+                pageCollectionView.backgroundColor = UIColor.AZUREISH_WHITE()
             }
             
             // 处理swipe动作，用于左右翻页
@@ -55,6 +60,9 @@ class SlideViewController: UIViewController{
         }
     }
     
+    //自己的代理
+    var slideViewDelegate : SlideViewDelegate?
+    
     // pageCollectionView的代理
     var pageCollectionViewDelegate : PageCollectionViewDelegate?
     
@@ -68,7 +76,7 @@ class SlideViewController: UIViewController{
     var presentationModel : PresentationModel?
     
     // 来自parser的所有页面
-    var pageViews : [PageView]?
+    var pageViews : [Page]?
 
     // MARK: - Methods
     
@@ -103,7 +111,7 @@ class SlideViewController: UIViewController{
         designerModel!.designerArray[0].isSelected = true
         
         // 刷新
-        changeDesigner()
+//        changeDesigner()
 
     }
     
@@ -134,7 +142,7 @@ class SlideViewController: UIViewController{
     // 刷新pageCollectionView
     func refreshPageCollectionView () {
         
-        mlog(message: "refresh!!!!!!", infoType: .DEBUG)
+        mlog(message: "refresh pageCollectionView", infoType: .DEBUG)
 
         pageCollectionView.collectionViewLayout.invalidateLayout()
         pageCollectionView.reloadData()
@@ -149,7 +157,7 @@ class SlideViewController: UIViewController{
         // 根据indexPath找到页
         let page = presentationModel!.pages[indexPath.row]
         
-        // 更新页数
+        // MARK: - 请不要直接修改currrentSlideIndex 考虑两个函数
         page.lastSlideIndex = page.currentSlideIndex
         page.currentSlideIndex = (page.currentSlideIndex + dir + page.singleSlideViews.count) % page.singleSlideViews.count
         
@@ -158,6 +166,8 @@ class SlideViewController: UIViewController{
         
         // 重新加载数据
         pageCollectionView.reloadItems(at: [indexPath])
+        let cell = pageCollectionView.cellForItem(at: indexPath) as! PageCollectionViewCell
+        cell.draw(cell.frame)
     }
     
     // 根据model中的记录更换设计师，或设计师的不同模版
@@ -169,13 +179,65 @@ class SlideViewController: UIViewController{
         
         mlog(message: "designerIndex \(designerIndex!) templateIndex \(templateIndex!)", infoType: .DESIGNER_INFO)
         
-        // model中更改设计师和模版
-//        presentationModel?.getPages(designerIndex: designerIndex!, templateIndex: templateIndex!)
+        // model中更改设计师和模版：通过delegates重新获取presentationModel中的pages（当pages=0时模版不存在）
+        let newPages = slideViewDelegate?.getNewPages(templateID: designerIndex!)
+        print("~~~~~~~~~~~~designerIndex:\(designerIndex!)")
+        if newPages?.count != 0{
+            presentationModel?.pages = newPages!
+        }
         
+        // 获取颜色
+        var lightCnt = 0
+//        let pageNum = presentationModel!.pages.count
+        for page in presentationModel!.pages{
+            mlog(message: "获取颜色", infoType: .DEBUG)
+            
+            let img = page.singleSlideViews[0].asImage()
+            
+            var cnt = 0
+            // 取三个点判断明暗
+            
+            if img.isLight(pos: CGPoint(x: 20,y: 20)){
+                cnt+=1
+            }
+            if img.isLight(pos: CGPoint(x: 20,y: 100)){
+                cnt+=1
+            }
+            if img.isLight(pos: CGPoint(x: img.size.width-10,y: img.size.height-20)){
+                cnt+=1
+            }
+  
+            if cnt>=2{
+                lightCnt+=1
+            }
+        }
+        
+//        // 多数为亮色
+//        if(lightCnt*2>pageNum){
+//            print("深色模式 亮色\(lightCnt) 页数\(pageNum)")
+//            ColorModeModel.colorMode = .dark
+//            
+//            // 换背景
+//            pageCollectionView.backgroundColor = UIColor.GUNMETAL()
+//        }else{
+//            print("浅色模式 亮色\(lightCnt) 页数\(pageNum)")
+//            ColorModeModel.colorMode = .light
+//            
+//            // 换背景
+//            pageCollectionView.backgroundColor = UIColor.AZUREISH_WHITE()
+//        }
+        
+        // 刷新设计师
+        for cell in designerCollectionView.visibleCells{
+            let designerCell = cell as! DesignerCollectionViewCell
+            designerCell.refresh()
+        }
+
         // 刷新
         refreshPageCollectionView()
-    }
     
+    }
+
     
     // MARK: - Gesture Methods
     
@@ -238,19 +300,30 @@ class SlideViewController: UIViewController{
             
             // 判断是否是同一个设计师
             if presentationModel!.selectedDesignerIndex == indexPath.row {
-                // 点击相同设计师，更换配色
+//                // 点击相同设计师，更换配色
+//
+//                // 获取当前设计师
+//                let currentDesigner = designerModel!.designerArray[presentationModel!.selectedDesignerIndex]
+//
+//                // 更新模板
+//                currentDesigner.selectedTemplateIndex = (currentDesigner.selectedTemplateIndex + 1) % currentDesigner.templates.count
+//
+//                // 刷新cell
+//                designerCollectionView.reloadItems(at: [IndexPath(row: presentationModel!.selectedDesignerIndex, section: 0)])
+//
+//                // 更换设计师
+//                changeDesigner()
                 
-                // 获取当前设计师
-                let currentDesigner = designerModel!.designerArray[presentationModel!.selectedDesignerIndex]
                 
-                // 更新模板
-                currentDesigner.selectedTemplateIndex = (currentDesigner.selectedTemplateIndex + 1) % currentDesigner.templates.count
+                 
+                 
+                 // TODO: 测试 导出PPT到本地
+//                 exportPPT()
+                 
+                 
+                 
+                 
                 
-                // 刷新cell
-                designerCollectionView.reloadItems(at: [IndexPath(row: presentationModel!.selectedDesignerIndex, section: 0)])
-                
-                // 更换设计师
-                changeDesigner()
             }
             else {
                 // 点击不同设计师，更换模板
@@ -270,10 +343,43 @@ class SlideViewController: UIViewController{
                 
                 // 更换设计师
                 changeDesigner()
-                
             }
         }
+        
+        
     }
     
+    @IBAction func exportPPTAction(_ sender: Any) {
+        exportPPT()
+    }
+    
+    // MARK: - WEB
+    func exportPPT(){
+        
+        var images:[UIImage] = []
+        
+        // 获取所有当前页
+        for page in presentationModel!.pages{
+            let slide = page.singleSlideViews[page.currentSlideIndex]
+            images.append(slide.asImage())
+        }
+        
+        mlog(message: "发送请求，导出PPT，共\(images.count)页", infoType: .DEBUG)
+        
+        let exPPT = ExPPT()
+        exPPT.postJsonData(images: images, path: "/Documents/HelloWord.ppt", completion:{_ in
+            mlog(message: "PPT下载完成", infoType: .DEBUG)
+        })
+    }
+    
+    func slideUpdate(pages: [Page]) {
+        
+        let newPages = pages
+        if newPages.count != 0{
+            presentationModel?.pages = newPages
+        }
+        refreshPageCollectionView()
+    }
 }
+    
 

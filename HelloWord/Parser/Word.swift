@@ -8,108 +8,157 @@
 
 import Foundation
 
-class Word{
+struct Word{
+    var WordData:[PageData]
+
     
-    //多页的大纲文件
-    var WordData: [PageData]
-    
-    init(){
-        self.WordData = [PageData]()
-    }
-    
-    func addNewPage(){
+    mutating func addnewpage(){
         self.WordData.append(PageData())
     }
-    
-    //更新Word
-    func reNewWord(id pageid:Int, information:[wordFromOutline]){
-        removeAllElements(id: pageid)
-        for x in information{
-            self.WordData[pageid].createNewNode(id: x.id, type: x.type, content: x.content, parentid:x.parentid)
-        }
-    }
-    
-    //返回这一页的PageData
-    func getThisPage(id pageid:Int)->PageData{
-        return self.WordData[pageid]
-    }
-    
-    //清除所有元素
-    func removeAllElements(id pageid:Int){
-        if self.WordData[pageid].PageData.count != 0{
-            self.WordData[pageid].PageData.removeAll()
-        }
-    }
-    
     init(WordData:[PageData]) {
         self.WordData=WordData
         
     }
-    
-}
+    init(){
+        self.WordData=[PageData]()
+    }
 
-class PageData{
-    
-    //一页有很多个小元素
-    var PageData:[PageNode]
-    
-    init() {
-        self.PageData=[PageNode]()
+    mutating func addNewPage(){
+        self.WordData.append(PageData())
     }
     
-    //把每一级标题元素添加进页面中
-    func createNewNode(id:Int,type:kind,content:Any,parentid:Int?){
-        self.PageData.append(PageNode(id: id, type: type, content: content, parentid: parentid))
-        if let parent=parentid{
-            self.PageData[parent].createNewChild(childid: id)
+    //renew是不是要删除再重写
+    //是否要做检查，怎么做检查
+    mutating func reNewWord(id pageid:Int,info information:[WordFromOutline]){
+        removeallelements(id: pageid)
+        for x in information{
+            self.WordData[pageid].createnewnode(id: x.id, type: x.type, content: x.content, parentid:x.parentid)
         }
     }
     
-    //返回某个parentID的所有孩子
-    func getAllChild(parentid id:Int)->[PageNode]{
-        var temp=[PageNode]()
-        let temps=PageData[id].childid
-        for x in temps{
-            temp.append(PageData[x])
+    func getthispage(id pageid:Int)->PageData{
+        return self.WordData[pageid]
+    }
+    
+    mutating func removeallelements(id pageid:Int){
+        if self.WordData.count == 0{
+            return
         }
-        return temp
+        if self.WordData[pageid].pageData.isEmpty{
+            return
+        }
+//        for i in 0..<reverse(self.WordData[pageid].PageData.count){
+//            self.WordData[pageid].PageData.remove(at: i)
+//        }
+        self.WordData[pageid].pageData.removeAll()
+    }
+    
+   
+}
+
+struct PageData{
+       var pageData:[PageNode]
+       init() {
+           self.pageData=[PageNode]()
+       }
+       mutating func createnewnode(id:Int,type:kind,content:Any,parentid:Int?){
+           self.pageData.append(PageNode(id: id, type: type, content: content, parentid: parentid))
+           if let parent=parentid{
+               self.pageData[parent].createnewchild(childid: id)
+           }
+       }
+       func getallchild(parentid id:Int) ->[PageNode]{
+           var temp=[PageNode]()
+           let temps=pageData[id].childid
+           for x in temps{
+               temp.append(pageData[x])
+           }
+           return temp
+       }
+    func getPageInfo() ->Int16{
+        var res = PageInfo()
+        for x in pageData{
+            switch x.type{
+            case .firsttitle: res.firstnum+=1
+            case .secondtitle: res.secondnum+=1
+            case .thirdtitle: res.thirdnum+=1
+            case .image: res.imagenum+=1
+            }
+        }
+        return res.getpageinfonum()
+        
+    }
+    func getFirstTitles( ) ->[PageNode]{
+        var res = [PageNode]()
+        for x in pageData{
+            if x.type == .firsttitle{
+                res.append(x)
+            }
+        }
+        return res
+    }
+    func getSecondTitles() ->[PageNode]{
+        var res = [PageNode]()
+        for x in pageData{
+            if x.type == .secondtitle{
+                res.append(x)
+            }
+        }
+        return res
+    }
+    func getImages() ->[PageNode]{
+        var res = [PageNode]()
+        for x in pageData{
+            if x.type == .image{
+                res.append(x)
+            }
+        }
+        return res
+    }
+    func getThirdTitles()->[PageNode]{
+        var res = [PageNode]()
+        for x in pageData{
+            if x.type == .thirdtitle{
+                res.append(x)
+            }
+        }
+        return res
     }
 }
 
-class PageNode{
-    
-    var id:Int
-    var type:kind
-    var content:Any
-    var stackid:Int?
-    private var parentid:Int?
-    var childid:[Int]
-    var childnum:Int
-    
-    init(id:Int,type:kind,content:Any,parentid:Int?){
-        self.id=id
-        self.type=type
-        self.content=content
-        self.childid=[Int]()
-        self.parentid=parentid
-        self.stackid=0
-        childnum=0
-    }
-    
-    func createNewChild(childid id:Int){
-        self.childid.append(id)
-        self.childnum+=1
-    }
-}
+struct PageNode{
+       var id:Int
+       var type:kind
+       var content:Any
+       var stackid:Int?
+       var parentid:Int?
+       var childid:[Int]
+       var childnum:Int
+       init(id:Int,type:kind,content:Any,parentid:Int?){
+           self.id=id
+           self.type=type
+           self.content=content
+           self.childid=[Int]()
+           self.parentid=parentid
+           self.stackid=0
+           childnum=0
+       }
+       mutating func createnewchild(childid id:Int){
+           self.childid.append(id)
+           self.childnum+=1
+       }
 
-enum kind: Int, Codable{
+   }
+
+enum kind:Int,Codable{
+ 
     case firsttitle
     case secondtitle
     case thirdtitle
     case image
 }
 
-class wordFromOutline{
+class WordFromOutline{
     var id:Int
     var type:kind
     var content:Any

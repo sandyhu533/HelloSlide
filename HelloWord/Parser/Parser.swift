@@ -12,19 +12,24 @@ import UIKit
 
 class Parser{
     
-    var myHelloword = Helloword()
+    lazy var myHelloword = Helloword(frame: bounds)
     var myWord = Word()
     
     var bounds = CGRect()
     
+    //template总数
+    var templateNum = 2
+    //当前在使用的template
+    var currentTemplate = 0
+    
     //在myWord和myHelloWord中添加新页
     func addnewpage(){
-        self.myHelloword.addNewPage(this: bounds, templateid: 0)
+        self.myHelloword.addNewPage(color: UIColor.white)
         self.myWord.addNewPage()
     }
     
     //从Word来的modify
-    func modifiedFromWord(id pageid:Int,information:[wordFromOutline]){
+    func modifiedFromWord(id pageid:Int,information:[WordFromOutline],templateid:Int,colorid:Int){
         //如果pageid超过访问下界，则增加相应数量的newPage
         if pageid>=myWord.WordData.count {
             for index in 0...pageid-myWord.WordData.count{
@@ -33,33 +38,75 @@ class Parser{
             }
         }
         //更新myWord中当页的信息
-        self.myWord.reNewWord(id: pageid, information: information)
+        self.myWord.reNewWord(id: pageid, info: information)
         print("succeed")
         print(information)
         //更新myHelloWord中当页的信息
-        self.myHelloword.reNewHelloWord(id: pageid, datasource: myWord.getThisPage(id:pageid),templateid:0)
+        let wordpage = self.myWord.getthispage(id: pageid)
+        
+        if(templateid == 0){
+            self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid)
+        }
+        else{
+            let compsings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateid, colorid: colorid)
+            self.myHelloword.reNewHellowordFixed(composings:compsings, datasource: wordpage, in: pageid)
+        }
         
         print("TEST1")
-        print("myHelloword.HellowordData.count  \(myHelloword.HellowordData.count)")
-        print("\(myHelloword.HellowordData)")
+        print("myWord.W.count  \(myWord.WordData.count)")
     }
     
+//    //更换模版
+//    func changeTemplateOrColor(templateId: Int,colorId:Int = 1){
+//
+//        print("~~~~~~~~\(templateId)")
+//        print("~~~~~~~\(currentTemplate)")
+//        if templateId < templateNum && templateId != currentTemplate{
+//            print("CHANGING TAMPLATE!!\(templateId)!")
+//            currentTemplate = templateId
+//            //每一页
+////            for (index,page) in myWord.WordData.enumerated() {
+////                var pageWord = [wordFromOutline]()
+////                //每一页中的每个元素
+////                for node in page.pageData{
+////                    let nodeWord = wordFromOutline(id: node.id, type: node.type, content: node.content, parentid: node.parentid)
+////                    pageWord.append(nodeWord)
+////                }
+////            }
+//            print("wordDATACount\(myWord.WordData.count)")
+//            for index in 0..<myWord.WordData.count{
+//                let wordpage = self.myWord.getthispage(id: index)
+//
+//                if(templateId == 0){
+//                    self.myHelloword.reNewHellowordFluid(id: index, datasource: wordpage, colorid: colorId)
+//                }
+//                else{
+//                    let compsings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateId, colorid: colorId)
+//                    print("*************I get you\(compsings)*****************")
+//                    self.myHelloword.reNewHellowordFixed(composings: compsings, datasource: wordpage, in: index)
+//
+//                }
+//            }
+//        }
+//        else {
+//            self.myHelloword.HellowordData.removeAll()
+//            self.myWord.WordData.removeAll()
+//        }
+//
+//    }
     
-    //从Slide页面来的modify
-    func modifiedfromview(changecolor:Bool, changetemplate:Bool, colorid:Int?, viewid:Int? ){
-        if(changecolor){
-            self.myHelloword.changecolorforall()
-        }
-        if(changetemplate){
-            self.myHelloword.changetemplateonthispage()
-        }
-    }
+    
+//    //从Slide页面来的modify
+//    func modifiedfromview(changecolor:Bool, changetemplate:Bool, colorid:Int?, viewid:Int? ){
+//        if(changecolor){
+//            self.myHelloword.changecolorforall()
+//        }
+//        if(changetemplate){
+//            self.myHelloword.changetemplateonthispage()
+//        }
+//    }
     
     //???
-    func openword(){
-        let pageid=0
-        //将来支持多页
-        self.myHelloword.reNewHelloWord(id: pageid, datasource: myWord.getThisPage(id:pageid),templateid:0)
-    }
+    
 }
 

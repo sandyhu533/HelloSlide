@@ -1,9 +1,9 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The Stroke data model and math extensions for CG primitives for easier math.
-*/
+ See LICENSE folder for this sample’s licensing information.
+ 
+ Abstract:
+ The Stroke data model and math extensions for CG primitives for easier math.
+ */
 
 import Foundation
 import UIKit
@@ -48,7 +48,7 @@ struct StrokeSample {
         }
         return vector
     }
-
+    
     init(timestamp: TimeInterval,
          location: CGPoint,
          coalesced: Bool,
@@ -58,7 +58,7 @@ struct StrokeSample {
          altitude: CGFloat? = nil,
          estimatedProperties: UITouch.Properties = [],
          estimatedPropertiesExpectingUpdates: UITouch.Properties = []) {
-
+        
         self.timestamp = timestamp
         self.location = location
         self.force = force
@@ -67,12 +67,12 @@ struct StrokeSample {
         self.altitude = altitude
         self.azimuth = azimuth
     }
-
+    
     /// Convenience accessor returns a non-optional (Default: 1.0)
     var forceWithDefault: CGFloat {
         return force ?? 1.0
     }
-
+    
     /// Returns the force perpendicular to the screen. The regular pencil force is along the pencil axis.
     var perpendicularForce: CGFloat {
         let force = forceWithDefault
@@ -108,7 +108,7 @@ class Stroke {
     var hasUpdatesAtEndFrom: Int?
     
     var receivedAllNeededUpdatesBlock: (() -> Void)?
-
+    
     func add(sample: StrokeSample) -> Int {
         let resultIndex = samples.count
         if hasUpdatesAtEndFrom == nil {
@@ -143,7 +143,7 @@ class Stroke {
             }
         }
     }
-
+    
     func addPredicted(sample: StrokeSample) {
         predictedSamples.append(sample)
     }
@@ -156,18 +156,18 @@ class Stroke {
     
     func updatedRanges() -> [CountableClosedRange<Int>] {
         var ranges = [CountableClosedRange<Int>]()
-
+        
         if let hasUpdatesFromStartTo = self.hasUpdatesFromStartTo,
             let hasUpdatesAtEndFrom = self.hasUpdatesAtEndFrom {
             ranges = [0...(hasUpdatesFromStartTo), hasUpdatesAtEndFrom...(samples.count - 1)]
-
+            
         } else if let hasUpdatesFromStartTo = self.hasUpdatesFromStartTo {
             ranges = [0...(hasUpdatesFromStartTo)]
-
+            
         } else if let hasUpdatesAtEndFrom = self.hasUpdatesAtEndFrom {
             ranges = [(hasUpdatesAtEndFrom)...(samples.count - 1)]
         }
-
+        
         return ranges
     }
     
@@ -206,15 +206,15 @@ class StrokeSegment {
     var segmentUnitNormal: CGVector {
         return segmentStrokeVector.normal!.normalized!
     }
-
+    
     var fromSampleUnitNormal: CGVector {
         return interpolatedNormalUnitVector(between: previousSegmentStrokeVector, and: segmentStrokeVector)
     }
-
+    
     var toSampleUnitNormal: CGVector {
         return interpolatedNormalUnitVector(between: segmentStrokeVector, and: nextSegmentStrokeVector)
     }
-
+    
     var previousSegmentStrokeVector: CGVector {
         if let sampleBefore = self.sampleBefore {
             return fromSample.location - sampleBefore.location
@@ -226,7 +226,7 @@ class StrokeSegment {
     var segmentStrokeVector: CGVector {
         return toSample.location - fromSample.location
     }
-
+    
     var nextSegmentStrokeVector: CGVector {
         if let sampleAfter = self.sampleAfter {
             return sampleAfter.location - toSample.location
@@ -234,7 +234,7 @@ class StrokeSegment {
             return segmentStrokeVector
         }
     }
-
+    
     init(sample: StrokeSample) {
         self.sampleAfter = sample
         self.fromSampleIndex = -2

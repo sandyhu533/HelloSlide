@@ -28,6 +28,9 @@ class CenterView: UIView {
     }
     
     private func setup() {
+//        let rotationAngle = CGFloat.pi / 2
+//        imageView.transform = CGAffineTransform(rotationAngle: rotationAngle)
+//        imageView.transform = CGAffineTransform(scaleX: -10, y: 0)
         addSubview(imageView)
     }
     

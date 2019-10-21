@@ -117,7 +117,7 @@ class StrokeCGView: UIView {
                 frame = frame.union(sampleFrame)
             }
         }
-        let maxStrokeWidth = CGFloat(20.0)
+        let maxStrokeWidth = CGFloat(2.0)
         return frame.insetBy(dx: -1 * maxStrokeWidth, dy: -1 * maxStrokeWidth)
     }
     
@@ -306,10 +306,10 @@ private extension StrokeCGView {
             
             context.beginPath()
             context.addLines(between: [
-                fromSample.location + fromUnitVector,
-                toSample.location + toUnitVector,
-                toSample.location - toUnitVector,
-                fromSample.location - fromUnitVector
+                fromSample.location + fromUnitVector*0.5,
+                toSample.location + toUnitVector*0.5,
+                toSample.location - toUnitVector*0.5,
+                fromSample.location - fromUnitVector*0.5
                 ])
             context.closePath()
             context.drawPath(using: .fillStroke)

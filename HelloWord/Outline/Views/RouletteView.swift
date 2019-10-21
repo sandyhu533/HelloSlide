@@ -30,9 +30,7 @@ class RouletteView: UIView {
     
     public var cells: [RouletteCell] = []{
         didSet{
-            let name = Notification.Name("cvm." + cells[(cells.count / 2 + 1) / 2 - 1].title)
-            print(name)
-            NotificationCenter.default.post(name: name, object: nil)
+            sendNotification()
         }
     }
     
@@ -42,6 +40,17 @@ class RouletteView: UIView {
         super.init(frame: frame)
         setup()
         setupLayout()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(notification:)), name: Notification.Name("textViewDidBeginEditing"), object: nil)
+    }
+    
+    @objc func handleNotification(notification: NSNotification){
+        sendNotification()
+    }
+    
+    func sendNotification(){
+        let name = Notification.Name("cvm." + cells[(cells.count / 2 + 1) / 2 - 1].title)
+        print(name)
+        NotificationCenter.default.post(name: name, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

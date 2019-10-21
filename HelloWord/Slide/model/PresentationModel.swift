@@ -17,12 +17,10 @@ class PresentationModel {
     var selectedDesignerIndex = 0
     
     // 放入数据
-    func fillData(pageViews : [PageView]) {
+    func fillData(pageViews : [Page]) {
         
         for pageView in pageViews{
-            let page = Page()
-            page.addSlide(pageView)
-            self.pages.append(page)
+            self.pages.append(pageView)
         }
         
     }

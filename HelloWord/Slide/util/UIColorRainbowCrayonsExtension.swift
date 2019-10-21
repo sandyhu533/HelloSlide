@@ -26,6 +26,23 @@
 import UIKit
 
 extension UIColor {
+    
+    class func BALL_BLUE ( alpha: CGFloat = 1.0 ) -> UIColor {
+    return  UIColor.init ( red: 41.0/255.0, green: 150.0/255.0, blue: 211.0/255.0, alpha: alpha ) }
+    
+    class func PICTON_BLUE ( alpha: CGFloat = 1.0 ) -> UIColor {
+       return  UIColor.init ( red: 81.0/255.0, green: 181.0/255.0, blue: 237.0/255.0, alpha: alpha ) }
+    
+    class func COLUMBIA_BLUE ( alpha: CGFloat = 1.0 ) -> UIColor {
+    return  UIColor.init ( red: 193.0/255.0, green: 223.0/255.0, blue: 234.0/255.0, alpha: alpha ) }
+    
+    class func AZUREISH_WHITE ( alpha: CGFloat = 1.0 ) -> UIColor {
+           return  UIColor.init ( red: 228.0/255.0, green: 239.0/255.0, blue: 244.0/255.0, alpha: alpha ) }
+    
+    class func GUNMETAL ( alpha: CGFloat = 1.0 ) -> UIColor {
+    return  UIColor.init ( red: 45.0/255.0, green: 55.0/255.0, blue: 66.0/255.0, alpha: alpha ) }
+    
+    
     /**
      Returns a UIColor object representing the color Almond (Crayola), whose RBG values are (239, 222, 205), and has the specified opacity.
      :param: alpha A CGFloat between 0.0 and 1.0 representing the opacity with a default value of 1.0.

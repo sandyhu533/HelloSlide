@@ -14,58 +14,75 @@ class DesignerCollectionViewCell: UICollectionViewCell {
     
     var designer : Designer?
     
-    func setDesigner(_ designer : Designer) {
-        
-        self.designer = designer
-        
+    func refresh() {
         // 设置大小
-        designerView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        designerView.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
+        designerView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        designerView.bounds = CGRect(x: 0, y: 0, width: 60, height: 60)
         
         // 背景透明
         designerView.backgroundColor = UIColor.clear
         designerView.alpha = 1
         
-        self.backgroundView?.alpha = 0
+        self.backgroundView?.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        self.backgroundView?.bounds = CGRect(x: 0, y: 0, width: 60, height: 60)
         
-        // 加载图片，如果不存在，显示空白
-        if ColorModeModel.colorMode == .light {
-            // 白色图标
-            designerView.image = UIImage(named: designer.imageName)?.tint(color: UIColor.white, blendMode: .destinationIn)
+        // 图标彩
+        let iconColor = designer!.templates[designer!.selectedTemplateIndex].templateIconColor
+        
+        // 如果选中
+        if designer!.isSelected == true {
+            // 图标彩
+            designerView.image = UIImage(named: designer!.imageName)?.tint(color: iconColor, blendMode: .destinationIn)
             
-        } else {
-            // 黑色图标
-            designerView.image = UIImage(named: designer.imageName)?.tint(color: UIColor.black, blendMode: .destinationIn)
+        }else{
+            if ColorModeModel.colorMode == .light{
+                // 图标白
+                designerView.image = UIImage(named: designer!.imageName)?.tint(color: UIColor.AZUREISH_WHITE(), blendMode: .destinationIn)
+                designerView.alpha = 0.8
+            }else{
+                // 图标黑
+                designerView.image = UIImage(named: designer!.imageName)?.tint(color: UIColor.GUNMETAL(), blendMode: .destinationIn)
+                designerView.alpha = 0.8
+            }
         }
+    }
+    
+    func setDesigner(_ designer : Designer) {
+        
+        self.designer = designer
+        
+        // 设置大小
+        designerView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        designerView.bounds = CGRect(x: 0, y: 0, width: 60, height: 60)
+        
+        // 背景透明
+        designerView.backgroundColor = UIColor.clear
+        designerView.alpha = 1
+        
+        self.backgroundView?.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        self.backgroundView?.bounds = CGRect(x: 0, y: 0, width: 60, height: 60)
+        
+        // 图标彩
+        let iconColor = designer.templates[designer.selectedTemplateIndex].templateIconColor
         
         // 如果选中
         if designer.isSelected == true {
+            // 图标彩
+            designerView.image = UIImage(named: designer.imageName)?.tint(color: iconColor, blendMode: .destinationIn)
             
-            // 获取图标颜色
-            let iconColor = designer.templates[designer.selectedTemplateIndex].templateIconColor
-            
-            // 设置图标颜色
-            designerView.image = designerView.image?.tint(color: iconColor, blendMode: .destinationIn)
-            
-            // 设置背景颜色
-            if ColorModeModel.colorMode == .light {
-                // 白色背景图片
-                self.backgroundView = UIImageView(image: UIImage(named: "avatarbackground")?.tint(color: UIColor.white, blendMode: .destinationIn))
-                self.backgroundView?.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-                self.backgroundView?.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
-                self.backgroundView?.alpha = 0.6
-                
-            } else {
-                // 黑色背景图片
-                self.backgroundView = UIImageView(image: UIImage(named: "avatarbackground")?.tint(color: UIColor.black, blendMode: .destinationIn))
-                self.backgroundView?.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-                self.backgroundView?.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
-                self.backgroundView?.alpha = 0.6
-                
+        }else{
+            if ColorModeModel.colorMode == .light{
+                // 图标白
+                designerView.image = UIImage(named: designer.imageName)?.tint(color: UIColor.AZUREISH_WHITE(), blendMode: .destinationIn)
+                designerView.alpha = 0.4
+            }else{
+                // 图标黑
+                designerView.image = UIImage(named: designer.imageName)?.tint(color: UIColor.GUNMETAL(), blendMode: .destinationIn)
+                designerView.alpha = 0.4
             }
-            
-        }
 
+        }
+        
     }
     
 }

@@ -18,3 +18,11 @@ extension UIViewController {
         }
     }
 }
+
+extension NSAttributedString {
+    func heightWithConstrainedWidth(width: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        return ceil(boundingBox.height)
+    }
+}

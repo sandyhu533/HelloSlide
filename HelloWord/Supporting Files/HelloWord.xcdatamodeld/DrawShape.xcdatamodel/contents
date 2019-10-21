@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14897.2" systemVersion="19A582a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Composing" representedClassName=".Composing" syncable="YES" codeGenerationType="class">
+        <attribute name="bgpic" optional="YES" attributeType="Binary"/>
+        <attribute name="composingid" optional="YES" attributeType="Integer 16" minValueString="1001" maxValueString="15999" defaultValueString="1001" usesScalarValueType="YES"/>
+        <attribute name="firstposition" optional="YES" attributeType="String"/>
+        <attribute name="font" optional="YES" attributeType="String"/>
+        <attribute name="imageposition" optional="YES" attributeType="String"/>
+        <attribute name="pageinfo" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="9999" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secondposition" optional="YES" attributeType="String"/>
+        <attribute name="textcolor" optional="YES" attributeType="String"/>
+        <attribute name="thirdposition" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Composing" positionX="-63" positionY="-18" width="128" height="178"/>
+    </elements>
+</model>

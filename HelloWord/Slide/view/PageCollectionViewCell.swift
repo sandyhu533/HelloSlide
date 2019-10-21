@@ -27,7 +27,7 @@ class PageCollectionViewCell: UICollectionViewCell {
         }
         
         // 设置背景
-        background = page.singleSlideViews[(page.currentSlideIndex)].initview
+        background = page.singleSlideViews[(page.getSlideNumber())]
         background?.frame = self.bounds
         background?.bounds = self.bounds
         slideView.addSubview(background!)
@@ -47,7 +47,7 @@ class PageCollectionViewCell: UICollectionViewCell {
     override func draw(_ rect: CGRect) {
 
         // 提示信息
-        mlog(message: "drawing template \(page!.lastSlideIndex) -> \(page!.currentSlideIndex)", infoType: .CREATE_SLIDE)
+        mlog(message: "drawing template \(page!.lastSlideIndex) -> \(page!.getSlideNumber())", infoType: .CREATE_SLIDE)
         
         // 根据cell大小调整slideView大小
         // 初始化时，有时frame左上角不为0
@@ -59,12 +59,12 @@ class PageCollectionViewCell: UICollectionViewCell {
         background?.bounds = self.bounds
         
         // 判断是否换页
-        if page?.lastSlideIndex != page?.currentSlideIndex {
+        if page?.lastSlideIndex != page?.getSlideNumber() {
             // 获取旧页
             let oldSingleSlideView = page?.singleSlideViews[(page?.lastSlideIndex)!]
             
             // 获取新页
-            let newSingleSlideView = page?.singleSlideViews[(page?.currentSlideIndex)!]
+            let newSingleSlideView = page?.singleSlideViews[(page?.getSlideNumber())!]
             
             // 设置新页大小
             newSingleSlideView?.frame = self.bounds
@@ -79,7 +79,7 @@ class PageCollectionViewCell: UICollectionViewCell {
                 to: newSingleSlideView!,
                 // TODO: 翻页时设置持续时间出现显示混乱问题，暂时不设动画
                 duration: 0,
-                options: [.curveEaseInOut],
+                options: [.curveEaseInOut,],
                 completion: nil)
             
         }
