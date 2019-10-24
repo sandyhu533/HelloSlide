@@ -34,16 +34,30 @@ public struct HelloWordModel {
 
 }
 
-struct WordModelManager {
+class WordModelManager {
     
-    static var shared = WordModelManager(wordModels: [NSAttributedString]())
+    static var shared = WordModelManager()
     
-    static var wordModelManagerDelegete : WordModelManagerDelegete?
+    static var wordModelManagerDelegete0 : WordModelManagerDelegete?
+    static var wordModelManagerDelegete1 : WordModelManagerDelegete?
     
-    var wordModels: [NSAttributedString] {
-        didSet{
-            WordModelManager.wordModelManagerDelegete?.setModel(globalModel: wordModels)
-            
+    var outlineViewController0 : OutlineViewController?
+    var outlineViewController1 : OutlineViewController?
+    
+    var lock0 : Int = 0
+    var lock1 : Int = 0
+    
+    var slideViewController : SlideViewController?
+    
+    var wordModels: [NSAttributedString] = [NSAttributedString]() {
+        didSet {
+            WordModelManager.wordModelManagerDelegete0?.setModel(globalModel: wordModels)
+            WordModelManager.wordModelManagerDelegete1?.setModel(globalModel: wordModels)
+//            if lock1 == 0 {
+                outlineViewController0?.cellConsistentDelegate = outlineViewController1
+                outlineViewController1?.cellConsistentDelegate = outlineViewController0
+//                lock1 = 1
+//            }
         }
     }
 }

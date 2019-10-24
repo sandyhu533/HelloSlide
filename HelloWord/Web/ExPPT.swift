@@ -43,15 +43,19 @@ class ExPPT {
                                                 completionHandler: { (location:URL?, response:URLResponse?, error:Error?)
                                                     -> Void in
                                                     //输出下载文件原来的存放目录
-//                                                    print("location:\(location)")
+                                                    print("location:\(String(describing: location))")
+                                                    
                                                     //location位置转换
                                                     let locationPath = location!.path
                                                     //拷贝到用户目录
-                                                    let documnets:String = NSHomeDirectory() + path
+                                                    let newLocation:String = NSHomeDirectory() + path
                                                     //创建文件管理器
                                                     let fileManager = FileManager.default
-                                                    try! fileManager.moveItem(atPath: locationPath, toPath: documnets)
-                                                    print("new location:\(documnets)")
+                                                    try? fileManager.moveItem(atPath: locationPath, toPath: newLocation)
+                                                    print("new location:\(newLocation)")
+                                                    
+                                                    //                                                    completion(location!.absoluteString)
+                                                    completion(newLocation)
         })
         
         //使用resume方法启动任务

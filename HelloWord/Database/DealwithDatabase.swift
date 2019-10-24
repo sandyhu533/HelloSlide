@@ -79,7 +79,7 @@ func findMatchedComposeing(pageinfo info:Int16,templateid tpl:Int,colorid clid:I
     return res
 }
 
-func deleteobject(pageinfo info:Int){
+func deleteobject(composingid info:Int){
     let app = UIApplication.shared.delegate as! AppDelegate
     let context = app.persistentContainer.viewContext
     
@@ -149,3 +149,4 @@ func addComposingToDatabase(_ pageinfo:Int,composingid:Int,bgpic:UIImage,firstpo
     
 }
 
+//MARK  返回所有composingid的函数

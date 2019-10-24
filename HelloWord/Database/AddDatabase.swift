@@ -27,8 +27,9 @@ func loadData(){
     let i001010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i001010", ofType: "png")!)
     let i001011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i001011", ofType: "png")!)
     
-    
-    
+    deleteobject(composingid: 001136)
+    deleteobject(composingid: 001141)
+
     addComposingToDatabase(1000, composingid: 001001, bgpic: i001001!, firstposition: "291333437347", secondposition: "", thirdposition: "", imageposition: "", font:"Arial",color:"0xffffff0x9b9b9b0x9b9b9b")
 
     addComposingToDatabase(1000, composingid: 001006, bgpic: i001010!, firstposition: "218152562104", secondposition: "", thirdposition: "", imageposition: "", font:"Arial",color:"0xffffff0x9b9b9b0x9b9b9b")
@@ -83,9 +84,9 @@ func loadData(){
 
     addComposingToDatabase(1202, composingid: 001131, bgpic: i001011!, firstposition: "708340203270", secondposition: "036576255215322576260215", thirdposition: "", imageposition: "036236255291322236260291", font:"Arial",color:"0xffffff0x9b9b9b0x9b9b9b")
 
-    addComposingToDatabase(2000, composingid: 001136, bgpic: i001003!, firstposition: "", secondposition: "", thirdposition: "", imageposition: "104305328361463305328361", font:"Arial",color:"0xffffff0x9b9b9b0x9b9b9b")
+    addComposingToDatabase(0002, composingid: 001136, bgpic: i001003!, firstposition: "", secondposition: "", thirdposition: "", imageposition: "104305328361463305328361", font:"Arial",color:"0xffffff0x9b9b9b0x9b9b9b")
 
-    addComposingToDatabase(2000, composingid: 001141, bgpic: i001005!, firstposition: "", secondposition: "", thirdposition: "", imageposition: "427138328340145513328340", font:"Arial",color:"0xffffff0x9b9b9b0x9b9b9b")
+    addComposingToDatabase(0002, composingid: 001141, bgpic: i001005!, firstposition: "", secondposition: "", thirdposition: "", imageposition: "427138328340145513328340", font:"Arial",color:"0xffffff0x9b9b9b0x9b9b9b")
 
     addComposingToDatabase(2200, composingid: 001146, bgpic: i001009!, firstposition: "041111114333041513114333", secondposition: "182111265333182513265333", thirdposition: "", imageposition: "", font:"Arial",color:"0x9b9b9b0x9b9b9b0x9b9b9b")
 

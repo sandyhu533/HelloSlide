@@ -17,11 +17,6 @@ class Parser{
     
     var bounds = CGRect()
     
-    //template总数
-    var templateNum = 2
-    //当前在使用的template
-    var currentTemplate = 0
-    
     //在myWord和myHelloWord中添加新页
     func addnewpage(){
         self.myHelloword.addNewPage(color: UIColor.white)
@@ -48,65 +43,17 @@ class Parser{
             self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid)
         }
         else{
-            let compsings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateid, colorid: colorid)
-            self.myHelloword.reNewHellowordFixed(composings:compsings, datasource: wordpage, in: pageid)
+            
+            // -MARK: 这里的1之后要变成当前模版所拥有的颜色数目
+            let realid = 1
+            let compsings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateid, colorid: realid)
+            
+            self.myHelloword.reNewHellowordFixed(composings:compsings, datasource: wordpage, in: pageid, colorid: realid)
         }
         
         print("TEST1")
         print("myWord.W.count  \(myWord.WordData.count)")
     }
-    
-//    //更换模版
-//    func changeTemplateOrColor(templateId: Int,colorId:Int = 1){
-//
-//        print("~~~~~~~~\(templateId)")
-//        print("~~~~~~~\(currentTemplate)")
-//        if templateId < templateNum && templateId != currentTemplate{
-//            print("CHANGING TAMPLATE!!\(templateId)!")
-//            currentTemplate = templateId
-//            //每一页
-////            for (index,page) in myWord.WordData.enumerated() {
-////                var pageWord = [wordFromOutline]()
-////                //每一页中的每个元素
-////                for node in page.pageData{
-////                    let nodeWord = wordFromOutline(id: node.id, type: node.type, content: node.content, parentid: node.parentid)
-////                    pageWord.append(nodeWord)
-////                }
-////            }
-//            print("wordDATACount\(myWord.WordData.count)")
-//            for index in 0..<myWord.WordData.count{
-//                let wordpage = self.myWord.getthispage(id: index)
-//
-//                if(templateId == 0){
-//                    self.myHelloword.reNewHellowordFluid(id: index, datasource: wordpage, colorid: colorId)
-//                }
-//                else{
-//                    let compsings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateId, colorid: colorId)
-//                    print("*************I get you\(compsings)*****************")
-//                    self.myHelloword.reNewHellowordFixed(composings: compsings, datasource: wordpage, in: index)
-//
-//                }
-//            }
-//        }
-//        else {
-//            self.myHelloword.HellowordData.removeAll()
-//            self.myWord.WordData.removeAll()
-//        }
-//
-//    }
-    
-    
-//    //从Slide页面来的modify
-//    func modifiedfromview(changecolor:Bool, changetemplate:Bool, colorid:Int?, viewid:Int? ){
-//        if(changecolor){
-//            self.myHelloword.changecolorforall()
-//        }
-//        if(changetemplate){
-//            self.myHelloword.changetemplateonthispage()
-//        }
-//    }
-    
-    //???
     
 }
 

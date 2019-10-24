@@ -40,26 +40,7 @@ class TextCell: UITableViewCell, UITextViewDelegate {
         textView.delegate = self
         createObserversOfRouletteView()
         updateWritingMode(name: lastModeName)
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: textView, action: #selector(tap(sender:)))
-//        self.addGestureRecognizer(tapGestureRecognizer)
     }
-    
-//    @objc func tap(sender: UITapGestureRecognizer) {
-//        self.isPicked = true
-//        self.textView.isUserInteractionEnabled = true
-//    }
-//
-//    func didTouched() {
-//        self.isPicked = true
-//    }
-    
-//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-//
-////        // ... otherwise return nil ; the tap will go on to the next receiver
-//        self.isPicked = true
-//////        self.setEditing(true, animated: true)
-//        return self
-//    }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         let name = Notification.Name("textViewDidBeginEditing")

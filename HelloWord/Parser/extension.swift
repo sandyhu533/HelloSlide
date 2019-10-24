@@ -91,11 +91,37 @@ extension String{
     }
 }
 
-extension UIImage{
-    var paddingsize:CGSize{
-        let size = self.size
-        let width = size.width * 0.9
-        let height = size.height * 0.9
-        return(CGSize(width: width, height: height))
+extension UIImage {
+    /**
+     *  重设图片大小
+     */
+    func reSizeImage(reSize:CGSize)-> UIImage? {
+        //UIGraphicsBeginImageContext(reSize);
+        UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale)
+        self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
+        let reSizeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return reSizeImage
     }
+    
+    /**
+     *  等比率缩放
+     */
+    func scaleImage(scaleSize:CGFloat)-> UIImage? {
+        let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
+        return reSizeImage(reSize: reSize)
+    }
+}
+
+extension UIColor{
+    open class var randomcolor:UIColor{
+        get
+        {
+            let red = CGFloat(arc4random()%256)/255.0
+            let green = CGFloat(arc4random()%256)/255.0
+            let blue = CGFloat(arc4random()%256)/255.0
+            return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        }
+    }
+    
 }

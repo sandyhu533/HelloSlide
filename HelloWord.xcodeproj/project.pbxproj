@@ -218,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				EE4E896823571718007CAAEA /* SourceFile */,
-				D105CFE7235625AE00B87888 /* Sources */,
 				2D853F2B2338B9730008F84A /* HelloWord */,
 				2D853F2A2338B9730008F84A /* Products */,
 				2E099054540240FB2EA732AF /* Pods */,
@@ -430,14 +429,6 @@
 			path = control;
 			sourceTree = "<group>";
 		};
-		D105CFE7235625AE00B87888 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				D105CFE82356265600B87888 /* 001001.png */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		D1400DA42355A7F6008BBDD0 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +442,7 @@
 		EE4E896823571718007CAAEA /* SourceFile */ = {
 			isa = PBXGroup;
 			children = (
+				D105CFE82356265600B87888 /* 001001.png */,
 				EE4E896B23571739007CAAEA /* i001001.png */,
 				EE4E89702357173A007CAAEA /* i001002.png */,
 				EE4E896E23571739007CAAEA /* i001003.png */,
@@ -825,13 +817,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WSQT6M3JKB;
+				DEVELOPMENT_TEAM = GUD3B3F383;
 				INFOPLIST_FILE = HelloWord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fb.MiaoMiaoMiao;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SandyHu.HelloWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -844,13 +837,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WSQT6M3JKB;
+				DEVELOPMENT_TEAM = GUD3B3F383;
 				INFOPLIST_FILE = HelloWord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fb.MiaoMiaoMiao;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SandyHu.HelloWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

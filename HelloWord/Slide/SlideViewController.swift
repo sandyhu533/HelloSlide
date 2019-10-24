@@ -9,11 +9,9 @@
 import UIKit
 
 protocol SlideViewDelegate {
-    func getNewPages(templateID: Int)->[Page]?
+    func getNewPages(templateID: Int, colorID: Int)->[Page]?
 }
 
-
-//class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
 class SlideViewController: UIViewController{
     
     // 显示幻灯片的view
@@ -112,6 +110,9 @@ class SlideViewController: UIViewController{
         
         // 刷新
 //        changeDesigner()
+        
+        //每1秒自我刷新一次
+//         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SlideViewController.refreshPageCollectionView), userInfo: nil, repeats: true)
 
     }
     
@@ -124,7 +125,7 @@ class SlideViewController: UIViewController{
         presentationModel?.fillData(pageViews: pageViews!)
 
         // 刷新
-        changeDesigner()
+        changeDesigner(colorId: 0)
 
     }
     
@@ -140,7 +141,7 @@ class SlideViewController: UIViewController{
     
     // TODO: view大小改变时刷新pageCollectionView以适应，刷新函数及效果暂未确定
     // 刷新pageCollectionView
-    func refreshPageCollectionView () {
+    @objc func refreshPageCollectionView () {
         
         mlog(message: "refresh pageCollectionView", infoType: .DEBUG)
 
@@ -171,7 +172,7 @@ class SlideViewController: UIViewController{
     }
     
     // 根据model中的记录更换设计师，或设计师的不同模版
-    func changeDesigner() {
+    func changeDesigner(colorId: Int) {
         
         // 获取model中记录数据
         let designerIndex = presentationModel?.selectedDesignerIndex
@@ -180,7 +181,7 @@ class SlideViewController: UIViewController{
         mlog(message: "designerIndex \(designerIndex!) templateIndex \(templateIndex!)", infoType: .DESIGNER_INFO)
         
         // model中更改设计师和模版：通过delegates重新获取presentationModel中的pages（当pages=0时模版不存在）
-        let newPages = slideViewDelegate?.getNewPages(templateID: designerIndex!)
+        let newPages = slideViewDelegate?.getNewPages(templateID: designerIndex!, colorID: colorId)
         print("~~~~~~~~~~~~designerIndex:\(designerIndex!)")
         if newPages?.count != 0{
             presentationModel?.pages = newPages!
@@ -290,6 +291,8 @@ class SlideViewController: UIViewController{
 //        self.view = self.presentationModel?.pages[0].singleSlideViews[0]
     }
     
+    var currentColorID = 0
+    
     // 点击选择设计师
     @objc func tapOnDesignerCollectionView(_ sender: UITapGestureRecognizer) {
         
@@ -300,8 +303,11 @@ class SlideViewController: UIViewController{
             
             // 判断是否是同一个设计师
             if presentationModel!.selectedDesignerIndex == indexPath.row {
-//                // 点击相同设计师，更换配色
-//
+                
+                // 点击相同设计师，更换配色
+                currentColorID = currentColorID + 1
+                changeDesigner(colorId: currentColorID)
+                
 //                // 获取当前设计师
 //                let currentDesigner = designerModel!.designerArray[presentationModel!.selectedDesignerIndex]
 //
@@ -312,17 +318,7 @@ class SlideViewController: UIViewController{
 //                designerCollectionView.reloadItems(at: [IndexPath(row: presentationModel!.selectedDesignerIndex, section: 0)])
 //
 //                // 更换设计师
-//                changeDesigner()
-                
-                
-                 
-                 
-                 // TODO: 测试 导出PPT到本地
-//                 exportPPT()
-                 
-                 
-                 
-                 
+//                changeDesigner(colorId: 0)
                 
             }
             else {
@@ -342,7 +338,7 @@ class SlideViewController: UIViewController{
                 presentationModel!.selectedDesignerIndex = indexPath.row
                 
                 // 更换设计师
-                changeDesigner()
+                changeDesigner(colorId: 0)
             }
         }
         

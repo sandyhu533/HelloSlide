@@ -19,6 +19,7 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
     var models: [NSAttributedString] = []
     var ocr: Bool?
     var isIntialized = false
+    var cellConsistentDelegate: CellConsistentDelegate?
     
     var cgView: StrokeCGView!
     var pencilStrokeRecognizer: StrokeGestureRecognizer!
@@ -49,11 +50,15 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
             models.append(NSAttributedString())
         }
         
-        //刷新Models内容
-        WordModelManager.shared.wordModels = models
-        
         //将Models的代理设置为自己
-        WordModelManager.wordModelManagerDelegete = self
+        if WordModelManager.shared.lock0 == 0 {
+            WordModelManager.wordModelManagerDelegete0 = self
+            WordModelManager.shared.outlineViewController0 = self
+        } else {
+            WordModelManager.wordModelManagerDelegete1 = self
+            WordModelManager.shared.outlineViewController1 = self
+        }
+        WordModelManager.shared.lock0 = 1
         
         selectedCellIndex = 0
         
@@ -311,18 +316,31 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
     func renewAll(){
         
         //刷新tableView的内容
-        tableView.reloadData()
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
+        let cell = tableView.cellForRow(at: IndexPath(row: selectedCellIndex!, section: 0))! as! TextCell
+        let textView = cell.textView
+        textView!.attributedText = models[selectedCellIndex!]
         
         //刷新Models内容
         WordModelManager.shared.wordModels = models
         
-        //TODO:重新生成helloWord
-        parseNSAttributedString(tempateID: 0, colorID: 0)
+        //取出slideView
+        let theSegue = WordModelManager.shared.slideViewController
         
-        //赋值给slideView
-        theSegue?.pageViews = self.parser.myHelloword.HellowordData
+        //重新生成当页helloWord
+        if theSegue?.presentationModel != nil {
+            parsePageNSAttributedString(tempateID: theSegue!.presentationModel!.selectedDesignerIndex, colorID: theSegue!.currentColorID, pageID: selectedCellIndex!)
+        }
+        
+        print("^^^^^^^^^^^^^^^^",theSegue as Any)
+        
+        //将当页内容赋值给slideView
+        if selectedCellIndex != nil, theSegue != nil {
+            if selectedCellIndex! >= theSegue!.presentationModel!.pages.count {
+                theSegue?.presentationModel?.pages.append(self.parser.myHelloword.HellowordData![selectedCellIndex!])
+            } else {
+                theSegue?.presentationModel?.pages[selectedCellIndex!] = self.parser.myHelloword.HellowordData![selectedCellIndex!]
+            }
+        }
         
         //刷新slideView
         theSegue?.refreshPageCollectionView()
@@ -346,98 +364,90 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
     //解析NSAttributedString并传给parser
     func parseNSAttributedString(tempateID: Int, colorID: Int){
         
-        for (index,attributedText) in models.enumerated(){
+        for index in 0..<models.count {
+            parsePageNSAttributedString(tempateID: tempateID, colorID: colorID, pageID: index)
+        }
+        
+    }
+    
+    //解析当页NSAttributedString并传给parser
+    func parsePageNSAttributedString(tempateID: Int, colorID: Int, pageID: Int){
+        
+        let attributedText = models[pageID];
+        
+        //提取各数组中的文字并用换行符拆分
+        let string = attributedText.string
+        let subString = string.split(separator: "\n", omittingEmptySubsequences: true)
+        
+        //存入传输数组
+        var word = [WordFromOutline]()
+        var nearestFirstTitle : Int?
+        var nearestSecondTitle : Int?
+        
+        //以换行符分割元素，判断类型并创建传输数组
+        for (index,aSubString) in subString.enumerated() {
             
-            //提取各数组中的文字并用换行符拆分
-            let string = attributedText.string
-            let subString = string.split(separator: "\n", omittingEmptySubsequences: true)
+            //取出attributesDictionary
+            let start = aSubString.startIndex.utf16Offset(in: "Swift 4")
+            let end = aSubString.endIndex.utf16Offset(in: "Swift 4")
+            let attributesDictionary = attributedText.attributedSubstring(from: NSRange(location: start, length: end-start)).attributes(at: 0, effectiveRange: nil)
+            let font = attributesDictionary[.font] as? UIFont
+            var kind : kind
+            var parentID : Int?
             
-            //存入传输数组
-            var word = [WordFromOutline]()
-            var nearestFirstTitle : Int?
-            var nearestSecondTitle : Int?
-            
-            print("~~~~~~~~~~~``",string)
-            
-            //以换行符分割元素，判断类型并创建传输数组
-            for (index,aSubString) in subString.enumerated() {
-                
-                print("~~~~~~~~~~`", index, aSubString.description)
-                
-                //取出attributesDictionary
-                let start = aSubString.startIndex.utf16Offset(in: "Swift 4")
-                let end = aSubString.endIndex.utf16Offset(in: "Swift 4")
-                let attributesDictionary = attributedText.attributedSubstring(from: NSRange(location: start, length: end-start)).attributes(at: 0, effectiveRange: nil)
-                let font = attributesDictionary[.font] as? UIFont
-                var kind : kind
-                var parentID : Int?
-                
-                //根据字号判断一二三级
-                switch font?.pointSize {
-                case UIFont.preferredFont(forTextStyle: .largeTitle).pointSize:
-                    kind = .firsttitle
-                    nearestFirstTitle = index
-                    parentID = nil
-                case UIFont.preferredFont(forTextStyle: .title2).pointSize:
-                    kind = .secondtitle
-                    nearestSecondTitle = index
+            //根据字号判断一二三级
+            switch font?.pointSize {
+            case UIFont.preferredFont(forTextStyle: .largeTitle).pointSize:
+                kind = .firsttitle
+                nearestFirstTitle = index
+                parentID = nil
+            case UIFont.preferredFont(forTextStyle: .title2).pointSize:
+                kind = .secondtitle
+                nearestSecondTitle = index
+                parentID = nearestFirstTitle
+            case UIFont.preferredFont(forTextStyle: .body).pointSize:
+                kind = .thirdtitle
+                //如果三级标题前只有一级标题，则父节点为该一级标题
+                if nearestSecondTitle == nil || ((nearestSecondTitle != nil) && (nearestFirstTitle != nil) && (nearestSecondTitle! < nearestFirstTitle!)) {
                     parentID = nearestFirstTitle
-                case UIFont.preferredFont(forTextStyle: .body).pointSize:
-                    kind = .thirdtitle
-                    //如果三级标题前只有一级标题，则父节点为该一级标题
-                    if nearestSecondTitle == nil || ((nearestSecondTitle != nil) && (nearestFirstTitle != nil) && (nearestSecondTitle! < nearestFirstTitle!)) {
-                        parentID = nearestFirstTitle
-                    }else{
-                        parentID = nearestSecondTitle
-                    }
-                default:
-                    kind = .thirdtitle
+                }else{
                     parentID = nearestSecondTitle
                 }
-                
-                //如果文字中含有图片，则覆盖之前的处理结果
-                attributedText.enumerateAttributes(in: NSRange(location: start, length: end-start), options: [], using: { (data, range, _) in
-                    //找出富文本中的附件
-                    if let attachment = data[.attachment] as? NSTextAttachment {
-                        //取出附件中的图片
-                        let image = (attachment.image)!
-                        kind = .image
-                        parentID = nil
-                        word.append(WordFromOutline(id: index, type: kind, content: image, parentid: parentID))
-                    }else{
-                        word.append(WordFromOutline(id: index, type: kind, content: aSubString.description, parentid: parentID))
-                    }
-                })
-                
+            default:
+                kind = .thirdtitle
+                parentID = nearestSecondTitle
             }
-    
-            //若cell非空，则parse
-            if word.count > 0 {
-                
-                print("~~~~~~~~~缩减前~~~~~~~~~`")
-                for aWord in word {
-                    print(aWord.content)
-                    print(aWord.id)
+            
+            //如果文字中含有图片，则覆盖之前的处理结果
+            attributedText.enumerateAttributes(in: NSRange(location: start, length: end-start), options: [], using: { (data, range, _) in
+                //找出富文本中的附件
+                if let attachment = data[.attachment] as? NSTextAttachment {
+                    //取出附件中的图片
+                    let image = (attachment.image)!
+                    kind = .image
+                    parentID = nil
+                    word.append(WordFromOutline(id: index, type: kind, content: image, parentid: parentID))
+                }else{
+                    word.append(WordFromOutline(id: index, type: kind, content: aSubString.description, parentid: parentID))
                 }
-                
-                var lastWord : WordFromOutline?
-                lastWord = nil
-                
-                //除去因为中英夹杂而多生成的节点
-                for index in 0...word.count {
-                    let tuple = removeUselessElement(index: index, word: word, lastWord: lastWord)
-                    word = tuple.1
-                    lastWord = tuple.0
-                }
-                
-                print("~~~~~~~~~缩减后~~~~~~~~~`")
-                for aWord in word {
-                    print(aWord.content)
-                    print(aWord.id)
-                }
-                
-                self.parser.modifiedFromWord(id: index, information: word, templateid: tempateID, colorid: colorID)
+            })
+            
+        }
+        
+        //若cell非空，则parse
+        if word.count > 0 {
+            
+            var lastWord : WordFromOutline?
+            lastWord = nil
+            
+            //除去因为中英夹杂而多生成的节点
+            for index in 0...word.count {
+                let tuple = removeUselessElement(index: index, word: word, lastWord: lastWord)
+                word = tuple.1
+                lastWord = tuple.0
             }
+            
+            self.parser.modifiedFromWord(id: pageID, information: word, templateid: tempateID, colorid: colorID)
         }
         
     }
@@ -465,15 +475,14 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
         
         return (newLastWord,newWord)
     }
-    
-    var theSegue: SlideViewController?
-    
+        
     //将parser的结果传给slideViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        theSegue = (segue.destination as! SlideViewController)
-        theSegue!.pageViews = self.parser.myHelloword.HellowordData
-        theSegue!.slideViewDelegate = self
+        let theSegue = (segue.destination as! SlideViewController)
+        WordModelManager.shared.slideViewController = theSegue
+        theSegue.pageViews = self.parser.myHelloword.HellowordData
+        theSegue.slideViewDelegate = self
         
     }
     
@@ -766,13 +775,13 @@ extension OutlineViewController:  UIImagePickerControllerDelegate, UINavigationC
                 selectedCellIndex! += 1
             }
             
-            print("~~~~~~~~~~~~~~~~~`~~~~~~~~~~~`")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print(models)
             for (index,model) in models.enumerated() {
                 print("第\(index)个page")
                 print(model)
             }
-            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~`")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         }
         
         //刷新Models内容
@@ -862,16 +871,16 @@ extension OutlineViewController:  UIImagePickerControllerDelegate, UINavigationC
         }
         return key
     }
+    
 }
 
 extension OutlineViewController : SlideViewDelegate {
     
-    func getNewPages(templateID: Int) -> [Page]? {
+    func getNewPages(templateID: Int, colorID: Int) -> [Page]? {
         
         //解析用户输入，更换模版
-        parseNSAttributedString(tempateID: templateID, colorID: 1)
+        parseNSAttributedString(tempateID: templateID, colorID: colorID)
         
-        print("!!!!!!!!!!!!!!")
         print(self.parser.myHelloword.HellowordData?.count as Any)
         print(self.parser.myWord.WordData.count)
         
@@ -881,8 +890,24 @@ extension OutlineViewController : SlideViewDelegate {
 }
 
 extension OutlineViewController : WordModelManagerDelegete {
-    func setModel(globalModel: [NSAttributedString]) {
-        self.models = globalModel
-        self.tableView.reloadData()
+    
+    func setSelectedIndex(globalSelectedIndex: Int?) {
+        self.selectedCellIndex = globalSelectedIndex
     }
+    
+    func setModel(globalModel: [NSAttributedString]) {
+        
+        //设置model的内容
+        self.models = globalModel
+//        self.tableView.reloadData()
+        
+        //刷新tableView的内容
+        if selectedCellIndex != nil, tableView.cellForRow(at: IndexPath(row: selectedCellIndex!, section: 0)) != nil {
+            let cell = tableView.cellForRow(at: IndexPath(row: selectedCellIndex!, section: 0))! as! TextCell
+            let textView = cell.textView
+            textView!.attributedText = models[selectedCellIndex!]
+        }
+        
+    }
+    
 }

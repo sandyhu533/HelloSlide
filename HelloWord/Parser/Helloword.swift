@@ -15,6 +15,9 @@ class Helloword{
     
     var initframe = CGRect(origin: CGPoint.zero, size: CGSize.zero)
     
+    var mycolors:[UIColor] = [UIColor.asparagus(),UIColor.blush(),UIColor.burntSienna(),UIColor.sepia(),UIColor.eggplant(),UIColor.fern(),UIColor.maroon(),UIColor.denim()]
+    var mycolorlength = 8
+    
     init(frame:CGRect){
         HellowordData = [Page]()
         self.initframe = frame
@@ -30,10 +33,10 @@ class Helloword{
     
     func reNewHellowordFluid(id pageid:Int,datasource data:PageData,colorid:Int){
         //获得模版、新建一个slide
-    
+        let realid = colorid % self.mycolorlength
         self.deleteoldhelloword(pageids: pageid)
         let templatenow = readFromFluidTemplate()
-        let thispage = PageView(initframe: self.initframe, color: templatenow.backcolor.hexcolor)
+        let thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
         
         //判断是否有图片
         let images = data.getImages()
@@ -58,14 +61,17 @@ class Helloword{
             layoutImages(images: images, frame: imageframe, in: thispage)
         }
         
+        modifyTotheSameSize(mypage: thispage)
         //刷新数组，换成我们新建的slide
+        thispage.renewPage()
         let image = UIImage(fromView: thispage)
         let imageview = UIImageView(image: image)
         self.HellowordData![pageid].addSlide(imageview)
         //self.HellowordData[pageid].OriginalSlideViews[0] = thispage
+       
     }
     
-    func reNewHellowordFixed(composings mycomposing:[Composing],datasource data:PageData,in pageid:Int){
+    func reNewHellowordFixed(composings mycomposing:[Composing],datasource data:PageData,in pageid:Int,colorid:Int){
         self.deleteoldhelloword(pageids: pageid)
         if(mycomposing.count != 0){
         for compose in mycomposing{
@@ -81,9 +87,9 @@ class Helloword{
             let bgimage = UIImage(data: compose.bgpic!)
             thispage.drawnewbg(pic: bgimage!)
             thispage.drawImages(positions: compose.imageposition, sourceImages: data.getImages())
-            thispage.drawText(positions: compose.firstposition, texts: data.getFirstTitles(), font: compose.font, color: mycolors[0])
-            thispage.drawText(positions: compose.secondposition, texts: data.getSecondTitles(), font: compose.font, color:mycolors[1] )
-            thispage.drawText(positions: compose.thirdposition, texts: data.getThirdTitles(), font: compose.font, color:mycolors[2])
+            let size1 = thispage.drawText(positions: compose.firstposition, texts: data.getFirstTitles(), font: compose.font, color: mycolors[0], lastsize: 100000)
+            let size2 = thispage.drawText(positions: compose.secondposition, texts: data.getSecondTitles(), font: compose.font, color:mycolors[1], lastsize: size1)
+            _ = thispage.drawText(positions: compose.thirdposition, texts: data.getThirdTitles(), font: compose.font, color:mycolors[2],lastsize: size2)
             
             thispage.renewPage()
 
@@ -95,7 +101,7 @@ class Helloword{
         }
         }
         else{
-            reNewHellowordFluid(id: pageid, datasource: data, colorid: 0)
+            reNewHellowordFluid(id: pageid, datasource: data, colorid: colorid)
         }
     }
     
@@ -104,6 +110,8 @@ class Helloword{
         
         if HellowordData != nil{
             self.HellowordData![pageid].singleSlideViews.removeAll()
+            self.HellowordData![pageid].currentSlideIndex = 0
+            self.HellowordData![pageid].lastSlideIndex = 0
         }
         
     }
@@ -115,6 +123,7 @@ class Helloword{
         if firstnode.childnum==0{
             let textframe1=createzerofirstkuang(rect: thisframe,type: firstnode.type,tpl: templatenow)
             let view1=addnewcontentandview(inthisframe: textframe1, templatenow,data:firstnode)
+            view1.tag = 10000
             thispage.PageCellElments.append(view1)
         }
         else{
@@ -122,6 +131,7 @@ class Helloword{
             let frame3=createsomesubviews(type: .secondtitle, templatenow: templatenow, childnum: firstnode.childnum, inwitchframe:frame2[1])
             let textframe2=createkuang(rect: frame2[0],type: firstnode.type,tpl: templatenow)
             let view2=addnewcontentandview(inthisframe: textframe2, templatenow, data: firstnode)
+            view2.tag = 10000
             thispage.PageCellElments.append(view2)
 
             let contents=data.getallchild(parentid: firstnode.id)
@@ -130,6 +140,7 @@ class Helloword{
                 if contents[i].childnum==0{
                     let frame11=createzerofirstkuang(rect: x, type: .secondtitle, tpl: templatenow)
                     let view11=addnewcontentandview(inthisframe: frame11, templatenow, data: contents[i])
+                    view11.tag = 20000
                     thispage.PageCellElments.append(view11)
 
                 }
@@ -137,12 +148,14 @@ class Helloword{
                     let frame12=createstackview(rect: x, type: .secondtitle, tpl: templatenow)
                     let textframe3=createkuang(rect: frame12[0], type: .secondtitle, tpl: templatenow)
                     let view12=addnewcontentandview(inthisframe: textframe3, templatenow, data: contents[i])
+                    view12.tag = 20000
                     thispage.PageCellElments.append(view12)
                     let contentss=data.getallchild(parentid: contents[i].id)
                     
                     if contentss.count==1{
                         let textframe4=createkuang(rect: frame12[1], type: .thirdtitle, tpl: templatenow)
                         let view112=addnewcontentandview(inthisframe: textframe4, templatenow, data: contentss[0])
+                        view112.tag = 30000
                         thispage.PageCellElments.append(view112)
                     }
                     else{
@@ -153,6 +166,7 @@ class Helloword{
                             let textframe5=createkuang(rect: z, type: .thirdtitle, tpl: templatenow)
 
                             let view113=addnewcontentandview(inthisframe: textframe5, templatenow, data: contentss[j])
+                            view113.tag = 30000
                             thispage.PageCellElments.append(view113)
 
                             j+=1
@@ -169,9 +183,10 @@ class Helloword{
     func layoutImages(images myimages:[PageNode],frame myframe:CGRect,in page:PageView){
         if myimages.count==1{
             let image = (myimages[0].content as! UIImage)
-            let nowframe = getProperSize(originalPic: image.size, ProperOutline: myframe)
-            let newview = UIImageView(image: (image))
-            newview.frame = nowframe
+            let (nowimage,origin) = getProperSize(originalPic: image, ProperOutline: myframe)
+            let newview = UIImageView(image: (nowimage))
+            newview.frame.origin = origin
+            print("********Image has been appended!**********\(newview.frame)")
             page.PageCellElments.append(newview)
         }
         else{
@@ -179,10 +194,12 @@ class Helloword{
                 let width = myframe.width/CGFloat(myimages.count)
                 var i = 0
                 for x in myimages{
-                    let frame = CGRect(x: myframe.minX+CGFloat(i)*width, y: myframe.minY, width: width, height: myframe.height)
-                    let image = (x.content as! UIImage).apply(padding: width*0.048)
-                    let newview = UIImageView(image: image)
-                    newview.frame = frame
+                    let myframe = CGRect(x: myframe.minX+CGFloat(i)*width, y: myframe.minY, width: width, height: myframe.height)
+                    let image = (x.content as! UIImage)
+                    let (nowimage,origin) = getProperSize(originalPic: image, ProperOutline: myframe)
+                    let newview = UIImageView(image: (nowimage))
+                    newview.frame.origin = origin
+                    print("********Image has been appended!**********\(newview.frame)")
                     page.PageCellElments.append(newview)
                     i=i+1
                 }
@@ -191,10 +208,12 @@ class Helloword{
                 let height = myframe.height/CGFloat(myimages.count)
                 var j = 0
                 for x in myimages{
-                    let frame = CGRect(x: myframe.minX, y: myframe.minY+height*CGFloat(j), width: height, height: myframe.width)
-                    let image = (x.content as! UIImage).apply(padding: height*0.048)
-                    let newview = UIImageView(image:image )
-                    newview.frame = frame
+                    let myframe = CGRect(x: myframe.minX, y: myframe.minY+height*CGFloat(j), width: height, height: myframe.width)
+                    let image = (x.content as! UIImage)
+                    let (nowimage,origin) = getProperSize(originalPic: image, ProperOutline: myframe)
+                    let newview = UIImageView(image: (nowimage))
+                    newview.frame.origin = origin
+                    print("********Image has been appended!**********\(newview.frame)")
                     page.PageCellElments.append(newview)
                     j=j+1
                 }
@@ -287,40 +306,62 @@ class PageView:UIView {
         for i in 0..<sourceImages.count{
             let position = positions[i]
             let image = sourceImages[i].content as! UIImage
-            let temp = CGRect(x: position.x, y: position.y, width: position.width, height: position.height)
-            let framenow = getProperSize(originalPic:image.size , ProperOutline: temp)
+            let temp = CGRect(x: position.x * self.initframe.width+self.initframe.minX, y: position.y * self.initframe.height+self.initframe.minY, width: position.width * self.initframe.width, height: position.height * self.initframe.height)
+            let (imagenow,origin) = getProperSize(originalPic:image, ProperOutline: temp)
 //            newimageview.frame = CGRect(x: position.x * self.initframe.width+self.initframe.minX, y: position.y * self.initframe.height+self.initframe.minY, width: position.width * self.initframe.width, height: position.height * self.initframe.height)
-            let newimageview = UIImageView(image: image)
-            newimageview.frame = framenow
+            let newimageview = UIImageView(image: imagenow)
+            newimageview.frame.origin = origin
             self.PageCellElments.append(newimageview)
         }
         }
     }
 
-    func drawText(positions:String?,texts:[PageNode],font:String?,color:String?){
+    func drawText(positions:String?,texts:[PageNode],font:String?,color:String?,lastsize:CGFloat)->CGFloat{
+        var mysize:CGFloat = 100000
         if let positions = positions{
             if let font = font{
                 if let color = color{
         let positionarray = positions.get12array
+                    
+                    var tempviews = [UITextView]()
         for i in 0..<texts.count{
             let myposition = positionarray[i]
             let text = texts[i]
             let width = self.initframe.width * myposition.width
             let height = self.initframe.height * myposition.height
-            let attritext = createAttributedString(text: text.content as! String, type: text.type, font: font, width:width , height: height, color: color.hexcolor, fontmin: 20, fontmax: 100)
+            let (attris,size) = createAttributedStringandSize(text: text.content as! String, type: text.type, font: font, width:width , height: height, color: color.hexcolor, fontmin: 20, fontmax: 100)
+            if(size < mysize){
+                mysize = size
+            }
             let newtextview = UITextView()
             newtextview.frame = CGRect(x: myposition.x * self.initframe.width+self.initframe.minX, y: myposition.y * self.initframe.height+self.initframe.minY, width:width, height: height)
-        
+            
             // TODO: 背景色
             newtextview.backgroundColor = UIColor.clear
             
-            newtextview.attributedText  = attritext
-            self.PageCellElments.append(newtextview)
+            newtextview.attributedText  = NSAttributedString(string: text.content as! String, attributes: attris as? [NSAttributedString.Key : Any])
+            tempviews.append(newtextview)
+                    }
+                    //var j = 0
+                    if(mysize>lastsize){
+                        mysize = lastsize - 3
+                    }
+                    for xnow in tempviews{
+                        //let xnow = x as! UITextView
+                        var dictionary = xnow.attributedText.attributes(at: 0, effectiveRange: nil)
+                        let mystring = xnow.attributedText.string
+                        let font = dictionary[.font] as! UIFont
+                        let fontname = font.fontName
+                        let newfont = UIFont(name: fontname, size: mysize)
+                        dictionary[.font] = newfont
+                        xnow.attributedText = NSAttributedString(string: mystring, attributes: dictionary)
+                        self.PageCellElments.append(xnow)
+                        
                     }
         }
             }
         }
-        
+        return mysize
     }
     func drawnewbg(pic:UIImage){
         self.bgview = UIImageView(image: pic)
@@ -399,7 +440,7 @@ func addnewcontentandview(inthisframe myframe:CGRect,_ templatenow:FluidTemplate
 }
 
 func readFromFluidTemplate()->FluidTemplate{
-    return FluidTemplate(backurl: "www.baidu.com", backcolor: "0x000000", fontcolor: "0xffffff", font: "TamilSangamMN", strong: "I",firstlayout: layoutway.layoutvertical, firstsecond: 0.300, firstsecondtype: composingtype.vertical, secondlayout: layoutway.layoutvertical, secondthird: 0.350, secondthirdtype: composingtype.vertical, thirdlayout: layoutway.layoutvertical, equallayout: true, myfontsize: fontsizemode.tosmallest, firstkuang: "250200500800", secondkuang:"100200800800",thirdkuang: "250100500800",zerofirstkuang: "300400400200",zerosecondkuang: "100300800300",zerothirdkuang:"100350800200",firstadmirefontmax: "100.0",firstadmirefontmin: "80.0", secondadmirefontmax: "80.0", secondadmirefontmin: "60.0", thirdadmirefontmax: "60.0", thirdadmirefontmin: "40.0")
+    return FluidTemplate(backurl: "www.baidu.com", backcolor: "0x000000", fontcolor: "0xffffff", font: "TamilSangamMN", strong: "I",firstlayout: layoutway.layoutvertical, firstsecond: 0.300, firstsecondtype: composingtype.vertical, secondlayout: layoutway.layoutvertical, secondthird: 0.350, secondthirdtype: composingtype.vertical, thirdlayout: layoutway.layoutvertical, equallayout: true, myfontsize: fontsizemode.tosmallest, firstkuang: "100300800700", secondkuang:"100100800800",thirdkuang: "100100800800",zerofirstkuang: "100100800800",zerosecondkuang: "100100800800",zerothirdkuang:"100100800800",firstadmirefontmax: "100.0",firstadmirefontmin: "80.0", secondadmirefontmax: "80.0", secondadmirefontmin: "60.0", thirdadmirefontmax: "60.0", thirdadmirefontmin: "40.0")
 }
 
 func StringtoFrame(string str:String,thisview view:CGRect)->CGRect{
@@ -421,7 +462,8 @@ func StringtoFrame(string str:String,thisview view:CGRect)->CGRect{
     
 }
 
-func createAttributedString(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat)->NSAttributedString{
+func createAttributedString(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat)->NSAttributedString {
+    
     var fontnow=max
     var ParagraphStyle=NSMutableParagraphStyle()
     var linespace:CGFloat{
@@ -455,7 +497,7 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
         padding = 30
     }else{
         if(mywidth>myheight){
-            padding = 30
+            padding = 45
         }else{
             padding = 50
         }
@@ -583,22 +625,177 @@ func createsomesubviews(type:kind,templatenow:FluidTemplate,childnum nums:Int,in
 }
 
 
-func getProperSize(originalPic pic:CGSize,ProperOutline outline:CGRect)->CGRect{
-    let pi1 = (pic.height)/(pic.width)
+func getProperSize(originalPic picture:UIImage?,ProperOutline outline:CGRect)->(UIImage?,CGPoint){
+    var res:UIImage?
+    var point:CGPoint = CGPoint.zero
+    if let pic = picture{
+    let pi1 = (pic.size.height)/(pic.size.width)
     let pi2 = (outline.height)/(outline.width)
-    var res = CGRect()
+
     if(pi1>pi2){
         let nowheight = outline.height
         let nowwidth = nowheight/pi1
+        let rate = outline.height/pic.size.height
         let dx = (outline.width-nowwidth)/2
-        res = CGRect(x: outline.minX+dx, y: outline.minY, width: nowwidth, height: nowheight)
+        point = CGPoint(x: outline.minX+dx, y: outline.minY)
+        res = pic.scaleImage(scaleSize: rate)
     }
     else{
         let nowwidth = outline.width
         let nowheight = nowwidth*pi1
+        let rate = outline.width/pic.size.width
         let dy = (outline.height-nowheight)/2
-        res = CGRect(x: outline.minX, y: outline.minY+dy, width: nowwidth, height: nowheight)
+        point = CGPoint(x: outline.minX, y: outline.minY+dy)
+        res = pic.scaleImage(scaleSize: rate)
     }
-    return res
+    print("~~~~~~~~~Now the Res is\(res as Any)~~~~~~~~~~~~~~~~~")
+    }
+    return (res,point)
+}
+
+
+func modifyTotheSameSize(mypage thispage:PageView){
+    var firstsize:CGFloat = 10000
+    var secondsize:CGFloat = 10000
+    var thirdsize:CGFloat = 10000
+    for x in thispage.PageCellElments{
+        if(x.tag == 10000){
+            let xnow = x as! UITextView
+            let dictionary = xnow.attributedText.attributes(at: 0, effectiveRange: nil)
+            let font = dictionary[.font] as! UIFont
+            if(font.pointSize<firstsize){
+                firstsize = font.pointSize
+            }
+        }
+        if(x.tag == 20000){
+            let xnow = x as! UITextView
+            let dictionary = xnow.attributedText.attributes(at: 0, effectiveRange: nil)
+            let font = dictionary[.font] as! UIFont
+            if(font.pointSize<secondsize){
+                secondsize = font.pointSize
+            }
+        }
+        if(x.tag == 30000){
+            let xnow = x as! UITextView
+            let dictionary = xnow.attributedText.attributes(at: 0, effectiveRange: nil)
+            let font = dictionary[.font] as! UIFont
+            if(font.pointSize<thirdsize){
+                thirdsize = font.pointSize
+            }
+        }
+    }
+    if(secondsize>firstsize){
+        secondsize = firstsize-3
+    }
+    if(thirdsize>secondsize){
+        thirdsize = secondsize-3
+    }
+    
+    var i = 0
+    for x in thispage.PageCellElments{
+        if(x.tag == 10000){
+            let xnow = x as! UITextView
+            var dictionary = xnow.attributedText.attributes(at: 0, effectiveRange: nil)
+            let mystring = xnow.attributedText.string
+            let font = dictionary[.font] as! UIFont
+            let fontname = font.fontName
+            let newfont = UIFont(name: fontname, size: firstsize)
+            dictionary[.font] = newfont
+            xnow.attributedText = NSAttributedString(string: mystring, attributes: dictionary)
+            thispage.PageCellElments[i] = xnow
+        }
+        if(x.tag == 20000){
+            let xnow = x as! UITextView
+            var dictionary = xnow.attributedText.attributes(at: 0, effectiveRange: nil)
+            let mystring = xnow.attributedText.string
+            let font = dictionary[.font] as! UIFont
+            let fontname = font.fontName
+            let newfont = UIFont(name: fontname, size: secondsize)
+            dictionary[.font] = newfont
+            xnow.attributedText = NSAttributedString(string: mystring, attributes: dictionary)
+            thispage.PageCellElments[i] = xnow
+        }
+        if(x.tag == 30000){
+            let xnow = x as! UITextView
+            var dictionary = xnow.attributedText.attributes(at: 0, effectiveRange: nil)
+            let mystring = xnow.attributedText.string
+            let font = dictionary[.font] as! UIFont
+            let fontname = font.fontName
+            let newfont = UIFont(name: fontname, size: thirdsize)
+            dictionary[.font] = newfont
+            xnow.attributedText = NSAttributedString(string: mystring, attributes: dictionary)
+            thispage.PageCellElments[i] = xnow
+        }
+        i=i+1
+    }
+}
+
+func createAttributedStringandSize(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat)->(NSDictionary?,CGFloat){
+    var fontnow=max
+    var ParagraphStyle=NSMutableParagraphStyle()
+    var linespace:CGFloat{
+        return fontnow/32
+    }
+    var wordspace:CGFloat{
+        return fontnow/20
+        
+    }
+    
+    ParagraphStyle.lineSpacing=linespace
+    
+    switch contenttype {
+    case .firsttitle:
+        ParagraphStyle.alignment = .center
+    case .secondtitle:
+        ParagraphStyle.alignment = .left
+    case .thirdtitle:
+        ParagraphStyle.alignment = .left
+        
+    default:
+        ParagraphStyle.alignment = .left
+    }
+    
+    var fonts=UIFont(name: myfont, size: fontnow)!
+    var mysizeheight:CGFloat = 0
+    let mysizewidth:CGFloat = 0
+    // let paddding = CGFloat(50)
+    var padding = 0
+    if(mytext.count < 100){
+        padding = 30
+    }else{
+        if(mywidth>myheight){
+            padding = 30
+        }else{
+            padding = 50
+        }
+    }
+    let wantheight = myheight - CGFloat(padding)
+    print("*******Width*********\(mywidth)")
+    print("*******Height*********\(wantheight)")
+    
+    while true{
+        mysizeheight=getTextHeight(textStr: mytext, font: fonts, width: mywidth, linespace: linespace, wordspace:wordspace )
+        //        mysizewidth = getTextWidth(textStr: mytext, font: fonts, height: myheight, linespace: linespace, wordspace:wordspace )
+        //        print("mysizeheight\(mysizeheight)")
+        //        print("mysizewidth\(mysizewidth)")
+        //
+        if mysizeheight<=wantheight{
+            if(mysizewidth<=mywidth){
+                break
+            }
+        }
+        else{
+            fontnow-=1
+        }
+        fonts=UIFont(name: myfont, size: fontnow)!
+    }
+    //    if fontnow<min{
+    //        print("Too many words!")
+    //    }
+    //print("fontnow\(fontnow)")
+    //print("computingheight\(mysizeheight)")
+    //print("originalsize\(myheight)")
+    //print("fontnow\(fontnow)")
+    return([NSAttributedString.Key.font:fonts,NSAttributedString.Key.foregroundColor:mycolor,NSAttributedString.Key.paragraphStyle:ParagraphStyle],fontnow) //这里再修改一点点
 }
 

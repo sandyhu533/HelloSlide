@@ -32,7 +32,24 @@ struct Word{
     mutating func reNewWord(id pageid:Int,info information:[WordFromOutline]){
         removeallelements(id: pageid)
         for x in information{
+            print("content",x.content,"id",x.id,"parentid",x.parentid as Any,"type",x.type)
+            switch x.type {
+            case .secondtitle:
+                if x.parentid == nil {
+                    x.type = .firsttitle
+                }
+            case .thirdtitle:
+                if x.parentid == nil {
+                    x.type = .firsttitle
+                } else {
+                    if information[x.parentid!].type == .firsttitle{
+                        x.type = .secondtitle
+                    }
+                }
+            default: break
+            }
             self.WordData[pageid].createnewnode(id: x.id, type: x.type, content: x.content, parentid:x.parentid)
+            print("content",x.content,"id",x.id,"parentid",x.parentid as Any,"type",x.type)
         }
     }
     
