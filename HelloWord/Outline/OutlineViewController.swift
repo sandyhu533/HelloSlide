@@ -43,7 +43,23 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        deleteobject(composingid: 005017)
+//
+//        let i005204 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i005204", ofType: "png")!)
+//        let i005104 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i005104", ofType: "png")!)
+//
+//        addComposingToDatabase(1100, composingid: 005018, bgpic: i005204!, firstposition: "314375337142", secondposition: "275548415090", thirdposition: "", imageposition: "", font:"Bradley Hand",color:"0xCF96210x6464640xCF9621")
+//        addComposingToDatabase(1100, composingid: 005017, bgpic: i005104!, firstposition: "314375337142", secondposition: "275548415090", thirdposition: "", imageposition: "", font:"Bradley Hand",color:"0x3452990x6464640x345299")
+//        deleteobject(composingid: 003052)
+//        let i103003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i103003", ofType: "png")!)
+//        addComposingToDatabase(1100, composingid: 003052, bgpic: i103003!, firstposition: "236259583185", secondposition: "097537833203", thirdposition: "", imageposition: "", font:"Hiragino Maru Gothic ProN",color:"0x4444430x4444430x444443")
+//        deleteobject(composingid: 003051)
+//        let i003006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i003006", ofType: "png")!)
+//        addComposingToDatabase(1100, composingid: 003051, bgpic: i003006!, firstposition: "236259583185", secondposition: "097537833203", thirdposition: "", imageposition: "", font:"Hiragino Maru Gothic ProN",color:"0x4444430x4444430x444443")
+//        deleteobject(composingid: 003002)
+//        let i103003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i103001", ofType: "png")!)
+//        addComposingToDatabase(1100, composingid: 003052, bgpic: i103003!, firstposition: "236259583185", secondposition: "097537833203", thirdposition: "", imageposition: "", font:"Hiragino Maru Gothic ProN",color:"0xffffff0x4444430x444443")
+
         loadData()
 
         if models.count == 0{
@@ -240,33 +256,81 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
     //手绘板
     func setupDrawingBoard(){
         
-        let screenBounds = UIScreen.main.bounds
-        let maxScreenDimension = max(screenBounds.width, screenBounds.height)
+    //手绘板
+     
+     let screenBounds = UIScreen.main.bounds
+     let maxScreenDimension = max(screenBounds.width, screenBounds.height)
+     
+     let cgView = StrokeCGView(frame: CGRect(origin: .zero, size: CGSize(width: maxScreenDimension, height: maxScreenDimension)))
+     cgView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+     self.cgView = cgView
+     
+     let bgImage = UIImage(named: "SingleLineBg")
+     let bgImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: maxScreenDimension, height: maxScreenDimension)))
+     bgImageView.image = bgImage
+     
+     //canvasContainerView指白纸
+     let canvasContainerView = CanvasContainerView(canvasSize: cgView.frame.size, imageView: bgImageView)
+     canvasContainerView.documentView = cgView
+     self.canvasContainerView = canvasContainerView
+     // canvasContainerView.addSubview(bgImageView)
+     
+     //scrollView为屏幕下方的可缩放的view
+     scrollView.contentSize = canvasContainerView.frame.size
+     scrollView.contentOffset = CGPoint(x: (canvasContainerView.frame.width - scrollView.bounds.width) / 2.0,
+                                        y: (canvasContainerView.frame.height - scrollView.bounds.height) / 2.0)
+     scrollView.addSubview(canvasContainerView)
+     scrollView.backgroundColor = canvasContainerView.backgroundColor
+     scrollView.maximumZoomScale = 2.0
+     scrollView.minimumZoomScale = 0.5
+     scrollView.panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
+     scrollView.pinchGestureRecognizer?.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
+     scrollView.scrollsToTop = true
+     // We put our UI elements on top of the scroll view, so we don't want any of the
+     // delay or cancel machinery in place.
+     scrollView.delaysContentTouches = false
+     
+     tableView.delegate = self
+     tableView.dataSource = self
+     tableView.estimatedRowHeight = 500
+     
+     //手指和pencil分别的recognizer
+     //        self.fingerStrokeRecognizer = setupStrokeGestureRecognizer(isForPencil: false)
+     self.pencilStrokeRecognizer = setupStrokeGestureRecognizer(isForPencil: true)
+     
+     if #available(iOS 12.1, *) {
+         let pencilInteraction = UIPencilInteraction()
+         pencilInteraction.delegate = self as? UIPencilInteractionDelegate
+         view.addInteraction(pencilInteraction)
+     }
         
-        let cgView = StrokeCGView(frame: CGRect(origin: .zero, size: CGSize(width: maxScreenDimension, height: maxScreenDimension)))
-        cgView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.cgView = cgView
-        
-        //canvasContainerView指白纸
-        let canvasContainerView = CanvasContainerView(canvasSize: cgView.frame.size)
-        canvasContainerView.documentView = cgView
-        self.canvasContainerView = canvasContainerView
-        // canvasContainerView.addSubview(bgImageView)
-        
-        //scrollView为屏幕下方的可缩放的view
-        scrollView.contentSize = canvasContainerView.frame.size
-        scrollView.contentOffset = CGPoint(x: (canvasContainerView.frame.width - scrollView.bounds.width) / 2.0,
-                                           y: (canvasContainerView.frame.height - scrollView.bounds.height) / 2.0)
-        scrollView.addSubview(canvasContainerView)
-        scrollView.backgroundColor = canvasContainerView.backgroundColor
-        scrollView.maximumZoomScale = 2.0
-        scrollView.minimumZoomScale = 0.5
-        scrollView.panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
-        scrollView.pinchGestureRecognizer?.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
-        scrollView.scrollsToTop = true
-        // We put our UI elements on top of the scroll view, so we don't want any of the
-        // delay or cancel machinery in place.
-        scrollView.delaysContentTouches = false
+//        let screenBounds = UIScreen.main.bounds
+//        let maxScreenDimension = max(screenBounds.width, screenBounds.height)
+//
+//        let cgView = StrokeCGView(frame: CGRect(origin: .zero, size: CGSize(width: maxScreenDimension, height: maxScreenDimension)))
+//        cgView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        self.cgView = cgView
+//
+//        //canvasContainerView指白纸
+//        let canvasContainerView = CanvasContainerView(canvasSize: cgView.frame.size)
+//        canvasContainerView.documentView = cgView
+//        self.canvasContainerView = canvasContainerView
+//        // canvasContainerView.addSubview(bgImageView)
+//
+//        //scrollView为屏幕下方的可缩放的view
+//        scrollView.contentSize = canvasContainerView.frame.size
+//        scrollView.contentOffset = CGPoint(x: (canvasContainerView.frame.width - scrollView.bounds.width) / 2.0,
+//                                           y: (canvasContainerView.frame.height - scrollView.bounds.height) / 2.0)
+//        scrollView.addSubview(canvasContainerView)
+//        scrollView.backgroundColor = canvasContainerView.backgroundColor
+//        scrollView.maximumZoomScale = 2.0
+//        scrollView.minimumZoomScale = 0.5
+//        scrollView.panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
+//        scrollView.pinchGestureRecognizer?.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
+//        scrollView.scrollsToTop = true
+//        // We put our UI elements on top of the scroll view, so we don't want any of the
+//        // delay or cancel machinery in place.
+//        scrollView.delaysContentTouches = false
     }
 
     
@@ -905,7 +969,9 @@ extension OutlineViewController : WordModelManagerDelegete {
         if selectedCellIndex != nil, tableView.cellForRow(at: IndexPath(row: selectedCellIndex!, section: 0)) != nil {
             let cell = tableView.cellForRow(at: IndexPath(row: selectedCellIndex!, section: 0))! as! TextCell
             let textView = cell.textView
-            textView!.attributedText = models[selectedCellIndex!]
+            if selectedCellIndex! < models.count{
+                textView!.attributedText = models[selectedCellIndex!]
+            }
         }
         
     }

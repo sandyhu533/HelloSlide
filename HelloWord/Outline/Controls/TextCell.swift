@@ -9,6 +9,7 @@
 import UIKit
 
 protocol TextCellDelegate {
+    func getSelfIndex(cell: TextCell)->Int
     func didSecetedSelf(cell: TextCell)
     func didDeleteCell()
     func didAddCell()
@@ -28,7 +29,9 @@ class TextCell: UITableViewCell, UITextViewDelegate {
     }
     
     @IBAction func didDeleteCell(_ sender: Any) {
-        delegate?.didDeleteCell()
+        if delegate?.getSelfIndex(cell: self) != 0{
+            delegate?.didDeleteCell()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

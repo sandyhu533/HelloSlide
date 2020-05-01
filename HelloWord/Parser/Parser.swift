@@ -40,15 +40,29 @@ class Parser{
         let wordpage = self.myWord.getthispage(id: pageid)
         
         if(templateid == 0){
-            self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid)
+            self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid, mytemplateid: templateid)
         }
         else{
             
             // -MARK: 这里的1之后要变成当前模版所拥有的颜色数目
-            let realid = 1
-            let compsings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateid, colorid: realid)
+            var realid = 0
             
-            self.myHelloword.reNewHellowordFixed(composings:compsings, datasource: wordpage, in: pageid, colorid: realid)
+            switch templateid {
+            case 5:
+                realid = colorid % 3 + 1
+            case 3:
+                realid = colorid % 2 + 1
+            default:
+                realid = 1
+            }
+           
+            let composings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateid, colorid: realid)
+            
+            if(composings.count == 0){
+                self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid, mytemplateid: templateid)
+            } else {
+            self.myHelloword.reNewHellowordFixed(composings:composings, datasource: wordpage, in: pageid, colorid: realid, templateid: templateid)
+            }
         }
         
         print("TEST1")

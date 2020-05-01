@@ -15,9 +15,19 @@ class Helloword{
     
     var initframe = CGRect(origin: CGPoint.zero, size: CGSize.zero)
     
-    var mycolors:[UIColor] = [UIColor.asparagus(),UIColor.blush(),UIColor.burntSienna(),UIColor.sepia(),UIColor.eggplant(),UIColor.fern(),UIColor.maroon(),UIColor.denim()]
-    var mycolorlength = 8
+    let mycolors:[UIColor] = [UIColor.asparagus(),UIColor.blush(),UIColor.burntSienna(),UIColor.sepia(),UIColor.eggplant(),UIColor.fern(),UIColor.maroon(),UIColor.denim()]
+    let mycolorlength = 8
     
+//    let fontfamily = ["Helvetica","Courier","ArialHebrew","Verdana","ArialHebrew","HelveticaNeue"]
+    
+//    //I001003
+//    I002001
+//    I003007
+//    I004002
+//    I005010
+
+    let picfamily = ["","i001012","i002013","i003006","i004007","i005013","","i001012","","i103006","i004007","005bg2","","i001012","","i103006","i004007","005bg3"]
+   // let fontcolor = ["","0xffffff","0x000000","0x000000","0x000000","0xB7251E"]
     init(frame:CGRect){
         HellowordData = [Page]()
         self.initframe = frame
@@ -31,13 +41,24 @@ class Helloword{
         HellowordData!.append(newpage)
     }
     
-    func reNewHellowordFluid(id pageid:Int,datasource data:PageData,colorid:Int){
+    func reNewHellowordFluid(id pageid:Int,datasource data:PageData,colorid:Int,mytemplateid:Int){
         //获得模版、新建一个slide
-        let realid = colorid % self.mycolorlength
+        var realid = 0
+        realid = colorid % self.mycolorlength
+
         self.deleteoldhelloword(pageids: pageid)
         let templatenow = readFromFluidTemplate()
-        let thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
-        
+        let thispage : PageView
+        let templateid = mytemplateid>5 ? 0 : mytemplateid
+        if(templateid == 0){
+            thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
+        }
+        else{
+            // MARK : 这里为了多点几下也不越界重新修改了呜呜id
+            let temp = colorid % 3
+            thispage = PageView(initframe: self.initframe, image: self.picfamily[templateid+temp*6])
+           
+        }
         //判断是否有图片
         let images = data.getImages()
         let isthereimage = images.count == 0 ? false : true
@@ -52,7 +73,7 @@ class Helloword{
 
             
             let firstnode = firstnodes[i]
-            layoutText(in: firstnode, myslide: thispage, datasource: data,frame: frame0[i])
+            layoutText(in: firstnode, myslide: thispage, datasource: data,frame: frame0[i], tplid: templateid)
         }
         
         //如果有图片，则排版图片
@@ -71,7 +92,7 @@ class Helloword{
        
     }
     
-    func reNewHellowordFixed(composings mycomposing:[Composing],datasource data:PageData,in pageid:Int,colorid:Int){
+    func reNewHellowordFixed(composings mycomposing:[Composing],datasource data:PageData,in pageid:Int,colorid:Int,templateid:Int){
         self.deleteoldhelloword(pageids: pageid)
         if(mycomposing.count != 0){
         for compose in mycomposing{
@@ -100,10 +121,8 @@ class Helloword{
             
         }
         }
-        else{
-            reNewHellowordFluid(id: pageid, datasource: data, colorid: colorid)
-        }
     }
+        
     
     //好像不用全部都remove，直接令它等于新的就好啦
     func deleteoldhelloword(pageids pageid:Int){
@@ -117,12 +136,12 @@ class Helloword{
     }
     
     //以一级标题为根，排版文字
-    func layoutText(in firstnode:PageNode,myslide thispage:PageView,datasource data:PageData,frame thisframe:CGRect){
+    func layoutText(in firstnode:PageNode,myslide thispage:PageView,datasource data:PageData,frame thisframe:CGRect,tplid:Int){
         let templatenow=readFromFluidTemplate()
         
         if firstnode.childnum==0{
             let textframe1=createzerofirstkuang(rect: thisframe,type: firstnode.type,tpl: templatenow)
-            let view1=addnewcontentandview(inthisframe: textframe1, templatenow,data:firstnode)
+            let view1=addnewcontentandview(inthisframe: textframe1, templatenow,data:firstnode, tplid: tplid)
             view1.tag = 10000
             thispage.PageCellElments.append(view1)
         }
@@ -130,7 +149,7 @@ class Helloword{
             let frame2=createstackview(rect: thisframe, type: .firsttitle, tpl: templatenow)
             let frame3=createsomesubviews(type: .secondtitle, templatenow: templatenow, childnum: firstnode.childnum, inwitchframe:frame2[1])
             let textframe2=createkuang(rect: frame2[0],type: firstnode.type,tpl: templatenow)
-            let view2=addnewcontentandview(inthisframe: textframe2, templatenow, data: firstnode)
+            let view2=addnewcontentandview(inthisframe: textframe2, templatenow, data: firstnode, tplid: tplid)
             view2.tag = 10000
             thispage.PageCellElments.append(view2)
 
@@ -139,7 +158,7 @@ class Helloword{
             for x in frame3{
                 if contents[i].childnum==0{
                     let frame11=createzerofirstkuang(rect: x, type: .secondtitle, tpl: templatenow)
-                    let view11=addnewcontentandview(inthisframe: frame11, templatenow, data: contents[i])
+                    let view11=addnewcontentandview(inthisframe: frame11, templatenow, data: contents[i], tplid: tplid)
                     view11.tag = 20000
                     thispage.PageCellElments.append(view11)
 
@@ -147,14 +166,14 @@ class Helloword{
                 else{
                     let frame12=createstackview(rect: x, type: .secondtitle, tpl: templatenow)
                     let textframe3=createkuang(rect: frame12[0], type: .secondtitle, tpl: templatenow)
-                    let view12=addnewcontentandview(inthisframe: textframe3, templatenow, data: contents[i])
+                    let view12=addnewcontentandview(inthisframe: textframe3, templatenow, data: contents[i], tplid: tplid)
                     view12.tag = 20000
                     thispage.PageCellElments.append(view12)
                     let contentss=data.getallchild(parentid: contents[i].id)
                     
                     if contentss.count==1{
                         let textframe4=createkuang(rect: frame12[1], type: .thirdtitle, tpl: templatenow)
-                        let view112=addnewcontentandview(inthisframe: textframe4, templatenow, data: contentss[0])
+                        let view112=addnewcontentandview(inthisframe: textframe4, templatenow, data: contentss[0], tplid: tplid)
                         view112.tag = 30000
                         thispage.PageCellElments.append(view112)
                     }
@@ -165,7 +184,7 @@ class Helloword{
                         for z in frame13{
                             let textframe5=createkuang(rect: z, type: .thirdtitle, tpl: templatenow)
 
-                            let view113=addnewcontentandview(inthisframe: textframe5, templatenow, data: contentss[j])
+                            let view113=addnewcontentandview(inthisframe: textframe5, templatenow, data: contentss[j], tplid: tplid)
                             view113.tag = 30000
                             thispage.PageCellElments.append(view113)
 
@@ -275,6 +294,20 @@ class PageView:UIView {
         super.init(frame: initframe)
         self.addSubview(bgview)
     }
+    init(initframe:CGRect,image:String){
+        let path = Bundle.main.path(forResource: image, ofType: "png")
+        let newImage = UIImage(contentsOfFile: path!)
+        
+        self.initframe = initframe
+        self.PageCellElments=[UIView]()
+        //self.bgcolor = color
+        self.bgview=UIImageView(image: newImage)
+        self.bgview.frame = initframe
+        self.bgview.tag = 1000
+       
+        super.init(frame: initframe)
+        self.addSubview(bgview)
+    }
     
   required init?(coder aDecoder: NSCoder) {
     self.PageCellElments = [UIView]()
@@ -293,6 +326,7 @@ class PageView:UIView {
         for x in self.PageCellElments{
             self.addSubview(x)
         }
+        
         self.setNeedsLayout()
     }
     //现在需要一个函数，它读入模版，根据模版去create
@@ -407,7 +441,7 @@ func createkuang(rect myrect:CGRect,type contenttype:kind,tpl:FluidTemplate)->CG
     return thisframe
 }
 
-func addnewcontentandview(inthisframe myframe:CGRect,_ templatenow:FluidTemplate,data source:PageNode)->UITextView{
+func addnewcontentandview(inthisframe myframe:CGRect,_ templatenow:FluidTemplate,data source:PageNode,tplid:Int)->UITextView{
         
     let color=templatenow.fontcolor.hexcolor
     let tempview=UITextView(frame: myframe)
@@ -427,7 +461,7 @@ func addnewcontentandview(inthisframe myframe:CGRect,_ templatenow:FluidTemplate
         maxfont=CGFloat(Double(templatenow.thirdadmirefontmax)!)
         
     }
-    tempview.attributedText=createAttributedString(text: source.content as! String, type: source.type, font: templatenow.font, width:mywidth , height:myheight, color:color, fontmin:minfont, fontmax:maxfont)
+    tempview.attributedText=createAttributedString(text: source.content as! String, type: source.type, font: templatenow.font, width:mywidth , height:myheight, color:color, fontmin:minfont, fontmax:maxfont,tplid:tplid)
         //参照helloword-version1修改
     tempview.isScrollEnabled = false
     tempview.backgroundColor=UIColor.clear
@@ -462,8 +496,10 @@ func StringtoFrame(string str:String,thisview view:CGRect)->CGRect{
     
 }
 
-func createAttributedString(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat)->NSAttributedString {
-    
+func createAttributedString(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat,tplid:Int)->NSAttributedString {
+    let fontfamily = ["Helvetica","DIN Alternate","DIN Condensed","Hiragino Maru Gothic ProN","DIN Condensed","Bradley Hand"]
+    let fontcolor = ["0xffffff","0xf0f0f0","0x646464","0x000000","50C5CE","0x646464"]
+
     var fontnow=max
     var ParagraphStyle=NSMutableParagraphStyle()
     var linespace:CGFloat{
@@ -488,7 +524,7 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
         ParagraphStyle.alignment = .left
     }
     
-    var fonts=UIFont(name: myfont, size: fontnow)!
+    var fonts=UIFont(name: fontfamily[tplid], size: fontnow)!
     var mysizeheight:CGFloat = 0
     let mysizewidth:CGFloat = 0
    // let paddding = CGFloat(50)
@@ -520,7 +556,7 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
         else{
             fontnow-=1
         }
-        fonts=UIFont(name: myfont, size: fontnow)!
+        fonts=UIFont(name: fontfamily[tplid], size: fontnow)!
     }
 //    if fontnow<min{
 //        print("Too many words!")
@@ -529,6 +565,7 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
     //print("computingheight\(mysizeheight)")
     //print("originalsize\(myheight)")
     //print("fontnow\(fontnow)")
+    let mycolor = fontcolor[tplid].hexcolor
     return NSAttributedString(string: mytext, attributes: [NSAttributedString.Key.font:fonts,NSAttributedString.Key.foregroundColor:mycolor,NSAttributedString.Key.paragraphStyle:ParagraphStyle]) //这里再修改一点点
 }
 
@@ -765,8 +802,10 @@ func createAttributedStringandSize(text mytext:String,type contenttype:kind,font
     }else{
         if(mywidth>myheight){
             padding = 30
-        }else{
+        }else if (mywidth>myheight/2){
             padding = 50
+        }else{
+            padding = 60
         }
     }
     let wantheight = myheight - CGFloat(padding)

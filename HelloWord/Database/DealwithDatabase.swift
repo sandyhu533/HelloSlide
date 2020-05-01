@@ -63,14 +63,18 @@ func findMatchedComposeing(pageinfo info:Int16,templateid tpl:Int,colorid clid:I
     do {
         let fetchedObjects = try context.fetch(fetchRequest)
         for x in fetchedObjects{
+            // 判断模版是否匹配
             if x.composingid>tpl*1000 && x.composingid<(tpl+1)*1000{
+                //判断颜色是否是同一色系
                 let temp = x.composingid%1000
+                
                 if (temp%5 == clid){
                     res.append(x)
+                    print("*******取到了一个模版**********\(x.composingid)，设计师号\(tpl),颜色号\(clid),页面\(info)")
+
                 }
                 
             }
-            print("*******取到了一个模版**********")
         }
     }
     catch {
@@ -112,8 +116,8 @@ func addComposingToDatabase(_ pageinfo:Int,composingid:Int,bgpic:UIImage,firstpo
     let context = app.persistentContainer.viewContext
     
     if(ifExists(instanceid:composingid)){
-        print("加入失败，请不要重复加入")
-        return
+        deleteobject(composingid: composingid)
+        
     }
     //创建User对象
     let compose = NSEntityDescription.insertNewObject(forEntityName: "Composing",
@@ -121,12 +125,12 @@ func addComposingToDatabase(_ pageinfo:Int,composingid:Int,bgpic:UIImage,firstpo
     
     //检查颜色是否是18位的字符串，由0x222222组成
     if(color.get8array.count != 3){
-        print("加入失败，颜色出错")
+        print("加入失败，颜色出错\(composingid)")
         return
     }
     //检查插入的位置是否是12的倍数
     if(firstposition.count%12 != 0 || secondposition.count%12 != 0 || thirdposition.count%12 != 0 || imageposition.count%12 != 0){
-        print("加入失败，位置出错")
+        print("加入失败，位置出错\(composingid)")
         return
     }
     

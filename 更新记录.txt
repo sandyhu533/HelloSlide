@@ -1,0 +1,47 @@
+1.0（10.9 中午）
+首次拼接两个页面，已实现：1、在outlineView输入的文字串能解析并发给parser 2、parser中能将解析后的文字串转为pageView 3、pageView能向slideView传递（但暂时无法正常显示在collection中）
+在原分页面的基础上主要对结构进行了如下变动：
+（1）parser变成一个class，放在outlineView下
+（2）parser解析后原本的pageView（非UIView）改造为UIView，直接传递给slideView显示
+（3）取消slideView原本的slide结构，变为直接显示pageView
+待完成：
+1、slideView正常显示 
+//2、pageView的delete处有不定期bug 
+//3、pageView中加入backgroundView
+4、slideView的更换设计师、更换排版功能（需要动slideView的结构）5、slideView和outlineView的同步
+
+1.1（10.9 22:17）
+1、slideView显示到collectionView中（缩放仍有bug）
+2、pageView不定期bug解决
+3、pageView中加入backgroundView
+4、设计师图标背景、加了一张图、设计师Model生成微调、空白页bug补丁
+5、解决多一页bug
+6、OutlineView页面多余按钮（去掉）
+
+1.2（10.10 15.59）
+1、更新outlineView顶部按钮
+2、可导入本地图片（UIImagePickerController）并插入到【第一个】view中
+3、图片可被解析并向parser传输（以kind=image形式）
+4、一级标题+一个三级标题将三级标题转为二级
+遗留bug：cell的选择与可视范围、无法拍照、图太大会卡、转盘不太好用
+
+1.3（10.14 17.30）
+1、oulineView遗留bug
+2、手写板
+3、初步支持OCR导出
+4、slideView界面优化
+
+1.4（10.15 20.24)
+1、支持OCR导出（reload和parentID仍有点bug）
+2、加入非流失布局（还有bug）
+
+1.5（10.17 00.46）
+1、OCR手写板
+2、暂不用Document
+3、分屏
+4、加入非流式布局和数据库
+
+1.6（10.21 21.44）
+1、parser图片文字
+2、slideView bug
+3、分屏同步（仍有键盘回收小bug）

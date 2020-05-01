@@ -37,12 +37,12 @@ class DesignerCollectionViewCell: UICollectionViewCell {
         }else{
             if ColorModeModel.colorMode == .light{
                 // 图标白
-                designerView.image = UIImage(named: designer!.imageName)?.tint(color: UIColor.AZUREISH_WHITE(), blendMode: .destinationIn)
-                designerView.alpha = 0.8
+                designerView.image = UIImage(named: designer!.imageName)?.tint(color: UIColor.GUNMETAL(), blendMode: .destinationIn)
+                designerView.alpha = 0.6
             }else{
                 // 图标黑
                 designerView.image = UIImage(named: designer!.imageName)?.tint(color: UIColor.GUNMETAL(), blendMode: .destinationIn)
-                designerView.alpha = 0.8
+                designerView.alpha = 0.6
             }
         }
     }
@@ -73,12 +73,12 @@ class DesignerCollectionViewCell: UICollectionViewCell {
         }else{
             if ColorModeModel.colorMode == .light{
                 // 图标白
-                designerView.image = UIImage(named: designer.imageName)?.tint(color: UIColor.AZUREISH_WHITE(), blendMode: .destinationIn)
-                designerView.alpha = 0.4
+                designerView.image = UIImage(named: designer.imageName)?.tint(color: UIColor.GUNMETAL(), blendMode: .destinationIn)
+                designerView.alpha = 0.6
             }else{
                 // 图标黑
                 designerView.image = UIImage(named: designer.imageName)?.tint(color: UIColor.GUNMETAL(), blendMode: .destinationIn)
-                designerView.alpha = 0.4
+                designerView.alpha = 0.6
             }
 
         }

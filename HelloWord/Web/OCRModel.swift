@@ -10,8 +10,6 @@ import UIKit
 
 class OCRModel{
     
-    //    var result:[wordFromOutline] = []
-    
     // TODO:这里返回值改成[[wordFromOutline]]
     func run(image: UIImage,completion: @escaping ([[WordFromOutline]]?) -> ()){
         

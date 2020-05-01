@@ -14,7 +14,7 @@ class PresentationModel {
     var pages = [Page]()
     
     // 当前选中设计师的序号，默认为0
-    var selectedDesignerIndex = 0
+    var selectedDesignerIndex = 5
     
     // 放入数据
     func fillData(pageViews : [Page]) {

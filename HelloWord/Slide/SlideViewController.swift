@@ -106,7 +106,7 @@ class SlideViewController: UIViewController{
         designerCollectionView.dataSource = designerCollectionViewDelegate
         
         // 默认选中0号设计师0号模板
-        designerModel!.designerArray[0].isSelected = true
+        designerModel!.designerArray[5].isSelected = true
         
         // 刷新
 //        changeDesigner()
@@ -125,7 +125,7 @@ class SlideViewController: UIViewController{
         presentationModel?.fillData(pageViews: pageViews!)
 
         // 刷新
-        changeDesigner(colorId: 0)
+        changeDesigner(colorId: 1)
 
     }
     
@@ -217,13 +217,13 @@ class SlideViewController: UIViewController{
 //        if(lightCnt*2>pageNum){
 //            print("深色模式 亮色\(lightCnt) 页数\(pageNum)")
 //            ColorModeModel.colorMode = .dark
-//            
+//
 //            // 换背景
 //            pageCollectionView.backgroundColor = UIColor.GUNMETAL()
 //        }else{
 //            print("浅色模式 亮色\(lightCnt) 页数\(pageNum)")
 //            ColorModeModel.colorMode = .light
-//            
+//
 //            // 换背景
 //            pageCollectionView.backgroundColor = UIColor.AZUREISH_WHITE()
 //        }

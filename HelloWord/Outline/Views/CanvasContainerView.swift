@@ -26,7 +26,7 @@ class CanvasContainerView: UIView {
         }
     }
     
-    required init(canvasSize: CGSize) {
+    required init(canvasSize: CGSize, imageView: UIImageView) {
         let screenBounds = UIScreen.main.bounds
         let minDimension = max(screenBounds.width, screenBounds.height)
         self.canvasSize = canvasSize
@@ -47,7 +47,7 @@ class CanvasContainerView: UIView {
 //        canvasView.layer.shadowOpacity = 1.0
         
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white
+        self.addSubview(imageView)
         self.addSubview(canvasView)
     }
     

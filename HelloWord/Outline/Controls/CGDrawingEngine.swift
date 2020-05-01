@@ -173,6 +173,10 @@ extension StrokeCGView {
         UIColor.white.set()
         UIRectFill(rect)
         
+//        let p = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: rect.width, height: 100), cornerRadius: 0)
+//        UIColor.black.setFill()
+//        p.fill()
+        
         // Optimization opportunity: Draw the existing collection in a different view,
         // and only draw each time we add a stroke.
         if let strokeCollection = strokeCollection {
@@ -388,7 +392,7 @@ private extension StrokeCGView {
         
         if displayOptions == .debug {
             context.setLineWidth(0.5)
-            context.setStrokeColor(UIColor.white.cgColor)
+            context.setStrokeColor(UIColor.clear.cgColor)
         } else {
             context.setLineWidth(0.25)
             context.setStrokeColor(strokeColor.cgColor)
