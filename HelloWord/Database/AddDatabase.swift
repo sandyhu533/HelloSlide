@@ -7,9 +7,13 @@
 
 import Foundation
 import UIKit
-func loadData(){
 
-    if(!ifExists(instanceid: 001001)){
+let DEBUG = true
+
+func loadData(){
+    
+    if(!ifExists(instanceid: 001001) && !DEBUG){
+        
        // MARK: - 001
        
        let i001001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i001001", ofType: "png")!)

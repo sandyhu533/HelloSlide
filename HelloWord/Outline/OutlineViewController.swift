@@ -43,22 +43,6 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        deleteobject(composingid: 005017)
-//
-//        let i005204 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i005204", ofType: "png")!)
-//        let i005104 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i005104", ofType: "png")!)
-//
-//        addComposingToDatabase(1100, composingid: 005018, bgpic: i005204!, firstposition: "314375337142", secondposition: "275548415090", thirdposition: "", imageposition: "", font:"Bradley Hand",color:"0xCF96210x6464640xCF9621")
-//        addComposingToDatabase(1100, composingid: 005017, bgpic: i005104!, firstposition: "314375337142", secondposition: "275548415090", thirdposition: "", imageposition: "", font:"Bradley Hand",color:"0x3452990x6464640x345299")
-//        deleteobject(composingid: 003052)
-//        let i103003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i103003", ofType: "png")!)
-//        addComposingToDatabase(1100, composingid: 003052, bgpic: i103003!, firstposition: "236259583185", secondposition: "097537833203", thirdposition: "", imageposition: "", font:"Hiragino Maru Gothic ProN",color:"0x4444430x4444430x444443")
-//        deleteobject(composingid: 003051)
-//        let i003006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i003006", ofType: "png")!)
-//        addComposingToDatabase(1100, composingid: 003051, bgpic: i003006!, firstposition: "236259583185", secondposition: "097537833203", thirdposition: "", imageposition: "", font:"Hiragino Maru Gothic ProN",color:"0x4444430x4444430x444443")
-//        deleteobject(composingid: 003002)
-//        let i103003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i103001", ofType: "png")!)
-//        addComposingToDatabase(1100, composingid: 003052, bgpic: i103003!, firstposition: "236259583185", secondposition: "097537833203", thirdposition: "", imageposition: "", font:"Hiragino Maru Gothic ProN",color:"0xffffff0x4444430x444443")
 
         loadData()
 
