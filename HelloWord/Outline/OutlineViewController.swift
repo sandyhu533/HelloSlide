@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreData
+import MobileCoreServices
 
-class OutlineViewController: UIViewController, RouletteViewDelegate {
+class OutlineViewController: UIViewController, RouletteViewDelegate, UIDocumentPickerDelegate {
     
 //    var document: Document?
     var parser: Parser!
@@ -278,67 +279,59 @@ class OutlineViewController: UIViewController, RouletteViewDelegate {
      tableView.dataSource = self
      tableView.estimatedRowHeight = 500
      
-     //手指和pencil分别的recognizer
-     //        self.fingerStrokeRecognizer = setupStrokeGestureRecognizer(isForPencil: false)
-     self.pencilStrokeRecognizer = setupStrokeGestureRecognizer(isForPencil: true)
-     
-     if #available(iOS 12.1, *) {
-         let pencilInteraction = UIPencilInteraction()
-         pencilInteraction.delegate = self as? UIPencilInteractionDelegate
-         view.addInteraction(pencilInteraction)
-     }
-        
-//        let screenBounds = UIScreen.main.bounds
-//        let maxScreenDimension = max(screenBounds.width, screenBounds.height)
-//
-//        let cgView = StrokeCGView(frame: CGRect(origin: .zero, size: CGSize(width: maxScreenDimension, height: maxScreenDimension)))
-//        cgView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        self.cgView = cgView
-//
-//        //canvasContainerView指白纸
-//        let canvasContainerView = CanvasContainerView(canvasSize: cgView.frame.size)
-//        canvasContainerView.documentView = cgView
-//        self.canvasContainerView = canvasContainerView
-//        // canvasContainerView.addSubview(bgImageView)
-//
-//        //scrollView为屏幕下方的可缩放的view
-//        scrollView.contentSize = canvasContainerView.frame.size
-//        scrollView.contentOffset = CGPoint(x: (canvasContainerView.frame.width - scrollView.bounds.width) / 2.0,
-//                                           y: (canvasContainerView.frame.height - scrollView.bounds.height) / 2.0)
-//        scrollView.addSubview(canvasContainerView)
-//        scrollView.backgroundColor = canvasContainerView.backgroundColor
-//        scrollView.maximumZoomScale = 2.0
-//        scrollView.minimumZoomScale = 0.5
-//        scrollView.panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
-//        scrollView.pinchGestureRecognizer?.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
-//        scrollView.scrollsToTop = true
-//        // We put our UI elements on top of the scroll view, so we don't want any of the
-//        // delay or cancel machinery in place.
-//        scrollView.delaysContentTouches = false
     }
 
     
-    @IBAction func OCRAction(_ sender: Any) {
+    @IBAction func OCROrNLPAction(_ sender: Any) {
         
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "NLP", style: .default, handler: { _ in
+            self.doNLP()
+        }))
+        alert.addAction(UIAlertAction(title: "OCR", style: .default, handler: { _ in
+            self.doOCR()
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    // OCR
+    func doOCR() {
         if tableView.isHidden{
             //截图并解析
             let image = UIImage(fromView: self.canvasContainerView)
             self.OCR.run(image: image!,completion: {
                 (results:[[WordFromOutline]]?) in
-                self.ocrHandle(results: results)
+                self.ocrOrNlpHandle(results: results)
             })
         }else{
             //获取图片
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
             imagePickerController.sourceType = .savedPhotosAlbum
-            
+
             //显示imagePickerController
             self.present(imagePickerController, animated: true, completion: nil)
         }
-        
+
         ocr = true
-        
+    }
+    
+    // NLP
+    func doNLP() {
+        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF as String, kUTTypeText as String], in: .import)
+        documentPicker.delegate = self
+        present(documentPicker, animated: true)
+    }
+    
+    // MARK: UIDocumentPickerDelegate
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        assert(urls.count == 1)
+        NLPModel.run(documentURL: urls.first!, completion: {
+            (results:[[WordFromOutline]]?) in
+            self.ocrOrNlpHandle(results: results)
+        })
     }
     
     //导入图片
@@ -775,7 +768,7 @@ extension OutlineViewController:  UIImagePickerControllerDelegate, UINavigationC
         if ocr!{
             self.OCR.run(image: image,completion: {
                 (results:[[WordFromOutline]]?) in
-                self.ocrHandle(results: results)
+                self.ocrOrNlpHandle(results: results)
                 let name = Notification.Name("finishOcrHandle")
                 NotificationCenter.default.post(name: name, object: nil)
                 DispatchQueue.main.async {
@@ -790,11 +783,11 @@ extension OutlineViewController:  UIImagePickerControllerDelegate, UINavigationC
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func ocrHandle(results: [[WordFromOutline]]?){
+    func ocrOrNlpHandle(results: [[WordFromOutline]]?){
         
         var  model = NSMutableAttributedString()
         
-        if results != nil{
+        if results != nil {
             for page in results!{
                 model = NSMutableAttributedString()
                 for element in page{

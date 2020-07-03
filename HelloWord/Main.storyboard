@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uUA-I3-xZq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uUA-I3-xZq">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -105,11 +105,11 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="zeP-uF-9cn">
-                            <rect key="frame" x="302.5" y="3" width="254.5" height="44"/>
+                            <rect key="frame" x="414" y="3" width="196" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hgt-pR-qtR">
-                                    <rect key="frame" x="0.0" y="0.0" width="254.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="196" height="44"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </stackView>
                             </subviews>
@@ -128,7 +128,7 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="OCR" width="20" id="4aa-EX-ykg">
                                 <connections>
-                                    <action selector="OCRAction:" destination="7ZY-Js-B9v" id="Ps7-ZD-CGT"/>
+                                    <action selector="OCROrNLPAction:" destination="7ZY-Js-B9v" id="Ps7-ZD-CGT"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

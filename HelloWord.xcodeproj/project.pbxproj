@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		2D853F602338B98E0008F84A /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F4F2338B98E0008F84A /* UIColorExtensions.swift */; };
 		2D853F612338B98E0008F84A /* StrokeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853F502338B98E0008F84A /* StrokeCollection.swift */; };
 		2D853F662338BA410008F84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D853F652338BA410008F84A /* LaunchScreen.storyboard */; };
+		2DE81A9E24AE01050091D072 /* NLPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE81A9D24AE01050091D072 /* NLPModel.swift */; };
 		2DFB0D002353F7BF009C154D /* LinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB0CFF2353F7BF009C154D /* LinkTextView.swift */; };
 		2DFB0D04235459B1009C154D /* ImageOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB0D02235459B0009C154D /* ImageOCR.swift */; };
 		2DFB0D05235459B1009C154D /* OCRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB0D03235459B0009C154D /* OCRModel.swift */; };
@@ -182,6 +183,7 @@
 		2D853F4F2338B98E0008F84A /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		2D853F502338B98E0008F84A /* StrokeCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeCollection.swift; sourceTree = "<group>"; };
 		2D853F652338BA410008F84A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2DE81A9D24AE01050091D072 /* NLPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPModel.swift; sourceTree = "<group>"; };
 		2DFB0CFF2353F7BF009C154D /* LinkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkTextView.swift; path = ../Controls/LinkTextView.swift; sourceTree = "<group>"; };
 		2DFB0D02235459B0009C154D /* ImageOCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOCR.swift; sourceTree = "<group>"; };
 		2DFB0D03235459B0009C154D /* OCRModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 			children = (
 				2DFB0D02235459B0009C154D /* ImageOCR.swift */,
 				2DFB0D03235459B0009C154D /* OCRModel.swift */,
+				2DE81A9D24AE01050091D072 /* NLPModel.swift */,
 				EE26AFEC2358B0920046BAE3 /* ExPPT.swift */,
 			);
 			path = Web;
@@ -684,6 +687,7 @@
 		2D853F212338B9730008F84A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = HelloWord;
@@ -907,6 +911,7 @@
 				2D60EA8B234F70A4002B4887 /* DocumentBrowserViewController.swift in Sources */,
 				C546C2F9234CC3D400E73B67 /* SingleSlideView.swift in Sources */,
 				C546C301234CC3FA00E73B67 /* SlideViewController.swift in Sources */,
+				2DE81A9E24AE01050091D072 /* NLPModel.swift in Sources */,
 				2D853F2D2338B9730008F84A /* AppDelegate.swift in Sources */,
 				EE26AFED2358B0920046BAE3 /* ExPPT.swift in Sources */,
 				C54498A523575A080000A231 /* SceneDelegate.swift in Sources */,
@@ -1045,7 +1050,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6W8HRA94QZ;
+				DEVELOPMENT_TEAM = GUD3B3F383;
 				INFOPLIST_FILE = HelloWord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1065,7 +1070,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6W8HRA94QZ;
+				DEVELOPMENT_TEAM = GUD3B3F383;
 				INFOPLIST_FILE = HelloWord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
