@@ -1157,7 +1157,7 @@ func loadData(){
         
         addComposingToDatabase(1450,composingid:017086,bgpic:i017018!,firstposition:"343087302083",secondposition:"753229106053461246106053756662106053460671106053",thirdposition:"077274281550751292115087459308115087754724115087457734115087",imageposition:"",font:"思源黑体 Regular",color:"0x0000000x683E790x808080");
         
-        addComposingToDatabase(0001,composingid:017091,bgpic:i017019!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"930-129049088",font:"思源黑体 Regular",color:"0x0000000x0000000x000000");
+        addComposingToDatabase(0001,composingid:017091,bgpic:i017019!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"9300009049088",font:"思源黑体 Regular",color:"0x0000000x0000000x000000");
         
         // MARK - 018
         let i018001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018001", ofType: "png")!)
