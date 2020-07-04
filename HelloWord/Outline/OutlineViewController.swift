@@ -371,9 +371,7 @@ class OutlineViewController: UIViewController, RouletteViewDelegate, UIDocumentP
         if theSegue?.presentationModel != nil {
             parsePageNSAttributedString(tempateID: theSegue!.presentationModel!.selectedDesignerIndex, colorID: theSegue!.currentColorID, pageID: selectedCellIndex!)
         }
-        
-        print("^^^^^^^^^^^^^^^^",theSegue as Any)
-        
+                
         //将当页内容赋值给slideView
         if selectedCellIndex != nil, theSegue != nil {
             if selectedCellIndex! >= theSegue!.presentationModel!.pages.count {
