@@ -494,6 +494,75 @@ func loadData(){
 
     addComposingToDatabase(0001, composingid: 005123, bgpic: i005210!, firstposition: "", secondposition: "", thirdposition: "", imageposition: "235276539440", font:"Bradley Hand",color:"0x6464640x6464640x646464")
         
+        // MARK - 006
+        let i006001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006001", ofType: "png")!)
+        
+        let i006002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006002", ofType: "png")!)
+        
+        let i006003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006003", ofType: "png")!)
+        
+        let i006004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006004", ofType: "png")!)
+        
+        let i006005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006005", ofType: "png")!)
+        
+        let i006006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006006", ofType: "png")!)
+        
+        let i006007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006007", ofType: "png")!)
+        
+        let i006008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006008", ofType: "png")!)
+        
+        let i006009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006009", ofType: "png")!)
+        
+        let i006010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006010", ofType: "png")!)
+        
+        let i006011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006011", ofType: "png")!)
+        
+        let i006012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006012", ofType: "png")!)
+        
+        let i006013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006013", ofType: "png")!)
+        
+        let i006014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006014", ofType: "png")!)
+        
+        let i006015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006015", ofType: "png")!)
+        
+        let i006016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006016", ofType: "png")!)
+        
+        let i006000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006000", ofType: "png")!)
+        
+        addComposingToDatabase(1120,composingid:006001,bgpic:i006001!,firstposition:"335393315103",secondposition:"250585500035",thirdposition:"356727079037548727079037",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x8080800x7A7A7A");
+        
+        addComposingToDatabase(1550,composingid:006006,bgpic:i006002!,firstposition:"403172179076",secondposition:"076513124040275513087040456513087040637513087040818513087040",thirdposition:"064580148076228580178043409580178043590580178043771580178076",imageposition:"",font:"思源黑体 CN Normal",color:"0x1D69A30x8080800x808080");
+        
+        addComposingToDatabase(1100,composingid:006011,bgpic:i006003!,firstposition:"508426150058",secondposition:"519511076043",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x9999990x8080800x000000");
+        
+        addComposingToDatabase(1420,composingid:006016,bgpic:i006004!,firstposition:"045165303044",secondposition:"051351196042759351196048090449196042720449196042",thirdposition:"074689338052618689338023",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x9999990x808080");
+        
+        addComposingToDatabase(1400,composingid:006021,bgpic:i006005!,firstposition:"045165303044",secondposition:"153421204050649421204050153584204050649584204050",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x6666660x000000");
+        
+        addComposingToDatabase(1100,composingid:006026,bgpic:i006006!,firstposition:"528426275058",secondposition:"545512075043",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x9999990x8080800x000000");
+        
+        addComposingToDatabase(1710,composingid:006031,bgpic:i006007!,firstposition:"045165303044",secondposition:"046366245051703366245051429444141024046478245051703478245051046590245051703590245051",thirdposition:"429533141033",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x6666660x7C7C7C");
+        
+        addComposingToDatabase(1400,composingid:006036,bgpic:i006008!,firstposition:"045165303044",secondposition:"058657197050289657197050517657197050746657197050",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x6666660x000000");
+        
+        addComposingToDatabase(1100,composingid:006041,bgpic:i006009!,firstposition:"529433275058",secondposition:"542516076043",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x9999990x8080800x000000");
+        
+        addComposingToDatabase(1400,composingid:006046,bgpic:i006010!,firstposition:"045165303044",secondposition:"130535149050331535149050529535149050729535149050",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800xE7E6E60x000000");
+        
+        addComposingToDatabase(1120,composingid:006051,bgpic:i006011!,firstposition:"045165303044",secondposition:"500352409050",thirdposition:"546448363191562700330019",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x6666660x808080");
+        
+        addComposingToDatabase(1100,composingid:006056,bgpic:i006012!,firstposition:"537418236058",secondposition:"545515076043",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x9999990x8080800x000000");
+        
+        addComposingToDatabase(1200,composingid:006061,bgpic:i006013!,firstposition:"045165303044",secondposition:"202412281023202577281023",thirdposition:"",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x8080800x000000");
+        
+        addComposingToDatabase(1660,composingid:006066,bgpic:i006014!,firstposition:"045165303044",secondposition:"127537077029278537077029412537077029546537077029680537077029814537077029",thirdposition:"237409160023504409160023772409160023086645160023371645160023638645160023",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800xFFFFFF0x808080");
+        
+        addComposingToDatabase(1440,composingid:006071,bgpic:i006015!,firstposition:"045165303044",secondposition:"597405070022836405070022602747070022828747070022",thirdposition:"059389417019059484417020059583417020059678417020",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800xFFFFFF0x808080");
+        
+        addComposingToDatabase(1120,composingid:006076,bgpic:i006016!,firstposition:"335393315103",secondposition:"250585500035",thirdposition:"356727079037548727079037",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x8080800x7A7A7A");
+        
+        
+        
         // MARK - 008
         let i008001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008001", ofType: "JPG")!)
         
@@ -646,6 +715,184 @@ func loadData(){
         
         addComposingToDatabase(0000,composingid:010091,bgpic:i010019!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"思源黑体 Bold",color:"0x0000000x0000000x000000");
         
+        //MARK - 011
+        
+        let i011001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011001", ofType: "JPG")!)
+        
+        let i011002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011002", ofType: "jpg")!)
+        
+        let i011003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011003", ofType: "jpg")!)
+        
+        let i011004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011004", ofType: "jpg")!)
+        
+        let i011005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011005", ofType: "jpg")!)
+        
+        let i011006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011006", ofType: "jpg")!)
+        
+        let i011007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011007", ofType: "jpg")!)
+        
+        let i011008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011008", ofType: "jpg")!)
+        
+        let i011009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011009", ofType: "jpg")!)
+        
+        let i011010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011010", ofType: "jpg")!)
+        
+        let i011011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011011", ofType: "jpg")!)
+        
+        let i011012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011012", ofType: "jpg")!)
+        
+        let i011000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011000", ofType: "jpg")!)
+        
+        
+        addComposingToDatabase(1100,composingid:011001,bgpic:i011001!,firstposition:"189356619255",secondposition:"388794222040",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x4040400x000000");
+        
+        addComposingToDatabase(1101,composingid:011006,bgpic:i011002!,firstposition:"412372489134",secondposition:"412508470085",thirdposition:"",imageposition:"104316271381",font:"PingFang SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1300,composingid:011011,bgpic:i011003!,firstposition:"012044345094",secondposition:"117481146148423481146148733481146148",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x1F4E790xFFFFFF0x000000");
+        
+        addComposingToDatabase(1400,composingid:011016,bgpic:i011004!,firstposition:"012044345094",secondposition:"038481146148302481146148568481146148834481146148",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x1F4E790xFFFFFF0x000000");
+        
+        addComposingToDatabase(1202,composingid:011021,bgpic:i011005!,firstposition:"374363239076",secondposition:"180620299197669620299197",thirdposition:"",imageposition:"000132374370630132369370",font:"PingFang SC",color:"0xFFFFFF0x1F4E790x000000");
+        
+        addComposingToDatabase(2002,composingid:011026,bgpic:i011006!,firstposition:"180576299197669576299197",secondposition:"",thirdposition:"",imageposition:"000182397273582182417273",font:"PingFang SC",color:"0x1F4E790x0000000x000000");
+        
+        addComposingToDatabase(1300,composingid:011031,bgpic:i011007!,firstposition:"055050311094",secondposition:"024309391192594320391192304556394192",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x1F4E790xFFFFFF0x000000");
+        
+        addComposingToDatabase(3000,composingid:011036,bgpic:i011008!,firstposition:"024279391192594290391192304526394192",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(3300,composingid:011041,bgpic:i011009!,firstposition:"683138183067351253183067041412183067",secondposition:"683205299170351320299170027470299170",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(3000,composingid:011046,bgpic:i011010!,firstposition:"682146299192347242299192029401299197",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(4000,composingid:011051,bgpic:i011011!,firstposition:"036608229192262608229192507608229192735608229192",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1000,composingid:011056,bgpic:i011012!,firstposition:"108435769134",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        
+        //MARK - 012
+        
+        let i012001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012001", ofType: "jpg")!)
+        
+        let i012002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012002", ofType: "jpg")!)
+        
+        let i012003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012003", ofType: "jpg")!)
+        
+        let i012004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012004", ofType: "jpg")!)
+        
+        let i012005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012005", ofType: "jpg")!)
+        
+        let i012006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012006", ofType: "jpg")!)
+        
+        let i012007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012007", ofType: "jpg")!)
+        
+        let i012008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012008", ofType: "jpg")!)
+        
+        let i012009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012009", ofType: "jpg")!)
+        
+        let i012010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012010", ofType: "jpg")!)
+        
+        let i012011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012011", ofType: "jpg")!)
+        
+        let i012012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012012", ofType: "jpg")!)
+        
+        let i012013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012013", ofType: "jpg")!)
+        
+        let i012014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012014", ofType: "jpg")!)
+        
+        let i012015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012015", ofType: "jpg")!)
+        
+        let i012016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012016", ofType: "jpg")!)
+        
+        let i012017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012017", ofType: "jpg")!)
+        
+        let i012018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012018", ofType: "jpg")!)
+        
+        let i012000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012000", ofType: "jpg")!)
+        
+        addComposingToDatabase(1000,composingid:012001,bgpic:i012001!,firstposition:"022347510147",secondposition:"",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:012006,bgpic:i012002!,firstposition:"028287505147",secondposition:"000467611085",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1200,composingid:012011,bgpic:i012003!,firstposition:"073038426121",secondposition:"050339267364689340267364",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x21B2C10xFFFFFF0x000000");
+        
+        addComposingToDatabase(1300,composingid:012016,bgpic:i012004!,firstposition:"069243105498",secondposition:"243267619094243454619094243648619094",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x1FB2BF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1400,composingid:012021,bgpic:i012005!,firstposition:"069243105498",secondposition:"256160619094256351619094256563619094256765619094",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x1FB2BF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1200,composingid:012026,bgpic:i012006!,firstposition:"106038393121",secondposition:"477239432587135284311442",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0x21B2C10xFFFFFF0x000000");
+        
+        addComposingToDatabase(1301,composingid:012031,bgpic:i012007!,firstposition:"106038375121",secondposition:"436383432156436548432156436728432156",thirdposition:"",imageposition:"063192331660",font:"+mn-ea",color:"0x21B2C10xFFFFFF0x000000");
+        
+        addComposingToDatabase(1100,composingid:012036,bgpic:i012008!,firstposition:"106038393121",secondposition:"093334842516",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x21B2C10xFFFFFF0x000000");
+        
+        addComposingToDatabase(1301,composingid:012041,bgpic:i012009!,firstposition:"052284085444",secondposition:"592160353217592378353217598585353217",thirdposition:"",imageposition:"244080295839",font:"PingFang SC",color:"0x21B2C10xFFFFFF0x000000");
+        
+        addComposingToDatabase(3001,composingid:012046,bgpic:i012010!,firstposition:"504145353217504363353217509570353217",secondposition:"",thirdposition:"",imageposition:"160080295839",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1102,composingid:012051,bgpic:i012011!,firstposition:"188050622134",secondposition:"100294474552",thirdposition:"",imageposition:"636276263271636602263271",font:"PingFang SC",color:"0x139AA10xFFFFFF0x000000");
+        
+        addComposingToDatabase(1200,composingid:012056,bgpic:i012012!,firstposition:"061050873134",secondposition:"696336239498080337239498",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(2200,composingid:012061,bgpic:i012013!,firstposition:"701145220098077147220098",secondposition:"076306239498696306239498",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x139AA10xFFFFFF0x000000");
+        
+        addComposingToDatabase(1300,composingid:012066,bgpic:i012014!,firstposition:"069016866134",secondposition:"234228513201234465513201234695513201",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x16B2BA0xFFFFFF0x000000");
+        
+        addComposingToDatabase(3000,composingid:012071,bgpic:i012015!,firstposition:"250185513201250421513201250651513201",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1400,composingid:012076,bgpic:i012016!,firstposition:"069016866134",secondposition:"295234270228691271270228029441270228738593270228",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x16B2BA0xFFFFFF0x000000");
+        
+        addComposingToDatabase(4000,composingid:012081,bgpic:i012017!,firstposition:"295179270228690216270228028386270228737538270228",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1000,composingid:012086,bgpic:i012018!,firstposition:"062371866231",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        //MARK - 013
+        let i013001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013001", ofType: "jpg")!)
+        
+        let i013002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013002", ofType: "jpg")!)
+        
+        let i013003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013003", ofType: "jpg")!)
+        
+        let i013004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013004", ofType: "jpg")!)
+        
+        let i013005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013005", ofType: "jpg")!)
+        
+        let i013006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013006", ofType: "jpg")!)
+        
+        let i013007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013007", ofType: "jpg")!)
+        
+        let i013008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013008", ofType: "jpg")!)
+        
+        let i013009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013009", ofType: "jpg")!)
+        
+        let i013010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013010", ofType: "jpg")!)
+        
+        let i013011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013011", ofType: "jpg")!)
+        
+        let i013000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013000", ofType: "jpg")!)
+        
+        
+        addComposingToDatabase(1000,composingid:013001,bgpic:i013001!,firstposition:"082694835094",secondposition:"",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1300,composingid:013006,bgpic:i013002!,firstposition:"034295141408",secondposition:"417208398085484452387085408661398085",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1400,composingid:013011,bgpic:i013003!,firstposition:"034295141408",secondposition:"407173398085527376387085527571398085407750398085",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1301,composingid:013016,bgpic:i013004!,firstposition:"022066340103",secondposition:"047345450131047491450131049637450133",thirdposition:"",imageposition:"547345452374",font:"PingFangSC-Light",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(3300,composingid:013021,bgpic:i013005!,firstposition:"709075247067167179247067380695247067",secondposition:"698137279138156241279138369756279138",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(3000,composingid:013026,bgpic:i013006!,firstposition:"698088279156156196279157369756279157",secondposition:"",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(4400,composingid:013031,bgpic:i013007!,firstposition:"244119208067554119208067781345208067024346208067",secondposition:"243208209138553208209138024423209138782434209138",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(4000,composingid:013036,bgpic:i013008!,firstposition:"243208209157553208209157024423209156782434209157",secondposition:"",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1200,composingid:013041,bgpic:i013009!,firstposition:"184117633085",secondposition:"082432209300712432209300",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(2000,composingid:013046,bgpic:i013010!,firstposition:"728351209300427353209300",secondposition:"",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1000,composingid:013051,bgpic:i013011!,firstposition:"186452633085",secondposition:"",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0x0000000x000000");
+        
         
         //MARK - 014
         
@@ -722,6 +969,115 @@ func loadData(){
           addComposingToDatabase(1301,composingid:014081,bgpic:i014017!,firstposition:"064044364067",secondposition:"027583303364358583303364695583303364",thirdposition:"",imageposition:"003188996342",font:"华文仿宋",color:"0x8080800x2A566D0x000000");
           
           addComposingToDatabase(2000,composingid:014086,bgpic:i014018!,firstposition:"397727079037670727079037",secondposition:"",thirdposition:"",imageposition:"",font:"华文仿宋",color:"0x8080800x0000000x000000");
+        
+        // MARK - 015
+
+        let i015001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015001", ofType: "jpg")!)
+               
+        let i015002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015002", ofType: "jpg")!)
+
+        let i015003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015003", ofType: "jpg")!)
+
+        let i015004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015004", ofType: "jpg")!)
+
+        let i015005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015005", ofType: "jpg")!)
+
+        let i015006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015006", ofType: "jpg")!)
+
+        let i015007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015007", ofType: "jpg")!)
+
+        let i015008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015008", ofType: "jpg")!)
+
+        let i015009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015009", ofType: "jpg")!)
+
+        let i015000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015000", ofType: "jpg")!)
+        
+        addComposingToDatabase(1000,composingid:015001,bgpic:i015001!,firstposition:"191402777161",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1300,composingid:015006,bgpic:i015002!,firstposition:"058047484148",secondposition:"128301398085249488387085354676398085",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1400,composingid:015011,bgpic:i015003!,firstposition:"058047484148",secondposition:"074264398085195452387085300640398085431825398085",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(3000,composingid:015016,bgpic:i015004!,firstposition:"703589240201077592240201379592240201",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(3300,composingid:015021,bgpic:i015005!,firstposition:"062507243085379507243085703507243085",secondposition:"069606240175386606240175710606240175",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x5959590x000000");
+        
+        addComposingToDatabase(3303,composingid:015026,bgpic:i015006!,firstposition:"035080405076173402405076307713405076",secondposition:"016154240148173475240148320783240148",thirdposition:"",imageposition:"704043295262704353295262712659295262",font:"PingFang SC",color:"0x0000000x5959590x000000");
+        
+        addComposingToDatabase(1100,composingid:015031,bgpic:i015007!,firstposition:"074146304121",secondposition:"089382398336",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(2200,composingid:015036,bgpic:i015008!,firstposition:"043127405085563661405085",secondposition:"043233240103563780240103",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(4400,composingid:015041,bgpic:i015009!,firstposition:"698290258058065299258058058652258058698653258058",secondposition:"063364258091698364258091063551258091698551258091",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x1F4E790x8080800x000000");
+        
+        // MARK - 016
+        
+        let i016001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016001", ofType: "jpg")!)
+        
+        let i016002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016002", ofType: "jpg")!)
+        
+        let i016003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016003", ofType: "jpg")!)
+        
+        let i016004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016004", ofType: "jpg")!)
+        
+        let i016005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016005", ofType: "jpg")!)
+        
+        let i016006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016006", ofType: "jpg")!)
+        
+        let i016007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016007", ofType: "jpg")!)
+        
+        let i016008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016008", ofType: "jpg")!)
+        
+        let i016009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016009", ofType: "jpg")!)
+        
+        let i016010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016010", ofType: "jpg")!)
+        
+        let i016011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016011", ofType: "jpg")!)
+        
+        let i016012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016012", ofType: "jpg")!)
+        
+        let i016013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016013", ofType: "jpg")!)
+        
+        let i016014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016014", ofType: "jpg")!)
+        
+        let i016015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016015", ofType: "jpg")!)
+        
+        let i016016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016016", ofType: "jpg")!)
+        
+        let i016000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016000", ofType: "jpg")!)
+        
+        addComposingToDatabase(1000,composingid:016001,bgpic:i016001!,firstposition:"117378764121",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(3000,composingid:016006,bgpic:i016002!,firstposition:"402308475067402456475067402605475067",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x2626260x0000000x000000");
+        
+        addComposingToDatabase(1400,composingid:016011,bgpic:i016003!,firstposition:"065331098336",secondposition:"417238475067417386475067417535475067417683475067",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x2626260x000000");
+        
+        addComposingToDatabase(1000,composingid:016016,bgpic:i016004!,firstposition:"202446475094",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:016021,bgpic:i016005!,firstposition:"266113475094",secondposition:"329295348489",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x2626260xFFFFFF0x000000");
+        
+        addComposingToDatabase(1102,composingid:016026,bgpic:i016006!,firstposition:"266113475094",secondposition:"329295348489",thirdposition:"",imageposition:"054282266537678282265536",font:"PingFang SC",color:"0x2626260xFFFFFF0x000000");
+        
+        addComposingToDatabase(1100,composingid:016031,bgpic:i016007!,firstposition:"266147475094",secondposition:"376328530489",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x2626260xFFFFFF0x000000");
+        
+        addComposingToDatabase(1000,composingid:016036,bgpic:i016008!,firstposition:"376240530489",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1001,composingid:016041,bgpic:i016009!,firstposition:"380245530489",secondposition:"",thirdposition:"",imageposition:"058232266537",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(4400,composingid:016046,bgpic:i016010!,firstposition:"2535102220855075102220850-2512222085751512222085",secondposition:"284623166192538623166192029625166192782625166192",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(4000,composingid:016051,bgpic:i016011!,firstposition:"284534166192538534166192029537166192782537166192",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(3001,composingid:016056,bgpic:i016012!,firstposition:"547534166192293537166192791537166192",secondposition:"",thirdposition:"",imageposition:"056301189426",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(3300,composingid:016061,bgpic:i016013!,firstposition:"445364131058728364131058152374131058",secondposition:"391425236211674425236211098435236211",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1330,composingid:016066,bgpic:i016014!,firstposition:"000139415076",secondposition:"444397131058728397131058152407131058",thirdposition:"391459236211674459236211098469236211",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        addComposingToDatabase(1300,composingid:016071,bgpic:i016015!,firstposition:"000139415076",secondposition:"098442236211391442236211674442236211",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(0000,composingid:016076,bgpic:i016016!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
+        
         
         // MARK - 017
         
@@ -803,8 +1159,179 @@ func loadData(){
         
         addComposingToDatabase(0001,composingid:017091,bgpic:i017019!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"930-129049088",font:"思源黑体 Regular",color:"0x0000000x0000000x000000");
         
+        // MARK - 018
+        let i018001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018001", ofType: "png")!)
+        
+        let i018002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018002", ofType: "png")!)
+        
+        let i018003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018003", ofType: "png")!)
+        
+        let i018004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018004", ofType: "png")!)
+        
+        let i018005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018005", ofType: "png")!)
+        
+        let i018006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018006", ofType: "png")!)
+        
+        let i018007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018007", ofType: "png")!)
+        
+        let i018008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018008", ofType: "png")!)
+        
+        let i018009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018009", ofType: "png")!)
+        
+        let i018010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018010", ofType: "png")!)
+        
+        let i018011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018011", ofType: "png")!)
+        
+        let i018012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018012", ofType: "png")!)
+        
+        let i018000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018000", ofType: "png")!)
+        
+        addComposingToDatabase(1201,composingid:018001,bgpic:i018001!,firstposition:"018404263104",secondposition:"027518234036040821153036",thirdposition:"",imageposition:"-39-62037050",font:"微软雅黑",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1440,composingid:018006,bgpic:i018002!,firstposition:"228418056149",secondposition:"421242084036421380084036420515084036423655084036",thirdposition:"421281256031425415256031425551256031428690256031",imageposition:"",font:"微软雅黑",color:"0x4040400x0000000x595959");
+        
+        addComposingToDatabase(1000,composingid:018011,bgpic:i018003!,firstposition:"412446143058",secondposition:"",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(2100,composingid:018016,bgpic:i018004!,firstposition:"066197076036536435110036",secondposition:"518465287036",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xC000000x8080800x000000");
+        
+        addComposingToDatabase(1300,composingid:018021,bgpic:i018005!,firstposition:"073201076036",secondposition:"329436031257534436031257745436031257",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xC000000x8080800x000000");
+        
+        addComposingToDatabase(1300,composingid:018026,bgpic:i018006!,firstposition:"070198076036",secondposition:"216440181036413440181036662440181036",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xC000000x5959590x000000");
+        
+        addComposingToDatabase(2100,composingid:018031,bgpic:i018007!,firstposition:"059198076036096417110036",secondposition:"096458287036",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xC000000x5959590x000000");
+        
+        addComposingToDatabase(2100,composingid:018036,bgpic:i018008!,firstposition:"063197084036222426110036",secondposition:"222467287036",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xC000000x5959590x000000");
+        
+        addComposingToDatabase(2100,composingid:018041,bgpic:i018009!,firstposition:"065191084036194414110036",secondposition:"194458287036",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xC000000x5959590x000000");
+        
+        addComposingToDatabase(7600,composingid:018046,bgpic:i018010!,firstposition:"061201084036134362153025709366153025709508153025134509153025134640153025714652153025",secondposition:"165387121041709392121041709534121041165535121041165666121041714677121041",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0x5959590x5959590x000000");
+        
+        addComposingToDatabase(4300,composingid:018051,bgpic:i018011!,firstposition:"069186084036721599106036453609106036183617106036",secondposition:"663631138032395641138032128648138032",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xC000000x5959590x000000");
+        
+        addComposingToDatabase(1000,composingid:018056,bgpic:i018012!,firstposition:"376501247104",secondposition:"",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xFFC0000x0000000x000000");
+        
+        // MARK - 019
+        let i019001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019001", ofType: "png")!)
+        
+        let i019002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019002", ofType: "png")!)
+        
+        let i019003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019003", ofType: "png")!)
+        
+        let i019004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019004", ofType: "png")!)
+        
+        let i019005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019005", ofType: "png")!)
+        
+        let i019006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019006", ofType: "png")!)
+        
+        let i019007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019007", ofType: "png")!)
+        
+        let i019008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019008", ofType: "png")!)
+        
+        let i019009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019009", ofType: "png")!)
+        
+        let i019010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019010", ofType: "png")!)
+        
+        let i019011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019011", ofType: "png")!)
+        
+        let i019012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019012", ofType: "png")!)
+        
+        let i019013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019013", ofType: "png")!)
+        
+        let i019000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019000", ofType: "png")!)
         
         
+        addComposingToDatabase(1110,composingid:019001,bgpic:i019001!,firstposition:"192490613087",secondposition:"277657443058",thirdposition:"162567673044",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        addComposingToDatabase(4400,composingid:019006,bgpic:i019002!,firstposition:"242422208026636422208026242594208026636594208026",secondposition:"636458237064242460236064242631236064638632240064",thirdposition:"",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:019011,bgpic:i019003!,firstposition:"270559466104",secondposition:"287664427044",thirdposition:"",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1220,composingid:019016,bgpic:i019004!,firstposition:"082170208026",secondposition:"249493134043544496117043",thirdposition:"497546191067185556221071",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        addComposingToDatabase(1220,composingid:019021,bgpic:i019005!,firstposition:"082170208026",secondposition:"127367079037714458079037",thirdposition:"055412265061650504265061",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        addComposingToDatabase(1140,composingid:019026,bgpic:i019006!,firstposition:"082170208026",secondposition:"216650092040",thirdposition:"229399118038449399123038670399120038216692590038",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        addComposingToDatabase(1220,composingid:019031,bgpic:i019007!,firstposition:"082170208026",secondposition:"290354079037657591079037",thirdposition:"289397593038149640593038",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        addComposingToDatabase(1400,composingid:019036,bgpic:i019008!,firstposition:"082170208026",secondposition:"634336228038131343228038636611239038131618235038",thirdposition:"",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1300,composingid:019041,bgpic:i019009!,firstposition:"082170208026",secondposition:"095605221044387605223044688605221044",thirdposition:"",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1200,composingid:019046,bgpic:i019010!,firstposition:"082170208026",secondposition:"426444174039180450172039",thirdposition:"",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1330,composingid:019051,bgpic:i019011!,firstposition:"082170208026",secondposition:"546349079037360525079037546684079037",thirdposition:"215341229038545507229038215671229038",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        addComposingToDatabase(1100,composingid:019056,bgpic:i019012!,firstposition:"082170208026",secondposition:"307473569090",thirdposition:"",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1110,composingid:019061,bgpic:i019013!,firstposition:"192490613087",secondposition:"277657443058",thirdposition:"162567673044",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
+        
+        // MARK - 020
+        let i020001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020001", ofType: "png")!)
+        
+        let i020002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020002", ofType: "png")!)
+        
+        let i020003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020003", ofType: "png")!)
+        
+        let i020004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020004", ofType: "png")!)
+        
+        let i020005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020005", ofType: "png")!)
+        
+        let i020006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020006", ofType: "png")!)
+        
+        let i020007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020007", ofType: "png")!)
+        
+        let i020008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020008", ofType: "png")!)
+        
+        let i020009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020009", ofType: "png")!)
+        
+        let i020010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020010", ofType: "png")!)
+        
+        let i020011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020011", ofType: "png")!)
+        
+        let i020012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020012", ofType: "png")!)
+        
+        let i020013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020013", ofType: "png")!)
+        
+        let i020014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020014", ofType: "png")!)
+        
+        let i020015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020015", ofType: "png")!)
+        
+        let i020016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020016", ofType: "png")!)
+        
+        let i020000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020000", ofType: "png")!)
+        
+        addComposingToDatabase(1000,composingid:020001,bgpic:i020001!,firstposition:"648298060286",secondposition:"",thirdposition:"",imageposition:"",font:"Arial",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1440,composingid:020006,bgpic:i020002!,firstposition:"796124133456",secondposition:"201405058159339406058159483410058159639420058159",thirdposition:"180424042364318425042364462429042364618439042364",imageposition:"",font:"Arial",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:020011,bgpic:i020003!,firstposition:"442501114055",secondposition:"134641730033",thirdposition:"",imageposition:"",font:"Arial",color:"0x2626260x4C525A0x000000");
+        
+        addComposingToDatabase(1330,composingid:020016,bgpic:i020004!,firstposition:"112030138060",secondposition:"164600151047446600151047728600151047",thirdposition:"157672169041438672169041721672169041",imageposition:"",font:"Arial",color:"0x0000000x0000000x4C525A");
+        
+        addComposingToDatabase(1220,composingid:020021,bgpic:i020005!,firstposition:"112030138060",secondposition:"189484153047661484161047",thirdposition:"067524298045663524298045",imageposition:"",font:"Arial",color:"0x0000000x0000000x3B3838");
+        
+        addComposingToDatabase(1440,composingid:020026,bgpic:i020006!,firstposition:"112030138060",secondposition:"160544164047713544164047168829164047713834164047",thirdposition:"160584236037631584246037168870236037631875246037",imageposition:"",font:"Arial",color:"0x0000000x0000000x3B3838");
+        
+        addComposingToDatabase(1100,composingid:020031,bgpic:i020007!,firstposition:"440501118055",secondposition:"134641730033",thirdposition:"",imageposition:"",font:"Arial",color:"0x2626260x4C525A0x000000");
+        
+        addComposingToDatabase(1330,composingid:020036,bgpic:i020008!,firstposition:"112030138060",secondposition:"208563104047452566104047676567104047",thirdposition:"167628192033411630192033635632192033",imageposition:"",font:"Arial",color:"0x0000000x0000000x444444");
+        
+        addComposingToDatabase(1440,composingid:020041,bgpic:i020009!,firstposition:"112030138060",secondposition:"208347104047634361104047639564104047208566104047",thirdposition:"167412192033594426192033599629192033167631192033",imageposition:"",font:"Arial",color:"0x0000000x0000000x444444");
+        
+        addComposingToDatabase(1100,composingid:020046,bgpic:i020010!,firstposition:"440501118055",secondposition:"134641730033",thirdposition:"",imageposition:"",font:"Arial",color:"0x2626260x4C525A0x000000");
+        
+        addComposingToDatabase(1100,composingid:020051,bgpic:i020011!,firstposition:"112030138060",secondposition:"383269057370",thirdposition:"",imageposition:"",font:"Arial",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:020056,bgpic:i020012!,firstposition:"112030138060",secondposition:"488283057370",thirdposition:"",imageposition:"",font:"Arial",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:020061,bgpic:i020013!,firstposition:"440501118055",secondposition:"134641730033",thirdposition:"",imageposition:"",font:"Arial",color:"0x2626260x4C525A0x000000");
+        
+        addComposingToDatabase(1330,composingid:020066,bgpic:i020014!,firstposition:"112030138060",secondposition:"422424104047178528104047656547104047",thirdposition:"382489192033137592192033616612192033",imageposition:"",font:"Arial",color:"0x0000000x0000000x444444");
+        
+        addComposingToDatabase(1330,composingid:020071,bgpic:i020015!,firstposition:"112030138060",secondposition:"443664104047709666104047193670104047",thirdposition:"403729192033669731192033153735192033",imageposition:"",font:"Arial",color:"0x0000000x0000000x444444");
+        
+        addComposingToDatabase(0000,composingid:020076,bgpic:i020016!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"Arial",color:"0x0000000x0000000x000000");
         
     }
 }
