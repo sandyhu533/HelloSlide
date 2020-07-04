@@ -24,12 +24,12 @@ class DesignerStub {
         var designersArray = [Designer]()
         
         // 从Assets中获取当前的12个设计师头像
-        for i in 1...15 {
+        for i in 1...100 {
             // 创建设计师对象
             let designer = Designer()
             
             // 设置图像名
-            designer.imageName = "avatar\(i)"
+            designer.imageName = "avatar\(i % 15 + 1)"
 
 //            // 两套模板（头像颜色和背景颜色）
 //            for j in 0...1 {
@@ -52,7 +52,7 @@ class DesignerStub {
             
             // 选色
             // 去除随机，以删除不必要的引用
-            let randomIndex = i
+            let randomIndex = i % 15 + 1
             let color = colors[randomIndex]
             
             designerTemplate.templateID = "\(i).\(0)"

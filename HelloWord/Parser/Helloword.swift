@@ -811,7 +811,7 @@ func createAttributedStringandSize(text mytext:String,type contenttype:kind,font
         ParagraphStyle.alignment = .left
     }
     
-    var fonts=UIFont(name: myfont, size: fontnow)!
+    var fonts=UIFont(name: myfont, size: fontnow) ?? UIFont(name: "Copperplate", size: fontnow)
     var mysizeheight:CGFloat = 0
     let mysizewidth:CGFloat = 0
     // let paddding = CGFloat(50)
@@ -832,7 +832,7 @@ func createAttributedStringandSize(text mytext:String,type contenttype:kind,font
     print("*******Height*********\(wantheight)")
     
     while true{
-        mysizeheight=getTextHeight(textStr: mytext, font: fonts, width: mywidth, linespace: linespace, wordspace:wordspace )
+        mysizeheight=getTextHeight(textStr: mytext, font: fonts!, width: mywidth, linespace: linespace, wordspace:wordspace )
         //        mysizewidth = getTextWidth(textStr: mytext, font: fonts, height: myheight, linespace: linespace, wordspace:wordspace )
         //        print("mysizeheight\(mysizeheight)")
         //        print("mysizewidth\(mysizewidth)")
@@ -845,7 +845,7 @@ func createAttributedStringandSize(text mytext:String,type contenttype:kind,font
         else{
             fontnow-=1
         }
-        fonts=UIFont(name: myfont, size: fontnow)!
+        fonts=UIFont(name: myfont, size: fontnow) ?? UIFont(name: "Copperplate", size: fontnow)
     }
     //    if fontnow<min{
     //        print("Too many words!")
