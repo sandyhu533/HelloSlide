@@ -495,41 +495,41 @@ func loadData(){
     addComposingToDatabase(0001, composingid: 005123, bgpic: i005210!, firstposition: "", secondposition: "", thirdposition: "", imageposition: "235276539440", font:"Bradley Hand",color:"0x6464640x6464640x646464")
         
         // MARK - 008
-        let i008001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008001", ofType: "jpg")!)
+        let i008001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008001", ofType: "JPG")!)
         
-        let i008002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008002", ofType: "jpg")!)
+        let i008002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008002", ofType: "JPG")!)
         
-        let i008003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008003", ofType: "jpg")!)
+        let i008003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008003", ofType: "JPG")!)
         
-        let i008004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008004", ofType: "jpg")!)
+        let i008004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008004", ofType: "JPG")!)
         
-        let i008005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008005", ofType: "jpg")!)
+        let i008005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008005", ofType: "JPG")!)
         
-        let i008006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008006", ofType: "jpg")!)
+        let i008006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008006", ofType: "JPG")!)
         
-        let i008007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008007", ofType: "jpg")!)
+        let i008007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008007", ofType: "JPG")!)
         
-        let i008008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008008", ofType: "jpg")!)
+        let i008008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008008", ofType: "JPG")!)
         
-        let i008009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008009", ofType: "jpg")!)
+        let i008009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008009", ofType: "JPG")!)
         
-        let i008010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008010", ofType: "jpg")!)
+        let i008010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008010", ofType: "JPG")!)
         
-        let i008011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008011", ofType: "jpg")!)
+        let i008011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008011", ofType: "JPG")!)
         
-        let i008012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008012", ofType: "jpg")!)
+        let i008012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008012", ofType: "JPG")!)
         
-        let i008013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008013", ofType: "jpg")!)
+        let i008013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008013", ofType: "JPG")!)
         
-        let i008014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008014", ofType: "jpg")!)
+        let i008014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008014", ofType: "JPG")!)
         
-        let i008015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008015", ofType: "jpg")!)
+        let i008015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008015", ofType: "JPG")!)
         
-        let i008016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008016", ofType: "jpg")!)
+        let i008016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008016", ofType: "JPG")!)
         
-        let i008017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008017", ofType: "jpg")!)
+        let i008017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008017", ofType: "JPG")!)
         
-        let i008000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008000", ofType: "jpg")!)
+        let i008000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008000", ofType: "JPG")!)
 
         addComposingToDatabase(1000,composingid:008001,bgpic:i008001!,firstposition:"122386761148",secondposition:"",thirdposition:"",imageposition:"",font:"华文行楷",color:"0xDD5B4F0x0000000x000000");
         
@@ -568,43 +568,43 @@ func loadData(){
         
         //MARK - 010
         
-        let i010001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010001", ofType: "jpg")!)
+        let i010001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010001", ofType: "JPG")!)
         
-        let i010002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010002", ofType: "jpg")!)
+        let i010002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010002", ofType: "JPG")!)
         
-        let i010003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010003", ofType: "jpg")!)
+        let i010003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010003", ofType: "JPG")!)
         
-        let i010004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010004", ofType: "jpg")!)
+        let i010004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010004", ofType: "JPG")!)
         
-        let i010005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010005", ofType: "jpg")!)
+        let i010005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010005", ofType: "JPG")!)
         
-        let i010006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010006", ofType: "jpg")!)
+        let i010006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010006", ofType: "JPG")!)
         
-        let i010007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010007", ofType: "jpg")!)
+        let i010007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010007", ofType: "JPG")!)
         
-        let i010008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010008", ofType: "jpg")!)
+        let i010008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010008", ofType: "JPG")!)
         
         let i010009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010009", ofType: "jpg")!)
         
-        let i010010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010010", ofType: "jpg")!)
+        let i010010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010010", ofType: "JPG")!)
         
-        let i010011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010011", ofType: "jpg")!)
+        let i010011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010011", ofType: "JPG")!)
         
-        let i010012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010012", ofType: "jpg")!)
+        let i010012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010012", ofType: "JPG")!)
         
-        let i010013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010013", ofType: "jpg")!)
+        let i010013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010013", ofType: "JPG")!)
         
-        let i010014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010014", ofType: "jpg")!)
+        let i010014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010014", ofType: "JPG")!)
         
-        let i010015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010015", ofType: "jpg")!)
+        let i010015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010015", ofType: "JPG")!)
         
-        let i010016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010016", ofType: "jpg")!)
+        let i010016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010016", ofType: "JPG")!)
         
-        let i010017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010017", ofType: "jpg")!)
+        let i010017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010017", ofType: "JPG")!)
         
-        let i010018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010018", ofType: "jpg")!)
+        let i010018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010018", ofType: "JPG")!)
         
-        let i010019 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010019", ofType: "jpg")!)
+        let i010019 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010019", ofType: "JPG")!)
         
         let i010000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010000", ofType: "jpg")!)
         
@@ -649,43 +649,43 @@ func loadData(){
         
         //MARK - 014
         
-        let i014001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014001", ofType: "jpg")!)
+        let i014001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014001", ofType: "JPG")!)
         
-        let i014002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014002", ofType: "jpg")!)
+        let i014002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014002", ofType: "JPG")!)
         
-        let i014003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014003", ofType: "jpg")!)
+        let i014003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014003", ofType: "JPG")!)
         
-        let i014004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014004", ofType: "jpg")!)
+        let i014004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014004", ofType: "JPG")!)
         
-        let i014005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014005", ofType: "jpg")!)
+        let i014005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014005", ofType: "JPG")!)
         
-        let i014006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014006", ofType: "jpg")!)
+        let i014006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014006", ofType: "JPG")!)
         
-        let i014007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014007", ofType: "jpg")!)
+        let i014007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014007", ofType: "JPG")!)
         
-        let i014008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014008", ofType: "jpg")!)
+        let i014008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014008", ofType: "JPG")!)
         
-        let i014009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014009", ofType: "jpg")!)
+        let i014009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014009", ofType: "JPG")!)
         
-        let i014010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014010", ofType: "jpg")!)
+        let i014010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014010", ofType: "JPG")!)
         
         let i014011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014011", ofType: "jpg")!)
         
-        let i014012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014012", ofType: "jpg")!)
+        let i014012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014012", ofType: "JPG")!)
         
-        let i014013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014013", ofType: "jpg")!)
+        let i014013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014013", ofType: "JPG")!)
         
-        let i014014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014014", ofType: "jpg")!)
+        let i014014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014014", ofType: "JPG")!)
         
-        let i014015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014015", ofType: "jpg")!)
+        let i014015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014015", ofType: "JPG")!)
         
-        let i014016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014016", ofType: "jpg")!)
+        let i014016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014016", ofType: "JPG")!)
         
-        let i014017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014017", ofType: "jpg")!)
+        let i014017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014017", ofType: "JPG")!)
         
-        let i014018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014018", ofType: "jpg")!)
+        let i014018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014018", ofType: "JPG")!)
         
-        let i014000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014000", ofType: "jpg")!)
+        let i014000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014000", ofType: "JPG")!)
       
         addComposingToDatabase(2200,composingid:014001,bgpic:i014001!,firstposition:"161429677103250585500035",secondposition:"397727079037670727079037",thirdposition:"",imageposition:"",font:"华文仿宋",color:"0x8080800x8080800x000000");
           
@@ -725,43 +725,43 @@ func loadData(){
         
         // MARK - 017
         
-        let i017001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017001", ofType: "jpg")!)
+        let i017001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017001", ofType: "JPG")!)
         
-        let i017002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017002", ofType: "jpg")!)
+        let i017002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017002", ofType: "JPG")!)
         
-        let i017003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017003", ofType: "jpg")!)
+        let i017003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017003", ofType: "JPG")!)
         
-        let i017004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017004", ofType: "jpg")!)
+        let i017004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017004", ofType: "JPG")!)
         
-        let i017005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017005", ofType: "jpg")!)
+        let i017005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017005", ofType: "JPG")!)
         
-        let i017006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017006", ofType: "jpg")!)
+        let i017006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017006", ofType: "JPG")!)
         
-        let i017007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017007", ofType: "jpg")!)
+        let i017007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017007", ofType: "JPG")!)
         
-        let i017008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017008", ofType: "jpg")!)
+        let i017008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017008", ofType: "JPG")!)
         
-        let i017009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017009", ofType: "jpg")!)
+        let i017009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017009", ofType: "JPG")!)
         
-        let i017010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017010", ofType: "jpg")!)
+        let i017010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017010", ofType: "JPG")!)
         
-        let i017011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017011", ofType: "jpg")!)
+        let i017011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017011", ofType: "JPG")!)
         
-        let i017012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017012", ofType: "jpg")!)
+        let i017012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017012", ofType: "JPG")!)
         
-        let i017013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017013", ofType: "jpg")!)
+        let i017013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017013", ofType: "JPG")!)
         
-        let i017014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017014", ofType: "jpg")!)
+        let i017014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017014", ofType: "JPG")!)
         
-        let i017015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017015", ofType: "jpg")!)
+        let i017015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017015", ofType: "JPG")!)
         
-        let i017016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017016", ofType: "jpg")!)
+        let i017016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017016", ofType: "JPG")!)
         
-        let i017017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017017", ofType: "jpg")!)
+        let i017017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017017", ofType: "JPG")!)
         
-        let i017018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017018", ofType: "jpg")!)
+        let i017018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017018", ofType: "JPG")!)
         
-        let i017019 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017019", ofType: "jpg")!)
+        let i017019 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017019", ofType: "JPG")!)
         
         let i017000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017000", ofType: "jpg")!)
         
