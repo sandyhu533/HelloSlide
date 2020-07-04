@@ -561,6 +561,69 @@ func loadData(){
         
         addComposingToDatabase(1120,composingid:006076,bgpic:i006016!,firstposition:"335393315103",secondposition:"250585500035",thirdposition:"356727079037548727079037",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x8080800x7A7A7A");
         
+        // MARK - 007
+        
+        let i007000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007000", ofType: "png")!)
+        
+        let i007001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007001", ofType: "png")!)
+        
+        let i007002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007002", ofType: "png")!)
+        
+        let i007003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007003", ofType: "png")!)
+        
+        let i007004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007004", ofType: "png")!)
+        
+        let i007005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007005", ofType: "png")!)
+        
+        let i007006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007006", ofType: "png")!)
+        
+        let i007007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007007", ofType: "png")!)
+        
+        let i007008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007008", ofType: "png")!)
+        
+        let i007009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007009", ofType: "png")!)
+        
+        let i007010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007010", ofType: "png")!)
+        
+        let i007011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007011", ofType: "png")!)
+        
+        let i007012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007012", ofType: "png")!)
+        
+        let i007013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007013", ofType: "png")!)
+        
+        let i007014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007014", ofType: "png")!)
+        
+        let i007015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007015", ofType: "png")!)
+        
+        addComposingToDatabase(1100,composingid:007001,bgpic:i007001!,firstposition:"377406540134",secondposition:"789622115067",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x1298DE0x0000000x000000");
+        
+        addComposingToDatabase(1400,composingid:007006,bgpic:i007002!,firstposition:"740102183103",secondposition:"524283148076524428148076524573148076524713148076",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x1298DE0x0000000x000000");
+        
+        addComposingToDatabase(1000,composingid:007011,bgpic:i007003!,firstposition:"538448183103",secondposition:"",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1341,composingid:007016,bgpic:i007004!,firstposition:"022048183103",secondposition:"061265132076061464132076061663132076",thirdposition:"061338472058061537472058061736472058609826269058",imageposition:"544278401524",font:"思源黑体 Light",color:"0x0000000x1298DE0x000000");
+        
+        addComposingToDatabase(1333,composingid:007021,bgpic:i007005!,firstposition:"022048183103",secondposition:"141622132076433629132076739629132076",thirdposition:"083698249148375705249148681705249148",imageposition:"086290220233389291220233692291220233",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1000,composingid:007026,bgpic:i007006!,firstposition:"538448183103",secondposition:"",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1102,composingid:007031,bgpic:i007007!,firstposition:"022048183103",secondposition:"122751733192",thirdposition:"",imageposition:"092277376421531277376421",font:"思源黑体 Light",color:"0x0000000xFFFFFF0x000000");
+        
+        addComposingToDatabase(1222,composingid:007036,bgpic:i007008!,firstposition:"022048183103",secondposition:"488357190103488655190103",thirdposition:"057334338148057633338148",imageposition:"777299139219777600128213",font:"思源黑体 Light",color:"0x0000000xFFFFFF0x000000");
+        
+        addComposingToDatabase(1000,composingid:007041,bgpic:i007009!,firstposition:"538448183103",secondposition:"",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1301,composingid:007046,bgpic:i007010!,firstposition:"022048183103",secondposition:"070319342103070520342103070721342103",thirdposition:"",imageposition:"440288488567",font:"思源黑体 Light",color:"0x0000000xFFFFFF0x000000");
+        
+        addComposingToDatabase(1222,composingid:007051,bgpic:i007011!,firstposition:"022048183103",secondposition:"392308132076118620132076",thirdposition:"392384491148118696491148",imageposition:"106286236263657600235263",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1000,composingid:007056,bgpic:i007012!,firstposition:"538448183103",secondposition:"",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1321,composingid:007061,bgpic:i007013!,firstposition:"022048183103",secondposition:"082277835139142533132076724533132076",thirdposition:"082614253175664614253175",imageposition:"363507273349",font:"思源黑体 Light",color:"0x0000000x0000000xFFFFFF");
+        
+        addComposingToDatabase(2440,composingid:007066,bgpic:i007014!,firstposition:"022048183103411505155121",secondposition:"076304132076577304132076086626132076587626132076",thirdposition:"065380351148566380351148076703351148577703351148",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1330,composingid:007071,bgpic:i007015!,firstposition:"740102183103",secondposition:"414280132076414478132076414677132076",thirdposition:"414353472103414551472103414750472103",imageposition:"",font:"思源黑体 Light",color:"0x1298DE0x0000000x000000");
         
         
         // MARK - 008
@@ -633,6 +696,69 @@ func loadData(){
         addComposingToDatabase(1110,composingid:008076,bgpic:i008016!,firstposition:"098038277076",secondposition:"413477194067",thirdposition:"227568586296",imageposition:"",font:"华文仿宋",color:"0x99322F0x99322F0x595959");
         
         addComposingToDatabase(0000,composingid:008081,bgpic:i008017!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"华文仿宋",color:"0x0000000x0000000x000000");
+        
+        // MARK - 009
+        let i009000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009000", ofType: "png")!)
+        
+        let i009001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009001", ofType: "png")!)
+        
+        let i009002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009002", ofType: "png")!)
+        
+        let i009003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009003", ofType: "png")!)
+        
+        let i009004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009004", ofType: "png")!)
+        
+        let i009005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009005", ofType: "png")!)
+        
+        let i009006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009006", ofType: "png")!)
+        
+        let i009007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009007", ofType: "png")!)
+        
+        let i009008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009008", ofType: "png")!)
+        
+        let i009009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009009", ofType: "png")!)
+        
+        let i009010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009010", ofType: "png")!)
+        
+        let i009011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009011", ofType: "png")!)
+        
+        let i009012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009012", ofType: "png")!)
+        
+        let i009013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009013", ofType: "png")!)
+        
+        let i009014 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009014", ofType: "png")!)
+        
+        let i009015 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009015", ofType: "png")!)
+        
+        addComposingToDatabase(1110,composingid:009001,bgpic:i009001!,firstposition:"177359644148",secondposition:"177497644058",thirdposition:"412593177053",imageposition:"",font:"思源黑体 Light",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1400,composingid:009006,bgpic:i009002!,firstposition:"074274153085",secondposition:"484259307058484400307058485542307058484683307058",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0xF2F2F20x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:009011,bgpic:i009003!,firstposition:"299401571121",secondposition:"299519571058",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1140,composingid:009016,bgpic:i009004!,firstposition:"052157234067",secondposition:"678326203058",thirdposition:"148361323094663500227264148531323094148702323094",imageposition:"",font:"无法获取",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1442,composingid:009021,bgpic:i009005!,firstposition:"052157234067",secondposition:"111312099053675312099053111560099053675560099053",thirdposition:"111373217121675373217121111621217121675621217121",imageposition:"394281210223394529210223",font:"无法获取",color:"0xFFFFFF0x4472C40x000000");
+        
+        addComposingToDatabase(1100,composingid:009026,bgpic:i009006!,firstposition:"299401571121",secondposition:"299519571058",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1121,composingid:009031,bgpic:i009007!,firstposition:"052157234067",secondposition:"080496095053",thirdposition:"244334328175244567328175",imageposition:"602326290415",font:"无法获取",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1440,composingid:009036,bgpic:i009008!,firstposition:"052157234067",secondposition:"143405119067340405119067538405119067735405119067",thirdposition:"111632174157313632174157514632174157715632174157",imageposition:"",font:"无法获取",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1100,composingid:009041,bgpic:i009009!,firstposition:"299401571121",secondposition:"299519571058",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1220,composingid:009046,bgpic:i009010!,firstposition:"052157234067",secondposition:"600268107058247717107058",thirdposition:"162323279192514520280192",imageposition:"",font:"无法获取",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1124,composingid:009051,bgpic:i009011!,firstposition:"052157234067",secondposition:"312521363058",thirdposition:"124333159444715333159444",imageposition:"306307187186505309187186306605187186505607187186",font:"无法获取",color:"0xFFFFFF0xFFFFFF0x000000");
+        
+        addComposingToDatabase(1100,composingid:009056,bgpic:i009012!,firstposition:"299401571121",secondposition:"299519571058",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0x0000000x0000000x000000");
+        
+        addComposingToDatabase(1220,composingid:009061,bgpic:i009013!,firstposition:"052157234067",secondposition:"111293133067111549133067",thirdposition:"111381480134111637480134",imageposition:"",font:"无法获取",color:"0xFFFFFF0x4472C40x000000");
+        
+        addComposingToDatabase(1400,composingid:009066,bgpic:i009014!,firstposition:"052157234067",secondposition:"096369284121610369284121096605284121610605284121",thirdposition:"",imageposition:"",font:"无法获取",color:"0xFFFFFF0x0000000x000000");
+        
+        addComposingToDatabase(1100,composingid:009071,bgpic:i009015!,firstposition:"272369455148",secondposition:"412525177053",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0xFFFFFF0x0000000x000000");
         
         
         //MARK - 010
