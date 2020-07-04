@@ -27,6 +27,10 @@ class Helloword{
 //    I005010
 
     let picfamily = ["","i001012","i002013","i003006","i004007","i005013","","i001012","","i103006","i004007","005bg2","","i001012","","i103006","i004007","005bg3"]
+    
+    // 默认晨曦是从第6套模版开始添加,依次往后排序
+    let picfamily2 = ["i008000","i008001","i008002","i008003","i008004","i008005","i008006","i008007","i008008","i008009","i008010","i008011","i008012","i008013","i008014","i008015","i008016","i008017","i010000","i010001","i010002","i010003","i010004","i010005","i010006","i010007","i010008","i010009","i010010","i010011","i010012","i010013","i010014","i010015","i010016","i010017","i010018","i010019","i014000","i014001","i014002","i014003","i014004","i014005","i014006","i014007","i014008","i014009","i014010","i014011","i014012","i014013","i014014","i014015","i014016","i014017","i014018","i017000","i017001","i017002","i017003","i017004","i017005","i017006","i017007","i017008","i017009","i017010","i017011","i017012","i017013","i017014","i017015","i017016","i017017","i017018","i017019"];
+    
    // let fontcolor = ["","0xffffff","0x000000","0x000000","0x000000","0xB7251E"]
     init(frame:CGRect){
         HellowordData = [Page]()
@@ -50,15 +54,30 @@ class Helloword{
         let templatenow = readFromFluidTemplate()
         let thispage : PageView
         let templateid = mytemplateid>5 ? 0 : mytemplateid
+//        if(templateid == 0){
+//            thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
+//        }
+//        else{
+//            // MARK : 这里为了多点几下也不越界重新修改了呜呜id
+//            let temp = colorid % 3
+//            thispage = PageView(initframe: self.initframe, image: self.picfamily[templateid+temp*6])
+//
+//        }
         if(templateid == 0){
             thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
         }
-        else{
-            // MARK : 这里为了多点几下也不越界重新修改了呜呜id
+        else if(templateid <= 5){
+            // MARK : 这里需要二次修改一下
             let temp = colorid % 3
-            thispage = PageView(initframe: self.initframe, image: self.picfamily[templateid+temp*6])
-           
+            let bgpic = self.picfamily[templateid+temp*6]
+            thispage = PageView(initframe: self.initframe, image: bgpic)
         }
+        else{
+            let bgpic = self.picfamily2[templateid-6]
+            thispage = PageView(initframe: self.initframe, image: bgpic)
+
+        }
+        
         //判断是否有图片
         let images = data.getImages()
         let isthereimage = images.count == 0 ? false : true
