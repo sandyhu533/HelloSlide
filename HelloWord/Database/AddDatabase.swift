@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
+// MARK: - when rebuilding Database, set DEBUG to true, else to false
 let DEBUG = true
 
 func loadData(){
     
-    if(!ifExists(instanceid: 001001) && !DEBUG){
+    if(!ifExists(instanceid: 001001) || DEBUG){
         
        // MARK: - 001
        
