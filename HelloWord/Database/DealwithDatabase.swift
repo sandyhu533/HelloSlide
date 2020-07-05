@@ -133,10 +133,10 @@ func addComposingToDatabase(_ pageinfo:Int,composingid:Int,bgpic:UIImage,firstpo
         print("加入失败，位置出错\(composingid)")
         return
     }
-    
-    compose.pageinfo = Int64(Int32(pageinfo))
+
+    compose.pageinfo = Int64(pageinfo)
     compose.bgpic = bgpic.toData
-    compose.composingid = Int64(Int32(composingid))
+    compose.composingid = Int64(composingid)
     compose.firstposition = firstposition
     compose.secondposition = secondposition
     compose.thirdposition = thirdposition

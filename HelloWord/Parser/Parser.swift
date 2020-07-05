@@ -40,7 +40,7 @@ class Parser{
         let wordpage = self.myWord.getthispage(id: pageid)
         
         if(templateid == 0){
-            self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid, mytemplateid: templateid)
+            self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid, templateid: templateid)
         }
         else{
             
@@ -59,7 +59,7 @@ class Parser{
             let composings = findMatchedComposeing(pageinfo:wordpage.getPageInfo(), templateid: templateid, colorid: realid)
             
             if(composings.count == 0){
-                self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid, mytemplateid: templateid)
+                self.myHelloword.reNewHellowordFluid(id: pageid, datasource: wordpage, colorid: colorid, templateid: templateid)
             } else {
             self.myHelloword.reNewHellowordFixed(composings:composings, datasource: wordpage, in: pageid, colorid: realid, templateid: templateid)
             }
