@@ -596,7 +596,11 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
         else{
             fontnow-=1
         }
-        fonts=UIFont(name: fontfamily[tplid], size: fontnow)!
+        if (tplid < fontfamily.count) {
+            fonts = UIFont(name: fontfamily[tplid], size: fontnow)!
+        } else {
+            fonts = UIFont.systemFont(ofSize: fontnow)
+        }
     }
 //    if fontnow<min{
 //        print("Too many words!")
