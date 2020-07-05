@@ -67,7 +67,12 @@ class Helloword{
             thispage = PageView(initframe: self.initframe, image: bgpic)
         }
         else{
-            let bgpic = self.picfamily2[templateid-6]
+            var bgpic : String
+            if (templateid-6 < picfamily2.count) {
+                bgpic = self.picfamily2[templateid-6]
+            } else {
+                bgpic = "i006000"
+            }
             thispage = PageView(initframe: self.initframe, image: bgpic)
 
         }
@@ -554,7 +559,12 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
         ParagraphStyle.alignment = .left
     }
     
-    var fonts=UIFont(name: fontfamily[tplid], size: fontnow)!
+    var fonts : UIFont
+    if (tplid < fontfamily.count) {
+        fonts = UIFont(name: fontfamily[tplid], size: fontnow)!
+    } else {
+        fonts = UIFont.systemFont(ofSize: fontnow)
+    }
     var mysizeheight:CGFloat = 0
     let mysizewidth:CGFloat = 0
    // let paddding = CGFloat(50)
@@ -595,7 +605,13 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
     //print("computingheight\(mysizeheight)")
     //print("originalsize\(myheight)")
     //print("fontnow\(fontnow)")
-    let mycolor = fontcolor[tplid].hexcolor
+    var mycolor : UIColor
+    if(tplid < fontcolor.count) {
+        mycolor = fontcolor[tplid].hexcolor
+    } else {
+        mycolor = UIColor.black
+    }
+    
     return NSAttributedString(string: mytext, attributes: [NSAttributedString.Key.font:fonts,NSAttributedString.Key.foregroundColor:mycolor,NSAttributedString.Key.paragraphStyle:ParagraphStyle]) //这里再修改一点点
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // MARK: - when rebuilding Database, set DEBUG to true, else to false
-let DEBUG = true
+let DEBUG = false
 
 func loadData(){
     
