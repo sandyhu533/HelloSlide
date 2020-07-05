@@ -858,7 +858,10 @@ func createAttributedStringandSize(text mytext:String,type contenttype:kind,font
             padding = 60
         }
     }
-    let wantheight = myheight - CGFloat(padding)
+    var wantheight = myheight - CGFloat(padding)
+    if (wantheight < 0) {
+        wantheight = 0
+    }
     print("*******Width*********\(mywidth)")
     print("*******Height*********\(wantheight)")
     
