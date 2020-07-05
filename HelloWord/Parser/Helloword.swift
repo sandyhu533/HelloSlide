@@ -29,7 +29,9 @@ class Helloword{
     let picfamily = ["","i001012","i002013","i003006","i004007","i005013","","i001012","","i103006","i004007","005bg2","","i001012","","i103006","i004007","005bg3"]
     
     // 默认晨曦是从第6套模版开始添加,依次往后排序
-    let picfamily2 = ["i006000","i006001","i006002","i006003","i006004","i006005","i006006","i006007","i006008","i006009","i006010","i006011","i006012","i006013","i006014","i006015","i006016","i007000","i007001","i007002","i007003","i007004","i007005","i007006","i007007","i007008","i007009","i007010","i007011","i007012","i007013","i007014","i007015","i008000","i008001","i008002","i008003","i008004","i008005","i008006","i008007","i008008","i008009","i008010","i008011","i008012","i008013","i008014","i008015","i008016","i008017","i009000","i009001","i009002","i009003","i009004","i009005","i009006","i009007","i009008","i009009","i009010","i009011","i009012","i009013","i009014","i009015","i010000","i010001","i010002","i010003","i010004","i010005","i010006","i010007","i010008","i010009","i010010","i010011","i010012","i010013","i010014","i010015","i010016","i010017","i010018","i010019","i011000","i011001","i011002","i011003","i011004","i011005","i011006","i011007","i011008","i011009","i011010","i011011","i011012","i012000","i012001","i012002","i012003","i012004","i012005","i012006","i012007","i012008","i012009","i012010","i012011","i012012","i012013","i012014","i012015","i012016","i012017","i012018","i013000","i013001","i013002","i013003","i013004","i013005","i013006","i013007","i013008","i013009","i013010","i013011","i014000","i014001","i014002","i014003","i014004","i014005","i014006","i014007","i014008","i014009","i014010","i014011","i014012","i014013","i014014","i014015","i014016","i014017","i014018","i015000","i015001","i015002","i015003","i015004","i015005","i015006","i015007","i015008","i015009","i016000","i016001","i016002","i016003","i016004","i016005","i016006","i016007","i016008","i016009","i016010","i016011","i016012","i016013","i016014","i016015","i016016","i017000","i017001","i017002","i017003","i017004","i017005","i017006","i017007","i017008","i017009","i017010","i017011","i017012","i017013","i017014","i017015","i017016","i017017","i017018","i017019","i018000","i018001","i018002","i018003","i018004","i018005","i018006","i018007","i018008","i018009","i018010","i018011","i018012","i019000","i019001","i019002","i019003","i019004","i019005","i019006","i019007","i019008","i019009","i019010","i019011","i019012","i019013","i020000","i020001","i020002","i020003","i020004","i020005","i020006","i020007","i020008","i020009","i020010","i020011","i020012","i020013","i020014","i020015","i020016"];
+//    let picfamily2 = ["i006000","i006001","i006002","i006003","i006004","i006005","i006006","i006007","i006008","i006009","i006010","i006011","i006012","i006013","i006014","i006015","i006016","i007000","i007001","i007002","i007003","i007004","i007005","i007006","i007007","i007008","i007009","i007010","i007011","i007012","i007013","i007014","i007015","i008000","i008001","i008002","i008003","i008004","i008005","i008006","i008007","i008008","i008009","i008010","i008011","i008012","i008013","i008014","i008015","i008016","i008017","i009000","i009001","i009002","i009003","i009004","i009005","i009006","i009007","i009008","i009009","i009010","i009011","i009012","i009013","i009014","i009015","i010000","i010001","i010002","i010003","i010004","i010005","i010006","i010007","i010008","i010009","i010010","i010011","i010012","i010013","i010014","i010015","i010016","i010017","i010018","i010019","i011000","i011001","i011002","i011003","i011004","i011005","i011006","i011007","i011008","i011009","i011010","i011011","i011012","i012000","i012001","i012002","i012003","i012004","i012005","i012006","i012007","i012008","i012009","i012010","i012011","i012012","i012013","i012014","i012015","i012016","i012017","i012018","i013000","i013001","i013002","i013003","i013004","i013005","i013006","i013007","i013008","i013009","i013010","i013011","i014000","i014001","i014002","i014003","i014004","i014005","i014006","i014007","i014008","i014009","i014010","i014011","i014012","i014013","i014014","i014015","i014016","i014017","i014018","i015000","i015001","i015002","i015003","i015004","i015005","i015006","i015007","i015008","i015009","i016000","i016001","i016002","i016003","i016004","i016005","i016006","i016007","i016008","i016009","i016010","i016011","i016012","i016013","i016014","i016015","i016016","i017000","i017001","i017002","i017003","i017004","i017005","i017006","i017007","i017008","i017009","i017010","i017011","i017012","i017013","i017014","i017015","i017016","i017017","i017018","i017019","i018000","i018001","i018002","i018003","i018004","i018005","i018006","i018007","i018008","i018009","i018010","i018011","i018012","i019000","i019001","i019002","i019003","i019004","i019005","i019006","i019007","i019008","i019009","i019010","i019011","i019012","i019013","i020000","i020001","i020002","i020003","i020004","i020005","i020006","i020007","i020008","i020009","i020010","i020011","i020012","i020013","i020014","i020015","i020016"];
+    
+    let picfamily2 = ["i006000","i007000","i008000","i009000","i010000","i011000","i012000","i013000","i014000","i015000","i016000","i017000","i018000","i019000","i020000"];
     
    // let fontcolor = ["","0xffffff","0x000000","0x000000","0x000000","0xB7251E"]
     init(frame:CGRect){
@@ -45,24 +47,16 @@ class Helloword{
         HellowordData!.append(newpage)
     }
     
-    func reNewHellowordFluid(id pageid:Int,datasource data:PageData,colorid:Int,mytemplateid:Int){
+    func reNewHellowordFluid(id pageid:Int,datasource data:PageData,colorid:Int,templateid:Int){
         //获得模版、新建一个slide
         var realid = 0
         realid = colorid % self.mycolorlength
-
+        
+        // LR ： 这里删去了过去的显示数组
         self.deleteoldhelloword(pageids: pageid)
         let templatenow = readFromFluidTemplate()
         let thispage : PageView
-        let templateid = mytemplateid>5 ? 0 : mytemplateid
-//        if(templateid == 0){
-//            thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
-//        }
-//        else{
-//            // MARK : 这里为了多点几下也不越界重新修改了呜呜id
-//            let temp = colorid % 3
-//            thispage = PageView(initframe: self.initframe, image: self.picfamily[templateid+temp*6])
-//
-//        }
+        
         if(templateid == 0){
             thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
         }
@@ -143,7 +137,6 @@ class Helloword{
     }
         
     
-    //好像不用全部都remove，直接令它等于新的就好啦
     func deleteoldhelloword(pageids pageid:Int){
         
         if HellowordData != nil{
@@ -314,8 +307,25 @@ class PageView:UIView {
         self.addSubview(bgview)
     }
     init(initframe:CGRect,image:String){
-        let path = Bundle.main.path(forResource: image, ofType: "png")
-        let newImage = UIImage(contentsOfFile: path!)
+        let path1 = Bundle.main.path(forResource: image, ofType: "png")
+        let path2 = Bundle.main.path(forResource: image, ofType: "jpg")
+        let path3 = Bundle.main.path(forResource: image, ofType: "PNG")
+        let path4 = Bundle.main.path(forResource: image, ofType: "JPG")
+
+        var newImage : UIImage? = nil
+        if let path = path1 {
+            newImage = UIImage(contentsOfFile: path)
+        }
+        if let path = path1 {
+            newImage = UIImage(contentsOfFile: path)
+        }
+        if let path = path1{
+            newImage = UIImage(contentsOfFile: path)
+        }
+        if let path = path1{
+            newImage = UIImage(contentsOfFile: path)
+        }
+        
         
         self.initframe = initframe
         self.PageCellElments=[UIView]()
@@ -516,11 +526,12 @@ func StringtoFrame(string str:String,thisview view:CGRect)->CGRect{
 }
 
 func createAttributedString(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat,tplid:Int)->NSAttributedString {
-    let fontfamily = ["Helvetica","DIN Alternate","DIN Condensed","Hiragino Maru Gothic ProN","DIN Condensed","Bradley Hand"]
-    let fontcolor = ["0xffffff","0xf0f0f0","0x646464","0x000000","50C5CE","0x646464"]
+   // LR : 这里看看待会儿要不要改吧
+    let fontfamily = ["Helvetica","DIN Alternate","DIN Condensed","Hiragino Maru Gothic ProN","DIN Condensed","Bradley Hand","Helvetica","DIN Alternate","DIN Condensed","Hiragino Maru Gothic ProN","DIN Condensed","Bradley Hand"]
+    let fontcolor = ["0xffffff","0xf0f0f0","0x646464","0x000000","50C5CE","0x646464","0x000000","0xf0f0f0","0x646464","0x000000","50C5CE","0x646464","0xf0f0f0","0x646464","0x000000"]
 
     var fontnow=max
-    var ParagraphStyle=NSMutableParagraphStyle()
+    let ParagraphStyle=NSMutableParagraphStyle()
     var linespace:CGFloat{
         return fontnow/32
     }
