@@ -2024,8 +2024,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SandyHu.HelloWord11;
+				MARKETING_VERSION = 2.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SandyHu.HelloWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -2044,8 +2044,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SandyHu.HelloWord11;
+				MARKETING_VERSION = 2.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SandyHu.HelloWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
