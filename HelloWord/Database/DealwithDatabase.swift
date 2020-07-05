@@ -134,9 +134,9 @@ func addComposingToDatabase(_ pageinfo:Int,composingid:Int,bgpic:UIImage,firstpo
         return
     }
     
-    compose.pageinfo = Int16(Int64(Int32(pageinfo)))
+    compose.pageinfo = Int64(Int32(pageinfo))
     compose.bgpic = bgpic.toData
-    compose.composingid = Int16(Int64(Int32(composingid)))
+    compose.composingid = Int64(Int32(composingid))
     compose.firstposition = firstposition
     compose.secondposition = secondposition
     compose.thirdposition = thirdposition
