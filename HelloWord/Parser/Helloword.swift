@@ -17,36 +17,7 @@ class Helloword{
     
     let mycolors:[UIColor] = [UIColor.asparagus(),UIColor.blush(),UIColor.burntSienna(),UIColor.sepia(),UIColor.eggplant(),UIColor.fern(),UIColor.maroon(),UIColor.denim()]
     let mycolorlength = 8
-    
-//    let fontfamily = ["Helvetica","Courier","ArialHebrew","Verdana","ArialHebrew","HelveticaNeue"]
-    
-//    //I001003
-//    I002001
-//    I003007
-//    I004002
-//    I005010
 
-    let picfamily = ["","i001012","i002013","i003006","i004007","i005013","","i001012","","i103006","i004007","005bg2","","i001012","","i103006","i004007","005bg3"]
-    
-    // 默认晨曦是从第6套模版开始添加,依次往后排序
-<<<<<<< HEAD
-    let picfamily2 = ["i006000","i007000","i008000","i009000","i010000","i011000","i012000","i013000","i014000","i015000","i016000","i017000","i018000","i019000","i020000","i021000"];
-
-// 默认字体
-//  ["思源黑体 CN Normal","PingFang SC","思源黑体regular","PingFang SC","思源黑体regular","PingFang SC","PingFang SC","PingFang SC","PingFangSC-Light","思源黑体regular","PingFang SC","PingFang SC","思源黑体regular","微软雅黑","Source Han Serif SC","等线","PingFang SC"];
-    
-// 默认字体颜色
-//["#7f7f7f","#000000","#FFFFFF","#000000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#000000","#FFFFFF","#FFFFFF"]
-=======
-//    let picfamily2 = ["i006000","i006001","i006002","i006003","i006004","i006005","i006006","i006007","i006008","i006009","i006010","i006011","i006012","i006013","i006014","i006015","i006016","i007000","i007001","i007002","i007003","i007004","i007005","i007006","i007007","i007008","i007009","i007010","i007011","i007012","i007013","i007014","i007015","i008000","i008001","i008002","i008003","i008004","i008005","i008006","i008007","i008008","i008009","i008010","i008011","i008012","i008013","i008014","i008015","i008016","i008017","i009000","i009001","i009002","i009003","i009004","i009005","i009006","i009007","i009008","i009009","i009010","i009011","i009012","i009013","i009014","i009015","i010000","i010001","i010002","i010003","i010004","i010005","i010006","i010007","i010008","i010009","i010010","i010011","i010012","i010013","i010014","i010015","i010016","i010017","i010018","i010019","i011000","i011001","i011002","i011003","i011004","i011005","i011006","i011007","i011008","i011009","i011010","i011011","i011012","i012000","i012001","i012002","i012003","i012004","i012005","i012006","i012007","i012008","i012009","i012010","i012011","i012012","i012013","i012014","i012015","i012016","i012017","i012018","i013000","i013001","i013002","i013003","i013004","i013005","i013006","i013007","i013008","i013009","i013010","i013011","i014000","i014001","i014002","i014003","i014004","i014005","i014006","i014007","i014008","i014009","i014010","i014011","i014012","i014013","i014014","i014015","i014016","i014017","i014018","i015000","i015001","i015002","i015003","i015004","i015005","i015006","i015007","i015008","i015009","i016000","i016001","i016002","i016003","i016004","i016005","i016006","i016007","i016008","i016009","i016010","i016011","i016012","i016013","i016014","i016015","i016016","i017000","i017001","i017002","i017003","i017004","i017005","i017006","i017007","i017008","i017009","i017010","i017011","i017012","i017013","i017014","i017015","i017016","i017017","i017018","i017019","i018000","i018001","i018002","i018003","i018004","i018005","i018006","i018007","i018008","i018009","i018010","i018011","i018012","i019000","i019001","i019002","i019003","i019004","i019005","i019006","i019007","i019008","i019009","i019010","i019011","i019012","i019013","i020000","i020001","i020002","i020003","i020004","i020005","i020006","i020007","i020008","i020009","i020010","i020011","i020012","i020013","i020014","i020015","i020016"];
-    
-    let picfamily2 = ["i006000","i007000","i008000","i009000","i010000","i011000","i012000","i013000","i014000","i015000","i016000","i017000","i018000","i019000","i020000"];
->>>>>>> d6bc96c99a4a2a180bb03c4bc256f0fb8a455aca
-    
-//    let picfamily2 = ["i006000","i006001","i006002","i006003","i006004","i006005","i006006","i006007","i006008","i006009","i006010","i006011","i006012","i006013","i006014","i006015","i006016","i007000","i007001","i007002","i007003","i007004","i007005","i007006","i007007","i007008","i007009","i007010","i007011","i007012","i007013","i007014","i007015","i008000","i008001","i008002","i008003","i008004","i008005","i008006","i008007","i008008","i008009","i008010","i008011","i008012","i008013","i008014","i008015","i008016","i008017","i009000","i009001","i009002","i009003","i009004","i009005","i009006","i009007","i009008","i009009","i009010","i009011","i009012","i009013","i009014","i009015","i010000","i010001","i010002","i010003","i010004","i010005","i010006","i010007","i010008","i010009","i010010","i010011","i010012","i010013","i010014","i010015","i010016","i010017","i010018","i010019","i011000","i011001","i011002","i011003","i011004","i011005","i011006","i011007","i011008","i011009","i011010","i011011","i011012","i012000","i012001","i012002","i012003","i012004","i012005","i012006","i012007","i012008","i012009","i012010","i012011","i012012","i012013","i012014","i012015","i012016","i012017","i012018","i013000","i013001","i013002","i013003","i013004","i013005","i013006","i013007","i013008","i013009","i013010","i013011","i014000","i014001","i014002","i014003","i014004","i014005","i014006","i014007","i014008","i014009","i014010","i014011","i014012","i014013","i014014","i014015","i014016","i014017","i014018","i015000","i015001","i015002","i015003","i015004","i015005","i015006","i015007","i015008","i015009","i016000","i016001","i016002","i016003","i016004","i016005","i016006","i016007","i016008","i016009","i016010","i016011","i016012","i016013","i016014","i016015","i016016","i017000","i017001","i017002","i017003","i017004","i017005","i017006","i017007","i017008","i017009","i017010","i017011","i017012","i017013","i017014","i017015","i017016","i017017","i017018","i017019","i018000","i018001","i018002","i018003","i018004","i018005","i018006","i018007","i018008","i018009","i018010","i018011","i018012","i019000","i019001","i019002","i019003","i019004","i019005","i019006","i019007","i019008","i019009","i019010","i019011","i019012","i019013","i020000","i020001","i020002","i020003","i020004","i020005","i020006","i020007","i020008","i020009","i020010","i020011","i020012","i020013","i020014","i020015","i020016"];
-    
-
-   // let fontcolor = ["","0xffffff","0x000000","0x000000","0x000000","0xB7251E"]
     init(frame:CGRect){
         HellowordData = [Page]()
         self.initframe = frame
@@ -64,30 +35,17 @@ class Helloword{
         //获得模版、新建一个slide
         var realid = 0
         realid = colorid % self.mycolorlength
-        
+
         // LR ： 这里删去了过去的显示数组
         self.deleteoldhelloword(pageids: pageid)
         let templatenow = readFromFluidTemplate()
         let thispage : PageView
-        
+      
+        // LR : 这里是获取背景图片
         if(templateid == 0){
-            thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
-        }
-        else if(templateid <= 5){
-            // MARK : 这里需要二次修改一下
-            let temp = colorid % 3
-            let bgpic = self.picfamily[templateid+temp*6]
-            thispage = PageView(initframe: self.initframe, image: bgpic)
-        }
-        else{
-            var bgpic : String
-            if (templateid-6 < picfamily2.count) {
-                bgpic = self.picfamily2[templateid-6]
-            } else {
-                bgpic = "i006000"
-            }
-            thispage = PageView(initframe: self.initframe, image: bgpic)
-
+               thispage = PageView(initframe: self.initframe, color: self.mycolors[realid])
+        }else{
+            thispage = PageView(initframe: self.initframe, image: GetFluidDefaultBgPic(tplid: templateid, colorid: colorid))
         }
         
         //判断是否有图片
@@ -95,14 +53,12 @@ class Helloword{
         let isthereimage = images.count == 0 ? false : true
         let firstnodes = data.getFirstTitles()
         let firstnum = isthereimage ? firstnodes.count+1 : firstnodes.count
-        
+
         let frame0 = createsomesubviews(type: .firsttitle, templatenow: templatenow, childnum: firstnum, inwitchframe: thispage.initframe)
 
         
         //首先排版文字，文字按照每个一级标题为一颗树，依次排版下去
         for i in 0..<firstnodes.count{
-
-            
             let firstnode = firstnodes[i]
             layoutText(in: firstnode, myslide: thispage, datasource: data,frame: frame0[i], tplid: templateid)
         }
@@ -145,7 +101,6 @@ class Helloword{
             
             thispage.renewPage()
 
-            
             let image = UIImage(fromView: thispage)
             let imageview = UIImageView(image: image)
             self.HellowordData![pageid].addSlide(imageview)
@@ -334,13 +289,13 @@ class PageView:UIView {
         if let path = path1 {
             newImage = UIImage(contentsOfFile: path)
         }
-        if let path = path1 {
+        if let path = path2 {
             newImage = UIImage(contentsOfFile: path)
         }
-        if let path = path1{
+        if let path = path3{
             newImage = UIImage(contentsOfFile: path)
         }
-        if let path = path1{
+        if let path = path4{
             newImage = UIImage(contentsOfFile: path)
         }
         
@@ -489,8 +444,6 @@ func createkuang(rect myrect:CGRect,type contenttype:kind,tpl:FluidTemplate)->CG
 }
 
 func addnewcontentandview(inthisframe myframe:CGRect,_ templatenow:FluidTemplate,data source:PageNode,tplid:Int)->UITextView{
-        
-    let color=templatenow.fontcolor.hexcolor
     let tempview=UITextView(frame: myframe)
     let mywidth=myframe.width
     let myheight=myframe.height
@@ -508,7 +461,8 @@ func addnewcontentandview(inthisframe myframe:CGRect,_ templatenow:FluidTemplate
         maxfont=CGFloat(Double(templatenow.thirdadmirefontmax)!)
         
     }
-    tempview.attributedText=createAttributedString(text: source.content as! String, type: source.type, font: templatenow.font, width:mywidth , height:myheight, color:color, fontmin:minfont, fontmax:maxfont,tplid:tplid)
+    let (font, color) = GetFluidDefaultColorAndFonts(templateid: tplid)
+    tempview.attributedText=createAttributedString(text: source.content as! String, type: source.type, font: font, width:mywidth , height:myheight, color:color.hexcolor, fontmin:minfont, fontmax:maxfont,tplid:tplid)
         //参照helloword-version1修改
     tempview.isScrollEnabled = false
     tempview.backgroundColor=UIColor.clear
@@ -545,9 +499,8 @@ func StringtoFrame(string str:String,thisview view:CGRect)->CGRect{
 
 func createAttributedString(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat,tplid:Int)->NSAttributedString {
    // LR : 这里看看待会儿要不要改吧
-    let fontfamily = ["Helvetica","DIN Alternate","DIN Condensed","Hiragino Maru Gothic ProN","DIN Condensed","Bradley Hand","Helvetica","DIN Alternate","DIN Condensed","Hiragino Maru Gothic ProN","DIN Condensed","Bradley Hand"]
-    let fontcolor = ["0xffffff","0xf0f0f0","0x646464","0x000000","50C5CE","0x646464","0x000000","0xf0f0f0","0x646464","0x000000","50C5CE","0x646464","0xf0f0f0","0x646464","0x000000"]
 
+    
     var fontnow=max
     let ParagraphStyle=NSMutableParagraphStyle()
     var linespace:CGFloat{
@@ -572,12 +525,8 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
         ParagraphStyle.alignment = .left
     }
     
-    var fonts : UIFont
-    if (tplid < fontfamily.count) {
-        fonts = UIFont(name: fontfamily[tplid], size: fontnow)!
-    } else {
-        fonts = UIFont.systemFont(ofSize: fontnow)
-    }
+    var fonts : UIFont = UIFont(name: myfont, size: fontnow)!
+
     var mysizeheight:CGFloat = 0
     let mysizewidth:CGFloat = 0
    // let paddding = CGFloat(50)
@@ -597,10 +546,6 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
 
     while true{
         mysizeheight=getTextHeight(textStr: mytext, font: fonts, width: mywidth, linespace: linespace, wordspace:wordspace )
-//        mysizewidth = getTextWidth(textStr: mytext, font: fonts, height: myheight, linespace: linespace, wordspace:wordspace )
-//        print("mysizeheight\(mysizeheight)")
-//        print("mysizewidth\(mysizewidth)")
-//
         if mysizeheight<=wantheight{
             if(mysizewidth<=mywidth){
             break
@@ -609,23 +554,27 @@ func createAttributedString(text mytext:String,type contenttype:kind,font myfont
         else{
             fontnow-=1
         }
-        fonts=UIFont(name: fontfamily[tplid], size: fontnow)!
-    }
-//    if fontnow<min{
-//        print("Too many words!")
-//    }
-    //print("fontnow\(fontnow)")
-    //print("computingheight\(mysizeheight)")
-    //print("originalsize\(myheight)")
-    //print("fontnow\(fontnow)")
-    var mycolor : UIColor
-    if(tplid < fontcolor.count) {
-        mycolor = fontcolor[tplid].hexcolor
-    } else {
-        mycolor = UIColor.black
+        fonts = UIFont(name: myfont, size: fontnow)!
     }
     
     return NSAttributedString(string: mytext, attributes: [NSAttributedString.Key.font:fonts,NSAttributedString.Key.foregroundColor:mycolor,NSAttributedString.Key.paragraphStyle:ParagraphStyle]) //这里再修改一点点
+}
+
+// 第一个返回参数是字体，第二个返回参数是字色
+func GetFluidDefaultColorAndFonts(templateid : Int) -> (String,String){
+    let fontfamily = ["Helvetica","DIN Alternate","DIN Condensed","Hiragino Maru Gothic ProN","DIN Condensed","Bradley Hand"]
+    let fontcolorfamily = ["0xffffff","0xf0f0f0","0x646464","0x000000","0x50C5CE","0x646464"]
+    let fontfamily2 = ["思源黑体 CN Normal","PingFang SC","思源黑体regular","PingFang SC","思源黑体regular","PingFang SC","PingFang SC","PingFang SC","PingFangSC-Light","思源黑体regular","PingFang SC","PingFang SC","思源黑体regular","微软雅黑","Source Han Serif SC","等线"]
+    let fontcolorfamily2 = ["#7f7f7f","#000000","#FFFFFF","#000000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#000000","#FFFFFF"]
+    
+    if (templateid < fontfamily.count) {
+        return (fontfamily[templateid],fontcolorfamily[templateid])
+    } else if (templateid - 6 < fontfamily2.count){
+        return (fontfamily2[templateid-6],fontcolorfamily2[templateid-6])
+    }else{
+        // 默认Helvetica，黑色
+        return ("Helvetica","0x000000")
+    }
 }
 
 func getTextHeight(textStr:String,font:UIFont,width:CGFloat,linespace:CGFloat,wordspace:CGFloat) -> CGFloat {
@@ -828,7 +777,7 @@ func modifyTotheSameSize(mypage thispage:PageView){
 
 func createAttributedStringandSize(text mytext:String,type contenttype:kind,font myfont:String,width mywidth:CGFloat,height myheight:CGFloat,color mycolor:UIColor,fontmin min:CGFloat,fontmax max:CGFloat)->(NSDictionary?,CGFloat){
     var fontnow=max
-    var ParagraphStyle=NSMutableParagraphStyle()
+    let ParagraphStyle=NSMutableParagraphStyle()
     var linespace:CGFloat{
         return fontnow/32
     }
@@ -867,7 +816,10 @@ func createAttributedStringandSize(text mytext:String,type contenttype:kind,font
             padding = 60
         }
     }
-    let wantheight = myheight - CGFloat(padding)
+    var wantheight = myheight - CGFloat(padding)
+    if (wantheight < 0) {
+        wantheight = 0
+    }
     print("*******Width*********\(mywidth)")
     print("*******Height*********\(wantheight)")
     
@@ -894,6 +846,28 @@ func createAttributedStringandSize(text mytext:String,type contenttype:kind,font
     //print("computingheight\(mysizeheight)")
     //print("originalsize\(myheight)")
     //print("fontnow\(fontnow)")
-    return([NSAttributedString.Key.font:fonts,NSAttributedString.Key.foregroundColor:mycolor,NSAttributedString.Key.paragraphStyle:ParagraphStyle],fontnow) //这里再修改一点点
+    return([NSAttributedString.Key.font:fonts as Any ,NSAttributedString.Key.foregroundColor:mycolor,NSAttributedString.Key.paragraphStyle:ParagraphStyle],fontnow) //这里再修改一点点
 }
 
+func GetFluidDefaultBgPic (tplid templateid : Int, colorid : Int) -> String{
+    let picfamily = ["","i001012","i002013","i003006","i004007","i005013","","i001012","","i103006","i004007","005bg2","","i001012","","i103006","i004007","005bg3"]
+    let picfamily2 = ["i006000","i007000","i008000","i009000","i010000","i011000","i012000","i013000","i014000","i015000","i016000","i017000","i018000","i019000","i020000"]
+    var bgpic = ""
+    if(templateid == 0){
+       return bgpic
+    }
+    else if(templateid <= 5){
+          // MARK : 这里需要二次修改一下
+        let temp = colorid % 3
+        bgpic = picfamily[templateid+temp*6]
+      }
+    else{
+          if (templateid-6 < picfamily2.count) {
+              bgpic = picfamily2[templateid-6]
+          } else {
+              bgpic = "i006000"
+          }
+      }
+    
+    return bgpic
+}

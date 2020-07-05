@@ -494,7 +494,7 @@ func loadData(){
 
     addComposingToDatabase(0001, composingid: 005123, bgpic: i005210!, firstposition: "", secondposition: "", thirdposition: "", imageposition: "235276539440", font:"Bradley Hand",color:"0x6464640x6464640x646464")
         
-        // MARK - 006
+        // MARK: - 006
         let i006001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006001", ofType: "png")!)
         
         let i006002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006002", ofType: "png")!)
@@ -527,7 +527,7 @@ func loadData(){
         
         let i006016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006016", ofType: "png")!)
         
-        let i006000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006000", ofType: "png")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i006000", ofType: "png")!)
         
         addComposingToDatabase(1120,composingid:006001,bgpic:i006001!,firstposition:"335393315103",secondposition:"250585500035",thirdposition:"356727079037548727079037",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x8080800x7A7A7A");
         
@@ -561,9 +561,9 @@ func loadData(){
         
         addComposingToDatabase(1120,composingid:006076,bgpic:i006016!,firstposition:"335393315103",secondposition:"250585500035",thirdposition:"356727079037548727079037",imageposition:"",font:"思源黑体 CN Normal",color:"0x8080800x8080800x7A7A7A");
         
-        // MARK - 007
+        // MARK: - 007
         
-        let i007000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007000", ofType: "png")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007000", ofType: "png")!)
         
         let i007001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i007001", ofType: "png")!)
         
@@ -626,7 +626,7 @@ func loadData(){
         addComposingToDatabase(1330,composingid:007071,bgpic:i007015!,firstposition:"740102183103",secondposition:"414280132076414478132076414677132076",thirdposition:"414353472103414551472103414750472103",imageposition:"",font:"思源黑体 Light",color:"0x1298DE0x0000000x000000");
         
         
-        // MARK - 008
+        // MARK: - 008
         let i008001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008001", ofType: "JPG")!)
         
         let i008002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008002", ofType: "JPG")!)
@@ -661,7 +661,7 @@ func loadData(){
         
         let i008017 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008017", ofType: "JPG")!)
         
-        let i008000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008000", ofType: "JPG")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i008000", ofType: "JPG")!)
 
         addComposingToDatabase(1000,composingid:008001,bgpic:i008001!,firstposition:"122386761148",secondposition:"",thirdposition:"",imageposition:"",font:"华文行楷",color:"0xDD5B4F0x0000000x000000");
         
@@ -697,8 +697,8 @@ func loadData(){
         
         addComposingToDatabase(0000,composingid:008081,bgpic:i008017!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"华文仿宋",color:"0x0000000x0000000x000000");
         
-        // MARK - 009
-        let i009000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009000", ofType: "png")!)
+        // MARK: - 009
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009000", ofType: "png")!)
         
         let i009001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i009001", ofType: "png")!)
         
@@ -761,7 +761,7 @@ func loadData(){
         addComposingToDatabase(1100,composingid:009071,bgpic:i009015!,firstposition:"272369455148",secondposition:"412525177053",thirdposition:"",imageposition:"",font:"思源黑体 Light",color:"0xFFFFFF0x0000000x000000");
         
         
-        //MARK - 010
+        //MARK: - 010
         
         let i010001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010001", ofType: "JPG")!)
         
@@ -801,7 +801,7 @@ func loadData(){
         
         let i010019 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010019", ofType: "JPG")!)
         
-        let i010000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010000", ofType: "jpg")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i010000", ofType: "jpg")!)
         
         addComposingToDatabase(1000,composingid:010001,bgpic:i010001!,firstposition:"051456483092",secondposition:"",thirdposition:"",imageposition:"",font:"思源黑体 Bold",color:"0xFFC0000x0000000x000000");
         
@@ -841,7 +841,7 @@ func loadData(){
         
         addComposingToDatabase(0000,composingid:010091,bgpic:i010019!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"思源黑体 Bold",color:"0x0000000x0000000x000000");
         
-        //MARK - 011
+        //MARK: - 011
         
         let i011001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011001", ofType: "JPG")!)
         
@@ -867,7 +867,7 @@ func loadData(){
         
         let i011012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011012", ofType: "jpg")!)
         
-        let i011000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011000", ofType: "jpg")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i011000", ofType: "jpg")!)
         
         
         addComposingToDatabase(1100,composingid:011001,bgpic:i011001!,firstposition:"189356619255",secondposition:"388794222040",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x4040400x000000");
@@ -895,7 +895,7 @@ func loadData(){
         addComposingToDatabase(1000,composingid:011056,bgpic:i011012!,firstposition:"108435769134",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
         
         
-        //MARK - 012
+        //MARK: - 012
         
         let i012001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012001", ofType: "jpg")!)
         
@@ -933,11 +933,11 @@ func loadData(){
         
         let i012018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012018", ofType: "jpg")!)
         
-        let i012000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012000", ofType: "jpg")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i012000", ofType: "jpg")!)
         
         addComposingToDatabase(1000,composingid:012001,bgpic:i012001!,firstposition:"022347510147",secondposition:"",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xFFFFFF0x0000000x000000");
         
-        addComposingToDatabase(1100,composingid:012006,bgpic:i012002!,firstposition:"028287505147",secondposition:"000467611085",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xFFFFFF0xFFFFFF0x000000");
+        addComposingToDatabase(1100,composingid:012006,bgpic:i012008!,firstposition:"106038393121",secondposition:"093334842516",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x21B2C10xFFFFFF0x000000");
         
         addComposingToDatabase(1200,composingid:012011,bgpic:i012003!,firstposition:"073038426121",secondposition:"050339267364689340267364",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x21B2C10xFFFFFF0x000000");
         
@@ -949,7 +949,7 @@ func loadData(){
         
         addComposingToDatabase(1301,composingid:012031,bgpic:i012007!,firstposition:"106038375121",secondposition:"436383432156436548432156436728432156",thirdposition:"",imageposition:"063192331660",font:"+mn-ea",color:"0x21B2C10xFFFFFF0x000000");
         
-        addComposingToDatabase(1100,composingid:012036,bgpic:i012008!,firstposition:"106038393121",secondposition:"093334842516",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x21B2C10xFFFFFF0x000000");
+        addComposingToDatabase(1100,composingid:012036,bgpic:i012002!,firstposition:"028287505147",secondposition:"000467611085",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xFFFFFF0xFFFFFF0x000000");
         
         addComposingToDatabase(1301,composingid:012041,bgpic:i012009!,firstposition:"052284085444",secondposition:"592160353217592378353217598585353217",thirdposition:"",imageposition:"244080295839",font:"PingFang SC",color:"0x21B2C10xFFFFFF0x000000");
         
@@ -971,7 +971,7 @@ func loadData(){
         
         addComposingToDatabase(1000,composingid:012086,bgpic:i012018!,firstposition:"062371866231",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
         
-        //MARK - 013
+        //MARK: - 013
         let i013001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013001", ofType: "jpg")!)
         
         let i013002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013002", ofType: "jpg")!)
@@ -994,7 +994,7 @@ func loadData(){
         
         let i013011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013011", ofType: "jpg")!)
         
-        let i013000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013000", ofType: "jpg")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i013000", ofType: "jpg")!)
         
         
         addComposingToDatabase(1000,composingid:013001,bgpic:i013001!,firstposition:"082694835094",secondposition:"",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0x0000000x000000");
@@ -1020,7 +1020,7 @@ func loadData(){
         addComposingToDatabase(1000,composingid:013051,bgpic:i013011!,firstposition:"186452633085",secondposition:"",thirdposition:"",imageposition:"",font:"PingFangSC-Light",color:"0xFFFFFF0x0000000x000000");
         
         
-        //MARK - 014
+        //MARK: - 014
         
         let i014001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014001", ofType: "JPG")!)
         
@@ -1058,7 +1058,7 @@ func loadData(){
         
         let i014018 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014018", ofType: "JPG")!)
         
-        let i014000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014000", ofType: "JPG")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i014000", ofType: "JPG")!)
       
         addComposingToDatabase(2200,composingid:014001,bgpic:i014001!,firstposition:"161429677103250585500035",secondposition:"397727079037670727079037",thirdposition:"",imageposition:"",font:"华文仿宋",color:"0x8080800x8080800x000000");
           
@@ -1096,7 +1096,7 @@ func loadData(){
           
           addComposingToDatabase(2000,composingid:014086,bgpic:i014018!,firstposition:"397727079037670727079037",secondposition:"",thirdposition:"",imageposition:"",font:"华文仿宋",color:"0x8080800x0000000x000000");
         
-        // MARK - 015
+        // MARK: - 015
 
         let i015001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015001", ofType: "jpg")!)
                
@@ -1116,7 +1116,7 @@ func loadData(){
 
         let i015009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015009", ofType: "jpg")!)
 
-        let i015000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015000", ofType: "jpg")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i015000", ofType: "jpg")!)
         
         addComposingToDatabase(1000,composingid:015001,bgpic:i015001!,firstposition:"191402777161",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
         
@@ -1136,7 +1136,7 @@ func loadData(){
         
         addComposingToDatabase(4400,composingid:015041,bgpic:i015009!,firstposition:"698290258058065299258058058652258058698653258058",secondposition:"063364258091698364258091063551258091698551258091",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x1F4E790x8080800x000000");
         
-        // MARK - 016
+        // MARK: - 016
         
         let i016001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016001", ofType: "jpg")!)
         
@@ -1170,7 +1170,7 @@ func loadData(){
         
         let i016016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016016", ofType: "jpg")!)
         
-        let i016000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016000", ofType: "jpg")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i016000", ofType: "jpg")!)
         
         addComposingToDatabase(1000,composingid:016001,bgpic:i016001!,firstposition:"117378764121",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0xFFFFFF0x0000000x000000");
         
@@ -1205,7 +1205,7 @@ func loadData(){
         addComposingToDatabase(0000,composingid:016076,bgpic:i016016!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"PingFang SC",color:"0x0000000x0000000x000000");
         
         
-        // MARK - 017
+        // MARK: - 017
         
         let i017001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017001", ofType: "JPG")!)
         
@@ -1245,7 +1245,7 @@ func loadData(){
         
         let i017019 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017019", ofType: "JPG")!)
         
-        let i017000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017000", ofType: "jpg")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i017000", ofType: "jpg")!)
         
         addComposingToDatabase(1110,composingid:017001,bgpic:i017001!,firstposition:"299544436100",secondposition:"347660336101",thirdposition:"229780566044",imageposition:"",font:"思源黑体 Bold",color:"0x5959590x0099A90x404040");
         
@@ -1285,7 +1285,7 @@ func loadData(){
         
         addComposingToDatabase(0001,composingid:017091,bgpic:i017019!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"9300009049088",font:"思源黑体 Regular",color:"0x0000000x0000000x000000");
         
-        // MARK - 018
+        // MARK: - 018
         let i018001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018001", ofType: "png")!)
         
         let i018002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018002", ofType: "png")!)
@@ -1310,7 +1310,7 @@ func loadData(){
         
         let i018012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018012", ofType: "png")!)
         
-        let i018000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018000", ofType: "png")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i018000", ofType: "png")!)
         
         addComposingToDatabase(1201,composingid:018001,bgpic:i018001!,firstposition:"018404263104",secondposition:"027518234036040821153036",thirdposition:"",imageposition:"-39-62037050",font:"微软雅黑",color:"0xFFFFFF0xFFFFFF0x000000");
         
@@ -1336,7 +1336,7 @@ func loadData(){
         
         addComposingToDatabase(1000,composingid:018056,bgpic:i018012!,firstposition:"376501247104",secondposition:"",thirdposition:"",imageposition:"",font:"微软雅黑",color:"0xFFC0000x0000000x000000");
         
-        // MARK - 019
+        // MARK: - 019
         let i019001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019001", ofType: "png")!)
         
         let i019002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019002", ofType: "png")!)
@@ -1363,7 +1363,7 @@ func loadData(){
         
         let i019013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019013", ofType: "png")!)
         
-        let i019000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019000", ofType: "png")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i019000", ofType: "png")!)
         
         
         addComposingToDatabase(1110,composingid:019001,bgpic:i019001!,firstposition:"192490613087",secondposition:"277657443058",thirdposition:"162567673044",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
@@ -1392,7 +1392,7 @@ func loadData(){
         
         addComposingToDatabase(1110,composingid:019061,bgpic:i019013!,firstposition:"192490613087",secondposition:"277657443058",thirdposition:"162567673044",imageposition:"",font:"Source Han Serif SC",color:"0xFFFFFF0xFFFFFF0xFFFFFF");
         
-        // MARK - 020
+        // MARK: - 020
         let i020001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020001", ofType: "png")!)
         
         let i020002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020002", ofType: "png")!)
@@ -1425,7 +1425,7 @@ func loadData(){
         
         let i020016 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020016", ofType: "png")!)
         
-        let i020000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020000", ofType: "png")!)
+        _ = UIImage(contentsOfFile: Bundle.main.path(forResource: "i020000", ofType: "png")!)
         
         addComposingToDatabase(1000,composingid:020001,bgpic:i020001!,firstposition:"648298060286",secondposition:"",thirdposition:"",imageposition:"",font:"Arial",color:"0x0000000x0000000x000000");
         
@@ -1458,63 +1458,6 @@ func loadData(){
         addComposingToDatabase(1330,composingid:020071,bgpic:i020015!,firstposition:"112030138060",secondposition:"443664104047709666104047193670104047",thirdposition:"403729192033669731192033153735192033",imageposition:"",font:"Arial",color:"0x0000000x0000000x444444");
         
         addComposingToDatabase(0000,composingid:020076,bgpic:i020016!,firstposition:"",secondposition:"",thirdposition:"",imageposition:"",font:"Arial",color:"0x0000000x0000000x000000");
-        
-        // MARK - 021
-        let i021001 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021001", ofType: "png")!)
-        
-        let i021002 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021002", ofType: "png")!)
-        
-        let i021003 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021003", ofType: "png")!)
-        
-        let i021004 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021004", ofType: "png")!)
-        
-        let i021005 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021005", ofType: "png")!)
-        
-        let i021006 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021006", ofType: "png")!)
-        
-        let i021007 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021007", ofType: "png")!)
-        
-        let i021008 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021008", ofType: "png")!)
-        
-        let i021009 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021009", ofType: "png")!)
-        
-        let i021010 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021010", ofType: "png")!)
-        
-        let i021011 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021011", ofType: "png")!)
-        
-        let i021012 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021012", ofType: "png")!)
-        
-        let i021013 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021013", ofType: "png")!)
-        
-        let i021000 = UIImage(contentsOfFile: Bundle.main.path(forResource: "i021000", ofType: "png")!)
-        
-        addComposingToDatabase(1110,composingid:021001,bgpic:i021001!,firstposition:"230416522087",secondposition:"230342522047",thirdposition:"230522522047",imageposition:"",font:"+mn-ea",color:"0xF2F2F20xF2F2F20xF2F2F2");
-        
-        addComposingToDatabase(1000,composingid:021006,bgpic:i021002!,firstposition:"396433416134",secondposition:"",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xF2F2F20x0000000x000000");
-        
-        addComposingToDatabase(1333,composingid:021011,bgpic:i021003!,firstposition:"238166522087",secondposition:"094475190060715479190060404562190060",thirdposition:"075302268148663302268148367625268148",imageposition:"399296200174089625200174710625200174",font:"+mn-ea",color:"0xF2F2F20xF2F2F20xF2F2F2");
-        
-        addComposingToDatabase(1300,composingid:021016,bgpic:i021004!,firstposition:"238166522087",secondposition:"108455245228645505245228377641245228",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xF2F2F20xF2F2F20x000000");
-        
-        addComposingToDatabase(1330,composingid:021021,bgpic:i021005!,firstposition:"238166522087",secondposition:"078344132058078515132058078685132058",thirdposition:"260313645121260484645121260655645121",imageposition:"",font:"+mn-ea",color:"0xF2F2F20x1E355E0xF2F2F2");
-        
-        addComposingToDatabase(1000,composingid:021026,bgpic:i021006!,firstposition:"396433416134",secondposition:"",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xF2F2F20x0000000x000000");
-        
-        addComposingToDatabase(1220,composingid:021031,bgpic:i021007!,firstposition:"238166522087",secondposition:"651334132058216335132058",thirdposition:"136444291264572444291264",imageposition:"",font:"+mn-ea",color:"0xF2F2F20x1E355E0xF2F2F2");
-        
-        addComposingToDatabase(1220,composingid:021036,bgpic:i021008!,firstposition:"238166522087",secondposition:"101400190060708619190060",thirdposition:"278370620114110592620114",imageposition:"",font:"+mn-ea",color:"0xF2F2F20xF2F2F20xF2F2F2");
-        
-        addComposingToDatabase(1200,composingid:021041,bgpic:i021009!,firstposition:"238166522087",secondposition:"083443299192608443299192",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xF2F2F20xF2F2F20x000000");
-        
-        addComposingToDatabase(1000,composingid:021046,bgpic:i021010!,firstposition:"396433416134",secondposition:"",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xF2F2F20x0000000x000000");
-        
-        addComposingToDatabase(1220,composingid:021051,bgpic:i021011!,firstposition:"238166522087",secondposition:"244360132058624658132058",thirdposition:"543336293264163474293264",imageposition:"",font:"+mn-ea",color:"0xF2F2F20x1E355E0xF2F2F2");
-        
-        addComposingToDatabase(1212,composingid:021056,bgpic:i021012!,firstposition:"238166522087",secondposition:"206609190060602609190060",thirdposition:"130697738121",imageposition:"148314307267544314307267",font:"+mn-ea",color:"0xF2F2F20xF2F2F20xF2F2F2");
-        
-        addComposingToDatabase(1100,composingid:021061,bgpic:i021013!,firstposition:"230416522087",secondposition:"230522522047",thirdposition:"",imageposition:"",font:"+mn-ea",color:"0xF2F2F20xF2F2F20x000000");
-        
-        
         
     }
 }
